@@ -1,0 +1,91 @@
+<div class="relative my-5 w-full max-w-3xl rounded-3xl bg-[#f5f0e5] p-6 text-[#173d33] shadow-2xl sm:p-9">
+<button type="button" class="absolute right-5 top-5 grid h-9 w-9 place-items-center rounded-full border border-[#dcd4c2]" aria-label="Close dialog" data-testid="button-modal-close"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+</svg>
+</button>
+<div>
+<div class="flex items-start justify-between gap-6 pr-10">
+<div>
+<p class="mono-face text-[10px] font-bold uppercase tracking-widest text-[#d85f45]">BNak membership</p>
+<h2 id="modal-title" class="display-face mt-3 text-4xl font-semibold leading-none sm:text-5xl">Find your place in the movement.</h2>
+<p class="mt-4 max-w-xl text-sm leading-relaxed text-[#60756c]">A trusted, welcoming path from your first details to the membership that fits your work.</p>
+</div>
+<span class="hidden rounded-full bg-[#e9c95e] p-3 sm:grid"><!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" />
+</svg>
+</span>
+</div>
+<div class="mt-8 grid grid-cols-4 gap-2">
+<div>
+<div class="h-1.5 rounded-full bg-[#d85f45]">
+</div>
+<p class="mt-2 text-[10px] font-bold uppercase tracking-wide text-[#173d33]">01 <span class="hidden sm:inline">Your details</span>
+</p>
+</div>
+<div>
+<div class="h-1.5 rounded-full bg-[#dcd4c2]">
+</div>
+<p class="mt-2 text-[10px] font-bold uppercase tracking-wide text-[#8a948a]">02 <span class="hidden sm:inline">Your business</span>
+</p>
+</div>
+<div>
+<div class="h-1.5 rounded-full bg-[#dcd4c2]">
+</div>
+<p class="mt-2 text-[10px] font-bold uppercase tracking-wide text-[#8a948a]">03 <span class="hidden sm:inline">Choose membership</span>
+</p>
+</div>
+<div>
+<div class="h-1.5 rounded-full bg-[#dcd4c2]">
+</div>
+<p class="mt-2 text-[10px] font-bold uppercase tracking-wide text-[#8a948a]">04 <span class="hidden sm:inline">Payment</span>
+</p>
+</div>
+</div>
+<div class="mt-8">
+<div class="mb-5 border-b border-[#dcd4c2] pb-4">
+<h3 class="text-xl font-bold">Tell us about you</h3>
+<p class="mt-1 text-sm text-[#60756c]">These details help us recognise and serve you well.</p>
+</div>
+<div class="grid gap-4 sm:grid-cols-2">
+<label class="block text-sm font-bold">Full name<input name="fullName" required type="text" placeholder="e.g. Amina Otieno" class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow ring-[#d85f45] focus:ring-2">
+</label>
+<label class="block text-sm font-bold">ID or passport number<input name="idNumber" required type="text" placeholder="Your identification number" class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow ring-[#d85f45] focus:ring-2">
+</label>
+<label class="block text-sm font-bold">Email address<input name="email" required type="email" placeholder="you@example.com" class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow ring-[#d85f45] focus:ring-2">
+</label>
+<label class="block text-sm font-bold">Phone number<input name="phone" required type="tel" placeholder="07XX XXX XXX" class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow ring-[#d85f45] focus:ring-2">
+</label>
+<label class="block text-sm font-bold">County<input name="county" required type="text" placeholder="e.g. Kisumu" class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow ring-[#d85f45] focus:ring-2">
+</label>
+<label class="block text-sm font-bold">Constituency<input name="constituency" required type="text" placeholder="Your constituency" class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow ring-[#d85f45] focus:ring-2">
+</label>
+<label class="block text-sm font-bold">Ward<input name="ward" required type="text" placeholder="Your ward" class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow ring-[#d85f45] focus:ring-2">
+</label>
+<label class="block text-sm font-bold">Estate or area<input name="estate" required type="text" placeholder="Your estate or village" class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow ring-[#d85f45] focus:ring-2">
+</label>
+<label class="block text-sm font-bold">Age bracket<select name="ageBracket" required class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow focus:ring-2 focus:ring-[#d85f45]"><option value="">Select your age bracket</option><option value="18–24">18–24</option><option value="25–34">25–34</option><option value="35–44">35–44</option><option value="45–54">45–54</option><option value="55–64">55–64</option><option value="65+">65+</option>
+</select>
+</label>
+<label class="block text-sm font-bold">Gender<select name="gender" required class="mt-2 w-full rounded-xl border border-[#dcd4c2] bg-[#fff9ed] px-4 py-3 font-normal outline-none transition-shadow focus:ring-2 focus:ring-[#d85f45]"><option value="">Select gender</option><option value="Male">Male</option><option value="Female">Female</option>
+</select>
+</label>
+</div>
+<div class="mt-7 flex items-center justify-between gap-3 border-t border-[#dcd4c2] pt-5">
+<button data-back="" type="button" disabled class="rounded-full border border-[#dcd4c2] px-5 py-3 text-sm font-bold disabled:cursor-not-allowed disabled:opacity-40" data-testid="button-membership-back-1">Back</button>
+<div class="flex items-center gap-3">
+<span class="hidden text-xs text-[#8a948a] sm:inline">Complete the required fields to continue</span>
+<button data-next="" type="button" disabled class="rounded-full bg-[#173d33] px-6 py-3 text-sm font-bold text-[#f5f0e5] transition-colors hover:bg-[#d85f45] disabled:cursor-not-allowed disabled:opacity-40" data-testid="button-membership-next-1">Continue <!-- @license lucide-static v0.468.0 - ISC -->
+<svg aria-hidden="true" class="ml-2 inline h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,100 @@
+<!-- layouts/partials/newsletter-form.html -->
+<section class="bg-gradient-to-br from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-center text-white leading-relaxed">
+      Stay Updated with FIQA's Latest Innovations
+    </h2>
+    
+    <p class="text-sm sm:text-base mb-8 text-center text-gray-300">
+      Subscribe to our newsletter to receive updates about our latest technology innovations, 
+      industry insights, and exclusive maintenance tips for your vertical transportation systems.
+    </p>
+
+    <form id="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
+      <input type="hidden" name="form-name" value="newsletter" />
+      <p class="hidden">
+        <label>
+          Don't fill this out if you're human: <input name="bot-field" />
+        </label>
+      </p>
+
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name (required)</label>
+        <input type="text" id="name" name="name" required 
+               class="w-full px-4 py-3 rounded-lg border-2 border-gray-600 focus:border-red-500 focus:ring focus:ring-red-200 transition duration-200 text-gray-700 bg-gray-800 text-white placeholder-gray-400">
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address (required)</label>
+        <input type="email" id="email" name="email" required 
+               class="w-full px-4 py-3 rounded-lg border-2 border-gray-600 focus:border-red-500 focus:ring focus:ring-red-200 transition duration-200 text-gray-700 bg-gray-800 text-white placeholder-gray-400">
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex items-start">
+          <input id="updates" name="updates" type="checkbox" required
+                 class="h-5 w-5 rounded border-gray-600 text-red-600 focus:ring-red-500 mt-1 bg-gray-800">
+          <label for="updates" class="ml-3 block text-sm text-gray-300">
+            Yes, send me product updates and maintenance notifications
+          </label>
+        </div>
+        
+        <div class="flex items-start">
+          <input id="innovations" name="innovations" type="checkbox"
+                 class="h-5 w-5 rounded border-gray-600 text-red-600 focus:ring-red-500 mt-1 bg-gray-800">
+          <label for="innovations" class="ml-3 block text-sm text-gray-300">
+            I'd like to receive information about new innovations and technologies
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" 
+                class="w-full bg-red-600 text-white font-bold py-4 px-8 rounded-lg transition duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 text-lg">
+          SUBSCRIBE NOW
+        </button>
+      </div>
+    </form>
+
+    <div id="form-success" class="hidden mt-6 p-4 bg-red-900 border border-red-700 text-gray-100 rounded-lg">
+      Thank you for subscribing to FIQA updates! You'll be the first to know about our latest innovations and services.
+    </div>
+
+    <p class="mt-8 text-xs text-gray-400 text-center">
+      By subscribing to our newsletter, you agree to receive email updates from FIQA. 
+      Your privacy is important to us - we'll never share your information with third parties. 
+      You can unsubscribe at any time using the link in our emails.
+    </p>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('newsletter-form');
+    var success = document.getElementById('form-success');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var formData = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(function(response) {
+        if (response.ok) {
+          form.reset();
+          form.style.display = 'none';
+          success.classList.remove('hidden');
+          success.classList.add('animate__animated', 'animate__fadeIn');
+        } else {
+          alert('There was a problem submitting your form. Please try again.');
+        }
+      })
+      .catch(function(error) {
+        alert('There was a problem submitting your form. Please try again.');
+      });
+    });
+  });
+</script>

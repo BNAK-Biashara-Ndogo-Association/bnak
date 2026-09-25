@@ -1,0 +1,223 @@
+{
+  "slides": [
+    {
+      "image": "/images/market_stall.jpg",
+      "label": "Food & trade",
+      "name": "Jane, fresh produce trader",
+      "place": "Gikomba, Nairobi",
+      "quote": "Every basket on this stall carries a family forward."
+    },
+    {
+      "image": "/images/boda_rider.jpg",
+      "label": "Mobility",
+      "name": "Kevin, boda boda rider",
+      "place": "Kisumu",
+      "quote": "I move people. BNak helps me move ahead."
+    },
+    {
+      "image": "/images/salon_owner.jpg",
+      "label": "Beauty & care",
+      "name": "Mercy, salon owner",
+      "place": "Kawangware, Nairobi",
+      "quote": "My chair is a place where people leave feeling taller."
+    },
+    {
+      "image": "/images/artisan.jpg",
+      "label": "Making",
+      "name": "Mwangi, furniture artisan",
+      "place": "Kariobangi, Nairobi",
+      "quote": "Good work deserves a fair chance to find its market."
+    },
+    {
+      "image": "/images/farmer.jpg",
+      "label": "Agribusiness",
+      "name": "Achieng, smallholder farmer",
+      "place": "Siaya County",
+      "quote": "When farmers grow, the whole village eats better."
+    },
+    {
+      "image": "/images/hotelier.jpg",
+      "label": "Hospitality",
+      "name": "Salma, guesthouse owner",
+      "place": "Kilifi County",
+      "quote": "The welcome is a business. The belonging is the reward."
+    },
+    {
+      "image": "/images/trader.jpg",
+      "label": "Enterprise",
+      "name": "Fatuma, spice trader",
+      "place": "Mombasa Old Town",
+      "quote": "Our ideas are as rich as what we sell."
+    },
+    {
+      "image": "/images/retail_shop.jpg",
+      "label": "Retail",
+      "name": "Peter, dukashop owner",
+      "place": "Nakuru County",
+      "quote": "Small shelves. Big responsibility."
+    },
+    {
+      "image": "/images/meeting.jpg",
+      "label": "Community",
+      "name": "The next generation",
+      "place": "BNak member forum",
+      "quote": "A room full of owners is a room full of solutions."
+    },
+    {
+      "image": "/images/weaver.jpg",
+      "label": "Culture & craft",
+      "name": "Rose, textile maker",
+      "place": "Kakamega County",
+      "quote": "Our heritage is not behind us. It is a living livelihood."
+    }
+  ],
+  "packages": [
+    {
+      "key": "mama-mboga",
+      "title": "Mama Mboga",
+      "price": "KSh 300",
+      "audience": "For market traders, food vendors and small informal traders.",
+      "benefits": [
+        "Membership recognition",
+        "Digital membership confirmation",
+        "Selected training and market networking"
+      ],
+      "image": "/images/market_stall.jpg",
+      "tone": "bg-[#e9c95e]"
+    },
+    {
+      "key": "bodaboda",
+      "title": "Bodaboda",
+      "price": "KSh 300",
+      "audience": "For boda boda riders and related transport micro-businesses.",
+      "benefits": [
+        "Business and financial literacy",
+        "Grassroots activities",
+        "Business opportunity alerts"
+      ],
+      "image": "/images/boda_rider.jpg",
+      "tone": "bg-[#d85f45]"
+    },
+    {
+      "key": "grassroots-coordinator",
+      "title": "Grassroots Coordinator",
+      "price": "KSh 500",
+      "audience": "For community business champions, representatives and mobilisers.",
+      "benefits": [
+        "Coordinator identification",
+        "Training and community forums",
+        "Priority programme information"
+      ],
+      "image": "/images/meeting.jpg",
+      "tone": "bg-[#205b4b]"
+    },
+    {
+      "key": "sole-proprietor",
+      "title": "Sole Proprietor",
+      "price": "KSh 1,500",
+      "audience": "For individual businesses, freelancers and professionals.",
+      "benefits": [
+        "Business directory listing",
+        "Mentorship and advisory sessions",
+        "Finance-readiness programmes"
+      ],
+      "image": "/images/salon_owner.jpg",
+      "tone": "bg-[#e9c95e]"
+    },
+    {
+      "key": "micro-business",
+      "title": "Micro Business",
+      "price": "KSh 5,000",
+      "audience": "For established shops, service providers and growing enterprises.",
+      "benefits": [
+        "Enhanced business profile",
+        "Business development clinics",
+        "B2B networking and mentorship"
+      ],
+      "image": "/images/retail_shop.jpg",
+      "tone": "bg-[#d85f45]"
+    },
+    {
+      "key": "sme",
+      "title": "SME",
+      "price": "KSh 15,000",
+      "audience": "For growing small and medium enterprises.",
+      "benefits": [
+        "Market and buyer linkages",
+        "Growth and finance-readiness support",
+        "Exhibition and trade opportunities"
+      ],
+      "image": "/images/artisan.jpg",
+      "tone": "bg-[#205b4b]"
+    },
+    {
+      "key": "corporate",
+      "title": "Corporate",
+      "price": "KSh 50,000",
+      "audience": "For established companies and institutions engaging the MSME ecosystem.",
+      "benefits": [
+        "Premium company profile",
+        "Strategic business introductions",
+        "Corporate–MSME partnership opportunities"
+      ],
+      "image": "/images/hotelier.jpg",
+      "tone": "bg-[#e9c95e]"
+    },
+    {
+      "key": "strategic-partner",
+      "title": "Strategic Partner",
+      "price": "KSh 150,000",
+      "audience": "For organisations supporting MSME development at scale.",
+      "benefits": [
+        "Strategic partner recognition",
+        "Direct member engagement",
+        "Joint programme development opportunities"
+      ],
+      "image": "/images/meeting.jpg",
+      "tone": "bg-[#d85f45]"
+    }
+  ],
+  "programs": [
+    {
+      "number": "01",
+      "title": "Know your business",
+      "text": "Practical tools, peer learning and trusted guidance for the decisions that keep an enterprise moving.",
+      "color": "bg-[#e9c95e]"
+    },
+    {
+      "number": "02",
+      "title": "Open doors",
+      "text": "We connect MSMEs to markets, finance, skills and the public conversations that shape their future.",
+      "color": "bg-[#df6b4e]"
+    },
+    {
+      "number": "03",
+      "title": "Build together",
+      "text": "A national network that turns shared challenges into collective action and better policy.",
+      "color": "bg-[#205b4b]"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "BNak helped me price my produce with confidence and meet buyers beyond my market.",
+      "name": "Achieng Odhiambo",
+      "role": "Agribusiness member",
+      "place": "Siaya County",
+      "image": "/images/farmer.jpg"
+    },
+    {
+      "quote": "The network understands hospitality as a real business, not just a friendly welcome.",
+      "name": "Salma Hassan",
+      "role": "Guesthouse owner",
+      "place": "Kilifi County",
+      "image": "/images/hotelier.jpg"
+    },
+    {
+      "quote": "I came for the business clinics. I stayed because other owners finally understood the work.",
+      "name": "Mercy Wanjiku",
+      "role": "Salon owner",
+      "place": "Kawangware, Nairobi",
+      "image": "/images/salon_owner.jpg"
+    }
+  ]
+}

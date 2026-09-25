@@ -1,0 +1,86 @@
+{{ define "partials/head.html" }}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5PNQDP60"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DX5PNQDP60');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="FIQA, elevators in Kenya, escalators in Kenya, passenger elevators, hospital elevators, goods elevators, home elevators, panoramic elevators, moving walkways, elevator modernization, elevator service, turnkey solutions, connectivity solutions, building transportation, Kenya elevator company">
+<meta name="author" content="FIQA">
+<meta name="robots" content="index, follow">
+
+<!-- Hugo's built-in OpenGraph and Twitter Card templates -->
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta itemprop="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+
+<!-- Preload critical assets -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<!-- Styles: Critical first -->
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+<!-- Alpine.js (load early for performance) -->
+<script defer src="https://unpkg.com/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
+<!-- Non-critical CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Open+Sans:wght@300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+<!-- Fallback for fonts loading -->
+<noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+</noscript>
+
+<!-- Initial styles to prevent FOUC -->
+<style>
+    .animate-me {
+        opacity: 0;
+    }
+    /* Font fallback to prevent layout shift */
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+</style>
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "FIQA",
+  "description": "{{ .Site.Params.description }}",
+  "url": "{{ .Site.BaseURL }}",
+  "logo": "{{ .Site.BaseURL }}images/FIQA_og.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Nairobi",
+    "addressCountry": "KE"
+  },
+  "telephone": "{{ .Site.Data.contact.phone }}",
+  "openingHours": "Mo-Su 00:00-23:59",
+  "sameAs": [
+    "https://www.linkedin.com/company/fiqa",
+    "https://twitter.com/fiqa"
+  ]
+}
+</script>
+{{ end }}

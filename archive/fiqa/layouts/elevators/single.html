@@ -1,0 +1,105 @@
+{{ define "main" }}
+<article class="bg-gray-50">
+ <!-- Hero Section -->
+ <div class="relative bg-white overflow-hidden">
+   <div class="max-w-7xl mx-auto">
+     <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20">
+       <div class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16">
+         {{ with .Params.image }}
+         <div class="mb-8">
+           <!-- Fullscreen Overlay -->
+           <div class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center" id="overlay">
+             <button onclick="closeImage()" class="absolute top-4 right-4 text-white hover:text-gray-300">
+               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+               </svg>
+             </button>
+             <img id="expanded-img" src="{{ . }}" alt="{{ $.Title }}" class="max-w-[90vw] max-h-[90vh]">
+           </div>
+           <!-- Thumbnail -->
+           <div class="group relative">
+             <img src="{{ . }}" 
+                  alt="{{ $.Title }}" 
+                  class="w-full h-96 rounded-lg shadow-lg cursor-zoom-in hover:opacity-90 transition-opacity"
+                  onclick="openImage(this)">
+           </div>
+         </div>
+         <script>
+           function openImage(img) {
+             const overlay = document.getElementById('overlay');
+             const expandedImg = document.getElementById('expanded-img');
+             expandedImg.src = img.src;
+             overlay.classList.remove('hidden');
+             overlay.classList.add('flex');
+             document.body.style.overflow = 'hidden';
+           }
+           
+           function closeImage() {
+             const overlay = document.getElementById('overlay');
+             overlay.classList.add('hidden');
+             overlay.classList.remove('flex');
+             document.body.style.overflow = 'auto';
+           }
+
+           document.addEventListener('keydown', e => {
+             if (e.key === 'Escape') closeImage();
+           });
+
+           document.getElementById('overlay').addEventListener('click', e => {
+             if (e.target.id === 'overlay') closeImage();
+           });
+         </script>
+         {{ end }}
+
+         <div class="flex justify-between items-start">
+           <div>
+             <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ .Title }}</h1>
+             {{ with .Params.subtitle }}
+               <p class="text-xl text-red-600 mb-8">{{ . }}</p>
+             {{ end }}
+           </div>
+           <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-200">
+             Get Quote
+             <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+             </svg>
+           </a>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <!-- Content Section -->
+ <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+   <div class="prose prose-lg mx-auto">
+     {{ .Content }}
+   </div>
+
+   <!-- Features Section -->
+   {{ with .Params.features }}
+   <div class="mt-16">
+     <h2 class="text-2xl font-bold text-gray-900 mb-8">Key Features</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+       {{ range . }}
+       <div class="bg-white p-6 rounded-lg shadow-sm">
+         <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ .title }}</h3>
+         <p class="text-gray-600">{{ .description }}</p>
+       </div>
+       {{ end }}
+     </div>
+   </div>
+   {{ end }}
+
+   <!-- Back to List -->
+   <div class="mt-16 text-center">
+     <a href="{{ "/elevators" | relURL }}" class="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
+       <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+       </svg>
+       Back to All Escalators
+     </a>
+   </div>
+ </div>
+</article>
+{{ end }}

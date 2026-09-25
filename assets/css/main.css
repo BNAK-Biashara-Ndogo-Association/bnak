@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --background: 42 44% 94%;
+  --foreground: 164 32% 15%;
+  --border: 38 24% 82%;
+  --input: 38 24% 82%;
+  --ring: 164 75% 28%;
+  --card: 42 50% 98%;
+  --card-foreground: 164 32% 15%;
+  --card-border: 38 24% 82%;
+  --primary: 164 75% 28%;
+  --primary-foreground: 42 50% 98%;
+  --secondary: 17 78% 57%;
+  --secondary-foreground: 42 50% 98%;
+  --muted: 39 30% 88%;
+  --muted-foreground: 164 15% 40%;
+  --accent: 44 94% 61%;
+  --accent-foreground: 164 32% 15%;
+  --destructive: 4 72% 48%;
+  --destructive-foreground: 42 50% 98%;
+  --popover: 42 50% 98%;
+  --popover-foreground: 164 32% 15%;
+  --popover-border: 38 24% 82%;
+  --chart-1: 164 75% 28%;
+  --chart-2: 17 78% 57%;
+  --chart-3: 44 94% 61%;
+  --chart-4: 203 62% 45%;
+  --chart-5: 283 34% 45%;
+  --sidebar: 164 32% 15%;
+  --sidebar-foreground: 42 50% 98%;
+  --sidebar-border: 164 25% 25%;
+  --sidebar-primary: 44 94% 61%;
+  --sidebar-primary-foreground: 164 32% 15%;
+  --sidebar-accent: 164 27% 24%;
+  --sidebar-accent-foreground: 42 50% 98%;
+  --sidebar-ring: 44 94% 61%;
+  --app-font-sans: 'DM Sans', sans-serif;
+  --app-font-serif: 'Fraunces', Georgia, serif;
+  --app-font-mono: 'Space Mono', monospace;
+  --radius: 0.75rem;
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+  --shadow-sm: 0 6px 20px rgba(29, 57, 47, .08);
+  --shadow-md: 0 16px 40px rgba(29, 57, 47, .12);
+  --shadow-lg: 0 24px 70px rgba(29, 57, 47, .16);
+}
+
+.dark {
+  --background: 164 32% 15%;
+  --foreground: 42 44% 94%;
+  --border: 164 25% 25%;
+  --input: 164 25% 25%;
+  --ring: 44 94% 61%;
+  --card: 164 28% 19%;
+  --card-foreground: 42 44% 94%;
+  --card-border: 164 25% 25%;
+  --primary: 44 94% 61%;
+  --primary-foreground: 164 32% 15%;
+  --secondary: 17 78% 57%;
+  --secondary-foreground: 42 50% 98%;
+  --muted: 164 25% 25%;
+  --muted-foreground: 42 20% 70%;
+  --accent: 164 60% 43%;
+  --accent-foreground: 42 50% 98%;
+  --destructive: 4 72% 48%;
+  --destructive-foreground: 42 50% 98%;
+  --popover: 164 28% 19%;
+  --popover-foreground: 42 44% 94%;
+  --popover-border: 164 25% 25%;
+  --chart-1: 44 94% 61%;
+  --chart-2: 17 78% 57%;
+  --chart-3: 164 60% 43%;
+  --chart-4: 203 62% 55%;
+  --chart-5: 283 44% 65%;
+}
+
+@layer base {
+  * { border-color: hsl(var(--border)); }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--app-font-sans); background: #f5f0e5; color: #173d33; -webkit-font-smoothing: antialiased; }
+}
+
+@keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slide-in { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes ticker { to { transform: translateX(-50%); } }
+.animate-rise-in { animation: rise-in .7s cubic-bezier(.2,.75,.25,1) both; }
+.animate-slide-in { animation: slide-in .7s cubic-bezier(.2,.75,.25,1) both; }
+.animate-ticker { animation: ticker 28s linear infinite; }
+.reveal, .reveal-section { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.75,.25,1); }
+.reveal.is-visible, .reveal-section.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-2 { transition-delay: .16s; }
+.display-face { font-family: var(--app-font-serif); }
+.mono-face { font-family: var(--app-font-mono); }
+.page-grain::after { content: ''; position: fixed; inset: 0; pointer-events: none; opacity: .035; z-index: 50; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E"); }
+.section-wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+#tab-panel { scroll-margin-top: 88px; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #d85f45; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+@media (max-width: 640px) { .section-wrap { width: min(100% - 28px, 1180px); } }
+[hidden] { display: none !important; }
+dialog { max-height: calc(100dvh - 2rem); overflow-y: auto; border: 0; padding: 0; background: transparent; width: min(48rem, calc(100% - 2rem)); }
+dialog::backdrop { background: rgb(23 61 51 / .7); backdrop-filter: blur(4px); }

@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ $currentPage := .File.BaseFileName }}
+{{ $product := index (where .Site.Data.about.products "slug" $currentPage) 0 }}
+
+<div class="container mx-auto px-4 py-16">
+  <h1 class="text-4xl font-bold mb-8">{{ $product.title }}</h1>
+  <div class="prose max-w-none">
+    {{ $product.content | markdownify }}
+    
+    <h2 class="text-2xl font-bold mt-8">Features</h2>
+    <ul>
+      {{ range $product.features }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-8">Specifications</h2>
+    <ul>
+      {{ range $product.specs }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

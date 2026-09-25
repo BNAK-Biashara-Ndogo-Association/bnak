@@ -1,0 +1,155 @@
+programs:
+  - id: "01"
+    title: "Smart Elevator"
+    description: "Next-generation elevator system with AI-powered traffic management"
+    image: "el.jpg"
+  - id: "02"
+    title: "Eco Lift"
+    description: "Energy-efficient elevator solution for sustainable buildings"
+    image: "el.jpg"
+  - id: "03"
+    title: "Express Transit"
+    description: "High-speed elevator system optimized for skyscrapers and high-rise buildings"
+    image: "el.jpg"
+  - id: "04"
+    title: "Safety Plus"
+    description: "Advanced elevator system with enhanced safety features and emergency protocols"
+    image: "el.jpg"
+  - id: "05"
+    title: "Space Saver"
+    description: "Compact elevator design for buildings with limited shaft space"
+    image: "el.jpg"
+  - id: "06"
+    title: "Smart Access"
+    description: "Touchless elevator system with mobile app integration and access control"
+    image: "el.jpg"
+  - id: "07"
+    title: "Multi Flow"
+    description: "Multi-car elevator system for optimized passenger flow in busy buildings"
+    image: "el.jpg"
+  
+products:
+  - title: "Passenger Elevator"
+    subtitle: "Smart mobility for modern buildings"
+    description: "High-capacity elevators with advanced safety systems and elegant interior options for commercial and residential buildings."
+    image: "/images/el.jpg"
+    slug: "passenger-elevator"
+    content: |
+      Our passenger elevators combine state-of-the-art technology with elegant design to provide safe and efficient vertical transportation.
+    features:
+      - High-capacity design
+      - Advanced safety systems
+      - Elegant interior options
+      - Smart control systems
+    specs:
+      - Speed: Up to 2.5 m/s
+      - Capacity: 630-1600 kg
+      - Max Floors: 40
+
+  - title: "Panoramic Elevator"
+    subtitle: "Experience elevation with a view"
+    description: "Glass-walled elevators offering breathtaking views and luxurious experiences for hotels and architectural landmarks."
+    image: "/images/el.jpg"
+    slug: "panoramic-elevator"
+    content: |
+      Our panoramic elevators provide a stunning visual experience while maintaining the highest standards of safety and comfort.
+    features:
+      - 360-degree glass walls
+      - Scenic views
+      - Luxury finishes
+      - Smart lighting system
+    specs:
+      - Speed: Up to 2.0 m/s
+      - Capacity: 400-1000 kg
+      - Max Floors: 30
+
+  - title: "Home Elevator"
+    subtitle: "Luxury meets convenience"
+    description: "Compact, customizable elevators designed for residential spaces, combining comfort with style."
+    image: "/images/el.jpg"
+    slug: "home-elevator"
+    content: |
+      Perfect for modern homes, our residential elevators combine compact design with luxury and convenience.
+    features:
+      - Space-efficient design
+      - Customizable interiors
+      - Quiet operation
+      - Energy efficient
+    specs:
+      - Speed: Up to 0.5 m/s
+      - Capacity: 250-400 kg
+      - Max Floors: 6
+
+  - title: "Hospital Elevator"
+    subtitle: "Specialized healthcare mobility"
+    description: "Medical-grade elevators with enhanced hygiene features and emergency backup systems."
+    image: "/images/el.jpg"
+    slug: "hospital-elevator"
+    content: |
+      Designed specifically for healthcare facilities, our hospital elevators prioritize hygiene, reliability, and emergency response.
+    features:
+      - Antimicrobial surfaces
+      - Emergency power backup
+      - Extra-wide doors
+      - Bed-friendly dimensions
+    specs:
+      - Speed: Up to 2.0 m/s
+      - Capacity: 1600-2500 kg
+      - Max Floors: 50
+
+  - title: "Freight Elevator"
+    subtitle: "Industrial strength solutions"
+    description: "Heavy-duty elevators with enhanced load-bearing capacity for industrial applications."
+    image: "/images/el.jpg"
+    slug: "freight-elevator"
+    content: |
+      Our freight elevators are built to handle heavy loads while maintaining reliability and safety standards.
+    features:
+      - Heavy-duty construction
+      - Reinforced flooring
+      - Wide entrance
+      - Industrial controls
+    specs:
+      - Speed: Up to 1.0 m/s
+      - Capacity: 2000-5000 kg
+      - Max Floors: 20
+
+  - title: "Car Elevator"
+    subtitle: "Automotive vertical transport"
+    description: "Specialized elevators for vehicle transport in parking facilities and luxury residences."
+    image: "/images/el.jpg"
+    slug: "car-elevator"
+    content: |
+      Specialized for vehicular transport, our car elevators offer secure and efficient vertical mobility for automobiles.
+    features:
+      - Vehicle-specific design
+      - Heavy load capacity
+      - Advanced safety systems
+      - Automated positioning
+    specs:
+      - Speed: Up to 0.8 m/s
+      - Capacity: 2500-3000 kg
+      - Max Floors: 10
+
+  - title: "Glass Elevator"
+    subtitle: "Transparent elegance"
+    description: "Stunning transparent elevators that combine aesthetics with functionality for modern spaces."
+    image: "/images/el.jpg"
+    slug: "glass-elevator"
+    content: |
+      Our glass elevators combine stunning aesthetics with reliable performance for a unique vertical transportation experience.
+    features:
+      - Full glass enclosure
+      - LED lighting
+      - Panoramic views
+      - Modern aesthetics
+    specs:
+      - Speed: Up to 1.5 m/s
+      - Capacity: 400-800 kg
+      - Max Floors: 25
+
+features:
+  safety: "100%"
+  types: "15+"
+  warranty: "5 Year"
+  support: "24/7"

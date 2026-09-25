@@ -1,0 +1,15 @@
+{
+  "name": "Biashara Ndogo Association of Kenya",
+  "short_name": "BNak",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f5f0e5",
+  "theme_color": "#173d33",
+  "icons": [
+    {
+      "src": "bnak.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

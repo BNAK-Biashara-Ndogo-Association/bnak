@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="bg-white font-sans">
+  {{- partial "header.html" . -}}
+  
+  <div>
+    {{ block "main" . }}
+      <div>
+        <div>
+          <h1 class="text-5xl font-bold mb-6">{{ .Title }}</h1>
+          {{ .Content }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+  
+  {{- partial "footer.html" . -}}
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+     const menuButton = document.querySelector('[aria-label="Toggle Menu"]');
+     const mobileMenu = document.getElementById('mobile-menu');
+     
+     menuButton?.addEventListener('click', () => {
+       const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+       menuButton.setAttribute('aria-expanded', String(!expanded));
+       mobileMenu.classList.toggle('hidden');
+     });
+   });
+  </script>
+</body>
+</html>

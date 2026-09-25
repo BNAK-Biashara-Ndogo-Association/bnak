@@ -1,0 +1,54 @@
+{{ define "main" }}
+<article class="bg-gray-50">
+  <!-- Hero Section -->
+  <div class="relative bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20">
+        <div class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16">
+          {{ with .Params.image }}
+            <div class="mb-8">
+              <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-96 object-cover rounded-lg shadow-lg">
+            </div>
+          {{ end }}
+          <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ .Title }}</h1>
+          {{ with .Params.subtitle }}
+            <p class="text-xl text-red-600 mb-8">{{ . }}</p>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="prose prose-lg mx-auto">
+      {{ .Content }}
+    </div>
+
+    <!-- Features Section -->
+    {{ with .Params.features }}
+    <div class="mt-16">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {{ range . }}
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ .title }}</h3>
+          <p class="text-gray-600">{{ .description }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    <!-- Back to List -->
+    <div class="mt-16 text-center">
+      <a href="{{ "/elevators" | relURL }}" class="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
+        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Back to All Elevators
+      </a>
+    </div>
+  </div>
+</article>
+{{ end }}

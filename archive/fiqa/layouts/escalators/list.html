@@ -1,0 +1,97 @@
+{{ define "main" }}
+<div class="bg-gray-50 min-h-screen py-12">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Page Title -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900">{{ .Title }}</h1>
+      <p class="mt-4 text-xl text-gray-600">Efficient people movement solutions for modern spaces</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Escalator Card -->
+      <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <a href="/escalators/escalator" class="block">
+          <div class="aspect-w-16 aspect-h-9">
+            <img 
+              src="/images/escalator.jpg" 
+              alt="FIQA Escalator"
+              class="object-cover w-full h-48 rounded-t-xl"
+              onerror="this.src='https://via.placeholder.com/400x300'"
+            >
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h2 class="text-xl font-semibold text-gray-900">Escalators</h2>
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <p class="text-gray-600 mb-4">Reliable, efficient, and stylish solutions for high-traffic environments with advanced safety features and energy-saving capabilities.</p>
+            <div class="flex items-center space-x-4 text-sm">
+              <span class="flex items-center text-gray-500">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Energy Efficient
+              </span>
+              <span class="flex items-center text-gray-500">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Advanced Safety
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Moving Walkway Card -->
+      <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <a href="/escalators/movingwalkways" class="block">
+          <div class="aspect-w-16 aspect-h-9">
+            <img 
+              src="/images/movingwalkways.jpg" 
+              alt="FIQA Moving Walkway"
+              class="object-cover w-full h-48 rounded-t-xl"
+              onerror="this.src='https://via.placeholder.com/400x300'"
+            >
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h2 class="text-xl font-semibold text-gray-900">Moving Walkways</h2>
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <p class="text-gray-600 mb-4">Convenient and efficient solutions for long-distance passenger transport with advanced safety features and customizable designs.</p>
+            <div class="flex items-center space-x-4 text-sm">
+              <span class="flex items-center text-gray-500">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Customizable
+              </span>
+              <span class="flex items-center text-gray-500">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Low Maintenance
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-12">
+      <div class="bg-blue-50 rounded-xl shadow-sm p-8 text-center">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Ready for an escalator?</h2>
+        <p class="text-gray-600 mb-6">Contact us for a consultation and discover how we can upgrade your systems</p>
+        <a href="/contact" class="inline-block bg-red-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">Get Started</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

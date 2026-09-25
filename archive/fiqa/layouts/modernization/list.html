@@ -1,0 +1,94 @@
+{{ define "main" }}
+<div class="bg-gray-50 min-h-screen py-12">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900">{{ .Title }}</h1>
+      <p class="mt-4 text-xl text-gray-600">Enhance your existing systems with cutting-edge solutions</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto">
+      <!-- Overview Section -->
+      <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Modernization Solutions</h2>
+        <p class="text-gray-600 mb-6">FIQA Modernization solutions are tailored to enhance the performance, aesthetics, and safety of existing systems. Whether it's elevators, escalators, or moving walkways, FIQA's modernization packages breathe new life into aging equipment, ensuring they meet modern standards and user expectations.</p>
+        
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-red-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <div>
+              <h3 class="font-semibold text-gray-900">Enhanced Performance</h3>
+              <p class="text-gray-600">Upgrade control systems and motors for improved efficiency</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-red-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <div>
+              <h3 class="font-semibold text-gray-900">Safety Compliance</h3>
+              <p class="text-gray-600">Meet latest safety regulations and standards</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-red-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <div>
+              <h3 class="font-semibold text-gray-900">Energy Efficiency</h3>
+              <p class="text-gray-600">Reduce energy consumption with modern technology</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-red-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <div>
+              <h3 class="font-semibold text-gray-900">Aesthetic Enhancement</h3>
+              <p class="text-gray-600">Update cabin design and visual elements</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process Section -->
+      <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">Our Process</h2>
+        <div class="space-y-6">
+          <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-semibold">1</div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Assessment</h3>
+              <p class="text-gray-600">Thorough evaluation of your current system</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-semibold">2</div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Custom Solution Design</h3>
+              <p class="text-gray-600">Tailored modernization plan for your needs</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-semibold">3</div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Implementation</h3>
+              <p class="text-gray-600">Minimal disruption during upgrades</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="bg-blue-50 rounded-xl shadow-sm p-8 text-center">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Ready to Modernize?</h2>
+        <p class="text-gray-600 mb-6">Contact us for a consultation and discover how we can upgrade your systems</p>
+        <a href="/contact" class="inline-block bg-red-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">Get Started</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

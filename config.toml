@@ -1,0 +1,8 @@
+baseURL = '/'
+languageCode = 'en-ke'
+title = 'BNak | Biashara Ndogo Association of Kenya'
+disableKinds = ['taxonomy', 'term']
+[params]
+description = "BNak is the home of Kenya's small businesses — a trusted network turning practical support, dignity and opportunity into everyday progress."
+[markup.goldmark.renderer]
+unsafe = false

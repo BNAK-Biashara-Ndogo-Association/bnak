@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ partial "head.html" . }}
+</head>
+
+  <body class="bg-white font-sans">
+    {{- partial "header.html" . -}}
+    
+    <!-- Hero Section -->
+    <div class="relative gradient-bg overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-60"></div>
+        
+        <img src="/images/hero.jpg" alt="Modern Elevator Technology" class="w-full h-full object-cover">
+        
+      </div>
+      <div class="relative max-w-7xl mx-auto py-32 px-4 sm:px-6 lg:px-8">
+        <div class="md:w-2/3">
+          <p class="text-red-400 text-sm font-bold tracking-wider mb-4 animate__animated animate__fadeInUp">WELCOME TO FIQA</p>
+          <h1 class="text-5xl font-bold text-white mb-6 leading-tight animate__animated animate__fadeInUp animate__delay-1s">
+            Elevating <br/>
+            <span class="text-red-400">Mobility</span> Solutions
+          </h1>
+          <p class="text-gray-300 text-lg mb-8 animate__animated animate__fadeInUp animate__delay-2s">
+            Transforming vertical transportation with innovative technology and exceptional service
+          </p>
+          <!-- <div class="grid grid-cols-3 gap-6 mt-12">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-white">25+</div>
+              <div class="text-gray-400 text-sm">Years Experience</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-white">1000+</div>
+              <div class="text-gray-400 text-sm">Projects Completed</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-white">24/7</div>
+              <div class="text-gray-400 text-sm">Support Available</div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-16 max-w-none">
+      <!-- About Content -->
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+          <div>
+            <h2 class="text-4xl font-bold mb-6">Pioneering Modern <br/><span class="text-red-600">Mobility</span></h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              At FIQA, we go beyond conventional elevator solutions. Our commitment to innovation 
+              and excellence drives us to deliver next-generation mobility systems that transform 
+              how people move through buildings.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              From smart elevator systems to integrated mobility solutions, we're shaping the 
+              future of vertical transportation with cutting-edge technology and unparalleled expertise.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gray-50 p-6 rounded-lg card-hover">
+              <h3 class="text-xl font-bold mb-2">Innovation</h3>
+              <p class="text-gray-600">Leading with advanced technology</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg card-hover">
+              <h3 class="text-xl font-bold mb-2">Quality</h3>
+              <p class="text-gray-600">Excellence in every detail</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg card-hover">
+              <h3 class="text-xl font-bold mb-2">Safety</h3>
+              <p class="text-gray-600">Uncompromising standards</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg card-hover">
+              <h3 class="text-xl font-bold mb-2">Service</h3>
+              <p class="text-gray-600">24/7 dedicated support</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vision & Mission -->
+        <div class="grid md:grid-cols-2 gap-8 mb-24">
+          <div class="bg-gray-900 p-12 rounded-2xl text-white">
+            <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+            <div class="w-16 h-1 bg-red-600 mb-6"></div>
+            <p class="text-gray-300 leading-relaxed">
+              To become the most trusted provider of innovative, sustainable, and efficient 
+              mobility solutions, empowering communities and transforming how people move.
+            </p>
+          </div>
+          <div class="bg-red-600 p-12 rounded-2xl text-white">
+            <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+            <div class="w-16 h-1 bg-white mb-6"></div>
+            <p class="text-gray-100 leading-relaxed">
+              To revolutionize mobility by delivering tailored, reliable, and affordable 
+              transportation solutions that enhance convenience, efficiency, and quality of life.
+            </p>
+          </div>
+        </div>
+
+        <!-- Values -->
+        <div class="mb-24">
+          <h2 class="text-4xl font-bold text-center mb-16">Our Core <span class="text-red-600">Values</span></h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            {{ range slice 
+              (dict "title" "Innovation " "desc" "Embracing cutting-edge technology to deliver smart mobility solutions")
+              (dict "title" "Safety " "desc" "Maintaining the highest safety standards in every installation and service")
+              (dict "title" "Customer " "desc" "Understanding and exceeding client expectations with personalized solutions")
+              (dict "title" "Sustainability" "desc" "Promoting eco-friendly practices and energy-efficient systems")
+              (dict "title" "Excellence" "desc" "Delivering superior quality in every aspect of our service")
+              (dict "title" "Integrity" "desc" "Operating with complete transparency and ethical standards") }}
+            <div class="bg-gray-50 p-8 rounded-xl card-hover">
+              <h3 class="text-xl font-bold mb-4">{{ .title }}</h3>
+              <p class="text-gray-600">{{ .desc }}</p>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <!-- Capabilities -->
+        <!-- <div class="bg-gray-900 rounded-3xl p-12 mb-24">
+          <h2 class="text-4xl font-bold text-white text-center mb-16">Our <span class="text-red-400">Capabilities</span></h2>
+          <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-red-400 mb-2">500+</div>
+              <div class="text-gray-300">Active Installations</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-red-400 mb-2">50+</div>
+              <div class="text-gray-300">Cities Served</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-red-400 mb-2">98%</div>
+              <div class="text-gray-300">Client Satisfaction</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-red-400 mb-2">24/7</div>
+              <div class="text-gray-300">Service Available</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </main>
+    
+    {{- partial "newsletter.html" . -}}
+    {{- partial "footer.html" . -}}
+
+    <script>
+      // Add scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+          }
+        });
+      });
+
+      document.querySelectorAll('.card-hover').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+[build]
+  command = "npm ci && npm run build"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.124.1"
+  NODE_VERSION = "22"
+
+  [build.processing]
+  skip_processing = true
+
+[build.processing.css]
+  bundle = false
+  minify = false
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
