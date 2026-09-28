@@ -1,0 +1,4 @@
+<dialog id="bnak-dialog" aria-labelledby="modal-title"></dialog>
+{{ range seq 4 }}<template id="membership-step-{{ . }}">{{ partial (printf "journey/step-%d.html" .) $ }}</template>{{ end }}
+<template id="donate-template">{{ partial "journey/donate.html" . }}</template>
+<script id="bnak-data" type="application/json">{{ site.Data.bnak | jsonify | safeJS }}</script>

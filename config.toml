@@ -1,8 +1,19 @@
-baseURL = '/'
+baseURL = 'https://bnak.co.ke/'
 languageCode = 'en-ke'
 title = 'BNak | Biashara Ndogo Association of Kenya'
 disableKinds = ['taxonomy', 'term']
+
 [params]
-description = "BNak is the home of Kenya's small businesses — a trusted network turning practical support, dignity and opportunity into everyday progress."
+  description = "BNak (Biashara Ndogo Association of Kenya) is the home of Kenya's micro and small enterprises — uniting mama mboga, boda boda operators, artisans, and grassroots entrepreneurs for voice, dignity, and economic progress."
+  keywords = ["Biashara Ndogo", "BNAK", "MSME Kenya", "small business Kenya", "micro enterprises Kenya", "Mama Mboga", "boda boda association", "grassroots businesses Kenya", "Kenya informal sector", "business advocacy Kenya", "entrepreneurship Kenya"]
+  author = "Biashara Ndogo Association of Kenya"
+  siteName = "Biashara Ndogo Association of Kenya (BNAK)"
+  email = "hello@bnak.co.ke"
+
+[sitemap]
+  changefreq = 'weekly'
+  priority = 0.8
+  filename = 'sitemap.xml'
+
 [markup.goldmark.renderer]
-unsafe = false
+  unsafe = false

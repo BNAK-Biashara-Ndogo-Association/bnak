@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://bnak.co.ke/sitemap.xml
