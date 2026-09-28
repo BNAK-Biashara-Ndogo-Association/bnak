@@ -1,0 +1,197 @@
+<section class="section-wrap py-16 sm:py-24" aria-labelledby="membership-heading">
+
+  {{/* ── Hero ── */}}
+  <div class="grid items-center gap-12 lg:grid-cols-[.75fr_1.25fr] lg:gap-20">
+    <div>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-[#d72f2a]">Membership</p>
+      {{ if .IsHome }}
+      <h2 id="membership-heading" class="display-face mt-5 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">There is a place for your work here.</h2>
+      {{ else }}
+      <h1 id="membership-heading" class="display-face mt-5 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">There is a place for your work here.</h1>
+      {{ end }}
+      <p class="mt-7 text-lg leading-relaxed text-[#60756c]">Browse the categories below, then contact BNAK to confirm current fees and benefits and secure your registration.</p>
+
+      <a href="mailto:info@bnak.org" class="mt-8 inline-flex items-center gap-2 rounded-full bg-[#276ba4] px-6 py-4 font-bold text-[#f5f0e5] transition-all hover:-translate-y-1 hover:bg-[#1d5a8a]">
+        Ask BNAK about membership<!-- @license lucide-static v0.468.0 - ISC -->
+        <svg aria-hidden="true" class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+
+    {{/* ── Image mosaic ── */}}
+    <div class="grid min-h-[390px] grid-cols-2 gap-3 sm:grid-cols-4">
+      <div class="col-span-2 row-span-2 overflow-hidden rounded-[2rem]">
+        <img src="{{ "images/market_stall.jpg" | relURL }}" alt="A Kenyan market trader at work" class="h-full w-full object-cover">
+      </div>
+      <div class="overflow-hidden rounded-[1.5rem]">
+        <img src="{{ "images/boda_rider.jpg" | relURL }}" alt="A Kenyan boda boda rider" class="h-full w-full object-cover">
+      </div>
+      <div class="overflow-hidden rounded-[1.5rem]">
+        <img src="{{ "images/artisan.jpg" | relURL }}" alt="A Kenyan artisan making furniture" class="h-full w-full object-cover">
+      </div>
+      <div class="overflow-hidden rounded-[1.5rem]">
+        <img src="{{ "images/meeting.jpg" | relURL }}" alt="BNak members in a community forum" class="h-full w-full object-cover">
+      </div>
+      <div class="flex items-end rounded-[1.5rem] bg-[#276ba4] p-5 text-[#f5f0e5]">
+        <p class="display-face text-2xl font-semibold leading-tight">From the grassroots to the boardroom.</p>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Packages grid ── */}}
+  <div class="mt-20 border-t border-[#dcd4c2] pt-12">
+    <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-[#d72f2a]">Membership categories</p>
+    <h2 class="display-face mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Eight ways to belong.</h2>
+    <p class="mt-3 max-w-2xl text-[#60756c]">Contact BNAK after browsing to confirm the package that fits your work today.</p>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+      {{/* Mama Mboga */}}
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-[#dcd4c2] bg-[#fff9ed]">
+        <div class="flex items-start justify-between gap-3 p-5 pb-4">
+          <div>
+            <p class="text-lg font-bold">Mama Mboga</p>
+            <p class="mt-1 text-sm leading-relaxed text-[#60756c]">For market traders, food vendors and small informal traders.</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-[#7abf61] px-3 py-1 text-xs font-bold text-black">KSh 300</span>
+        </div>
+        <ul class="mt-auto border-t border-[#dcd4c2] px-5 py-4 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Membership recognition</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Digital membership confirmation</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Selected training and market networking</li>
+        </ul>
+      </article>
+
+      {{/* Bodaboda */}}
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-[#dcd4c2] bg-[#fff9ed]">
+        <div class="flex items-start justify-between gap-3 p-5 pb-4">
+          <div>
+            <p class="text-lg font-bold">Bodaboda</p>
+            <p class="mt-1 text-sm leading-relaxed text-[#60756c]">For boda boda riders and related transport micro-businesses.</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-[#d72f2a] px-3 py-1 text-xs font-bold text-white">KSh 300</span>
+        </div>
+        <ul class="mt-auto border-t border-[#dcd4c2] px-5 py-4 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Business and financial literacy</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Grassroots activities</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Business opportunity alerts</li>
+        </ul>
+      </article>
+
+      {{/* Grassroots Coordinator */}}
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-[#dcd4c2] bg-[#fff9ed]">
+        <div class="flex items-start justify-between gap-3 p-5 pb-4">
+          <div>
+            <p class="text-lg font-bold">Grassroots Coordinator</p>
+            <p class="mt-1 text-sm leading-relaxed text-[#60756c]">For community business champions, representatives and mobilisers.</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-[#276ba4] px-3 py-1 text-xs font-bold text-white">KSh 500</span>
+        </div>
+        <ul class="mt-auto border-t border-[#dcd4c2] px-5 py-4 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Coordinator identification</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Training and community forums</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Priority programme information</li>
+        </ul>
+      </article>
+
+      {{/* Sole Proprietor */}}
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-[#dcd4c2] bg-[#fff9ed]">
+        <div class="flex items-start justify-between gap-3 p-5 pb-4">
+          <div>
+            <p class="text-lg font-bold">Sole Proprietor</p>
+            <p class="mt-1 text-sm leading-relaxed text-[#60756c]">For individual businesses, freelancers and professionals.</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-[#7abf61] px-3 py-1 text-xs font-bold text-black">KSh 1,500</span>
+        </div>
+        <ul class="mt-auto border-t border-[#dcd4c2] px-5 py-4 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Business directory listing</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mentorship and advisory sessions</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Finance-readiness programmes</li>
+        </ul>
+      </article>
+
+      {{/* Micro Business */}}
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-[#dcd4c2] bg-[#fff9ed]">
+        <div class="flex items-start justify-between gap-3 p-5 pb-4">
+          <div>
+            <p class="text-lg font-bold">Micro Business</p>
+            <p class="mt-1 text-sm leading-relaxed text-[#60756c]">For established shops, service providers and growing enterprises.</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-[#d72f2a] px-3 py-1 text-xs font-bold text-white">KSh 5,000</span>
+        </div>
+        <ul class="mt-auto border-t border-[#dcd4c2] px-5 py-4 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Enhanced business profile</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Business development clinics</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>B2B networking and mentorship</li>
+        </ul>
+      </article>
+
+      {{/* SME */}}
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-[#dcd4c2] bg-[#fff9ed]">
+        <div class="flex items-start justify-between gap-3 p-5 pb-4">
+          <div>
+            <p class="text-lg font-bold">SME</p>
+            <p class="mt-1 text-sm leading-relaxed text-[#60756c]">For growing small and medium enterprises.</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-[#276ba4] px-3 py-1 text-xs font-bold text-white">KSh 15,000</span>
+        </div>
+        <ul class="mt-auto border-t border-[#dcd4c2] px-5 py-4 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Market and buyer linkages</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Growth and finance-readiness support</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Exhibition and trade opportunities</li>
+        </ul>
+      </article>
+
+      {{/* Corporate */}}
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-[#dcd4c2] bg-[#eee6d7]">
+        <div class="flex items-start justify-between gap-3 p-5 pb-4">
+          <div>
+            <p class="text-lg font-bold">Corporate</p>
+            <p class="mt-1 text-sm leading-relaxed text-[#60756c]">For established companies and institutions engaging the MSME ecosystem.</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-[#7abf61] px-3 py-1 text-xs font-bold text-black">KSh 50,000</span>
+        </div>
+        <ul class="mt-auto border-t border-[#dcd4c2] px-5 py-4 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Premium company profile</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Strategic business introductions</li>
+          <li class="flex items-start gap-2 text-sm text-[#476359]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Corporate-MSME partnership opportunities</li>
+        </ul>
+      </article>
+
+      {{/* Strategic Partner */}}
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-[#276ba4] bg-[#276ba4] text-[#f5f0e5]">
+        <div class="flex items-start justify-between gap-3 p-5 pb-4">
+          <div>
+            <p class="text-lg font-bold">Strategic Partner</p>
+            <p class="mt-1 text-sm leading-relaxed text-[#c2d0c5]">For organisations supporting MSME development at scale.</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-[#d72f2a] px-3 py-1 text-xs font-bold text-white">KSh 150,000</span>
+        </div>
+        <ul class="mt-auto border-t border-[#3d80b8] px-5 py-4 space-y-2">
+          <li class="flex items-start gap-2 text-sm text-[#c2d0c5]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Strategic partner recognition</li>
+          <li class="flex items-start gap-2 text-sm text-[#c2d0c5]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Direct member engagement</li>
+          <li class="flex items-start gap-2 text-sm text-[#c2d0c5]"><svg aria-hidden="true" class="mt-0.5 h-4 w-4 shrink-0 text-[#7abf61]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Joint programme development opportunities</li>
+        </ul>
+      </article>
+
+    </div>
+
+    {{/* ── Bottom CTA ── */}}
+    <div class="mt-12 flex flex-col items-start gap-4 rounded-2xl border border-[#dcd4c2] bg-[#eee6d7] p-6 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p class="font-bold">Ready to join?</p>
+        <p class="mt-1 text-sm text-[#60756c]">Contact BNAK to confirm current fees and receive secure registration instructions.</p>
+      </div>
+      <a href="mailto:info@bnak.org" class="shrink-0 inline-flex items-center gap-2 rounded-full bg-[#276ba4] px-6 py-3 text-sm font-bold text-[#f5f0e5] transition-all hover:-translate-y-0.5 hover:bg-[#1d5a8a]">
+        Ask BNAK about membership<!-- @license lucide-static v0.468.0 - ISC -->
+        <svg aria-hidden="true" class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+</section>

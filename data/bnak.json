@@ -83,7 +83,7 @@
         "Selected training and market networking"
       ],
       "image": "/images/market_stall.jpg",
-      "tone": "bg-[#e9c95e]"
+      "tone": "bg-[#7abf61]"
     },
     {
       "key": "bodaboda",
@@ -96,7 +96,7 @@
         "Business opportunity alerts"
       ],
       "image": "/images/boda_rider.jpg",
-      "tone": "bg-[#d85f45]"
+      "tone": "bg-[#d72f2a]"
     },
     {
       "key": "grassroots-coordinator",
@@ -109,7 +109,7 @@
         "Priority programme information"
       ],
       "image": "/images/meeting.jpg",
-      "tone": "bg-[#205b4b]"
+      "tone": "bg-[#276ba4]"
     },
     {
       "key": "sole-proprietor",
@@ -122,7 +122,7 @@
         "Finance-readiness programmes"
       ],
       "image": "/images/salon_owner.jpg",
-      "tone": "bg-[#e9c95e]"
+      "tone": "bg-[#7abf61]"
     },
     {
       "key": "micro-business",
@@ -135,7 +135,7 @@
         "B2B networking and mentorship"
       ],
       "image": "/images/retail_shop.jpg",
-      "tone": "bg-[#d85f45]"
+      "tone": "bg-[#d72f2a]"
     },
     {
       "key": "sme",
@@ -148,7 +148,7 @@
         "Exhibition and trade opportunities"
       ],
       "image": "/images/artisan.jpg",
-      "tone": "bg-[#205b4b]"
+      "tone": "bg-[#276ba4]"
     },
     {
       "key": "corporate",
@@ -161,7 +161,7 @@
         "Corporate–MSME partnership opportunities"
       ],
       "image": "/images/hotelier.jpg",
-      "tone": "bg-[#e9c95e]"
+      "tone": "bg-[#7abf61]"
     },
     {
       "key": "strategic-partner",
@@ -174,7 +174,7 @@
         "Joint programme development opportunities"
       ],
       "image": "/images/meeting.jpg",
-      "tone": "bg-[#d85f45]"
+      "tone": "bg-[#d72f2a]"
     }
   ],
   "programs": [
@@ -182,19 +182,19 @@
       "number": "01",
       "title": "Know your business",
       "text": "Practical tools, peer learning and trusted guidance for the decisions that keep an enterprise moving.",
-      "color": "bg-[#e9c95e]"
+      "color": "bg-[#7abf61]"
     },
     {
       "number": "02",
       "title": "Open doors",
       "text": "We connect MSMEs to markets, finance, skills and the public conversations that shape their future.",
-      "color": "bg-[#df6b4e]"
+      "color": "bg-[#d72f2a]"
     },
     {
       "number": "03",
       "title": "Build together",
       "text": "A national network that turns shared challenges into collective action and better policy.",
-      "color": "bg-[#205b4b]"
+      "color": "bg-[#276ba4]"
     }
   ],
   "testimonials": [

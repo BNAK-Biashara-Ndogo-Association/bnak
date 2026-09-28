@@ -8,10 +8,10 @@
   let opener, step = 1, selected = null, fields = {}, donation = 'KES 500';
 
   document.querySelectorAll('header nav a').forEach(link => {
-    link.classList.remove('text-[#d85f45]');
+    link.classList.remove('text-[#d72f2a]');
     if (new URL(link.href).pathname === location.pathname) {
       link.setAttribute('aria-current', 'page');
-      link.classList.add('text-[#d85f45]');
+      link.classList.add('text-[#d72f2a]');
     }
   });
   menuButton.addEventListener('click', () => {
@@ -45,7 +45,7 @@
       const key = button.dataset.testid.replace('button-package-', '');
       button.setAttribute('aria-pressed', String(selected?.key === key));
       button.classList.toggle('ring-2', selected?.key === key);
-      button.classList.toggle('ring-[#d85f45]', selected?.key === key);
+      button.classList.toggle('ring-[#d72f2a]', selected?.key === key);
     });
     if (step === 4 && selected) {
       dialog.querySelector('[data-package-title]').textContent = selected.title;
@@ -99,7 +99,7 @@
 
   function showUnavailable(kind) {
     const container = dialog.querySelector('.relative');
-    container.innerHTML = `<div class="rounded-2xl border border-[#d4a72c] bg-[#fff1c7] p-6" role="status" tabindex="-1"><h2 id="modal-title" class="display-face text-3xl font-semibold">${kind === 'donate' ? 'Donation payments are not connected yet' : 'STK Push setup needed'}</h2><p class="mt-4 text-sm leading-relaxed">No payment has been requested or collected, and your details have not been submitted. Contact BNak to ${kind === 'donate' ? 'arrange your support' : 'complete your membership'}.</p><a href="mailto:hello@bnak.co.ke" class="mt-5 inline-block font-bold underline">hello@bnak.co.ke</a><div class="mt-6 flex gap-3"><button type="button" data-restart class="rounded-full bg-[#173d33] px-5 py-3 text-sm font-bold text-[#f5f0e5]">Start again</button><button type="button" data-close class="rounded-full border border-[#173d33] px-5 py-3 text-sm font-bold">Close</button></div></div>`;
+    container.innerHTML = `<div class="rounded-2xl border border-[#7abf61] bg-[#fff1c7] p-6" role="status" tabindex="-1"><h2 id="modal-title" class="display-face text-3xl font-semibold">${kind === 'donate' ? 'Donation payments are not connected yet' : 'STK Push setup needed'}</h2><p class="mt-4 text-sm leading-relaxed">No payment has been requested or collected, and your details have not been submitted. Contact BNak to ${kind === 'donate' ? 'arrange your support' : 'complete your membership'}.</p><a href="mailto:hello@bnak.co.ke" class="mt-5 inline-block font-bold underline">hello@bnak.co.ke</a><div class="mt-6 flex gap-3"><button type="button" data-restart class="rounded-full bg-[#276ba4] px-5 py-3 text-sm font-bold text-[#f5f0e5]">Start again</button><button type="button" data-close class="rounded-full border border-[#276ba4] px-5 py-3 text-sm font-bold">Close</button></div></div>`;
     container.querySelector('[role="status"]').focus();
   }
   dialog.addEventListener('submit', event => {
@@ -130,7 +130,7 @@
         const active = item === button;
         item.setAttribute('aria-pressed', String(active));
         item.classList.toggle('ring-2', active);
-        item.classList.toggle('ring-[#d85f45]', active);
+        item.classList.toggle('ring-[#d72f2a]', active);
       });
       return updateReady();
     }
@@ -141,7 +141,7 @@
         const active = item === button;
         item.setAttribute('aria-pressed', String(active));
         item.classList.toggle('bg-[#ffe2cf]', active);
-        item.classList.toggle('border-[#d85f45]', active);
+        item.classList.toggle('border-[#d72f2a]', active);
       });
       const input = dialog.querySelector('[name="customAmount"]');
       input.parentElement.hidden = donation !== 'Other';

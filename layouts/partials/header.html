@@ -1,24 +1,19 @@
 <header class="fixed inset-x-0 top-0 z-40 border-b border-[#dcd4c2]/80 bg-[#f5f0e5]/90 backdrop-blur-md">
 <div class="section-wrap flex h-[76px] items-center justify-between">
-<a class="group flex items-center gap-3 text-left" data-testid="button-brand-home" href="{{ "/" | relURL }}">
-<span class="grid h-10 w-10 place-items-center rounded-full bg-[#173d33] font-mono text-sm font-bold text-[#f5f0e5] transition-transform group-hover:rotate-6">BN</span>
-<span class="leading-none">
-<span class="block text-[13px] font-bold tracking-[.18em]">BIASHARA</span>
-<span class="block text-[13px] font-bold tracking-[.18em] text-[#d85f45]">NDOGO</span>
-</span>
+<a class="group flex items-center text-left" data-testid="button-brand-home" href="{{ "/" | relURL }}" aria-label="BNak home">
+<img class="h-[52px] w-[160px] object-contain sm:w-[174px]" src="{{ "images/bnak-logo-cropped.png" | relURL }}" alt="BNak, Biashara Ndogo Association of Kenya">
 </a>
 <nav class="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
-<a class="text-sm font-semibold transition-colors hover:text-[#d85f45]" data-testid="tab-about" href="{{ "/about/" | relURL }}">About &amp; impact</a>
-<a class="text-sm font-semibold transition-colors hover:text-[#d85f45]" data-testid="tab-programs" href="{{ "/programs/" | relURL }}">Programs</a>
-<a class="text-sm font-semibold transition-colors hover:text-[#d85f45]" data-testid="tab-membership" href="{{ "/membership/" | relURL }}">Membership</a>
-<a class="text-sm font-semibold transition-colors hover:text-[#d85f45]" data-testid="tab-opportunities" href="{{ "/opportunities/" | relURL }}">Opportunities</a>
-<a class="text-sm font-semibold transition-colors hover:text-[#d85f45]" data-testid="tab-stories" href="{{ "/stories/" | relURL }}">Stories</a>
-<a class="text-sm font-semibold transition-colors hover:text-[#d85f45]" data-testid="tab-events" href="{{ "/events/" | relURL }}">Events</a>
-<a class="text-sm font-semibold transition-colors hover:text-[#d85f45]" data-testid="tab-partners" href="{{ "/partners/" | relURL }}">Partners</a>
+<a class="text-sm font-semibold transition-colors hover:text-[#d72f2a]" data-testid="tab-about" href="{{ "/about/" | relURL }}">About &amp; impact</a>
+<a class="text-sm font-semibold transition-colors hover:text-[#d72f2a]" data-testid="tab-programs" href="{{ "/programs/" | relURL }}">Programs</a>
+<a class="text-sm font-semibold transition-colors hover:text-[#d72f2a]" data-testid="tab-membership" href="{{ "/membership/" | relURL }}">Membership</a>
+<a class="text-sm font-semibold transition-colors hover:text-[#d72f2a]" data-testid="tab-opportunities" href="{{ "/opportunities/" | relURL }}">Opportunities</a>
+<a class="text-sm font-semibold transition-colors hover:text-[#d72f2a]" data-testid="tab-events" href="{{ "/events/" | relURL }}">Events</a>
+<a class="text-sm font-semibold transition-colors hover:text-[#d72f2a]" data-testid="tab-partners" href="{{ "/partners/" | relURL }}">Partners</a>
 </nav>
 <div class="hidden items-center gap-4 lg:flex">
-<button type="button" class="text-sm font-bold text-[#d85f45] transition-colors hover:text-[#173d33]" data-testid="button-donate-nav" data-modal="donate">Support us</button>
-<a class="rounded-full bg-[#173d33] px-5 py-3 text-sm font-bold text-[#f5f0e5] transition-all hover:-translate-y-0.5 hover:bg-[#d85f45]" data-testid="button-join-nav" href="{{ "/membership/" | relURL }}">Join the movement <!-- @license lucide-static v0.468.0 - ISC -->
+<button type="button" class="text-sm font-bold text-[#d72f2a] transition-colors hover:text-[#276ba4]" data-testid="button-donate-nav" data-modal="donate">Support us</button>
+<a class="rounded-full bg-[#276ba4] px-5 py-3 text-sm font-bold text-[#f5f0e5] transition-all hover:-translate-y-0.5 hover:bg-[#d72f2a]" data-testid="button-join-nav" href="{{ "/membership/" | relURL }}">Join the movement <!-- @license lucide-static v0.468.0 - ISC -->
 <svg aria-hidden="true" class="ml-1 inline h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 12h14" />
   <path d="m12 5 7 7-7 7" />
@@ -35,15 +30,14 @@
 </div>
 <div hidden id="mobile-menu" class="border-t border-[#dcd4c2] bg-[#f5f0e5] px-5 py-5 lg:hidden">
 <nav class="section-wrap flex flex-col gap-1" aria-label="Mobile navigation">
-<a class="py-2 text-left text-lg font-semibold text-[#d85f45]" data-testid="mobile-tab-home" href="{{ "/" | relURL }}">Home</a>
+<a class="py-2 text-left text-lg font-semibold text-[#d72f2a]" data-testid="mobile-tab-home" href="{{ "/" | relURL }}">Home</a>
 <a class="py-2 text-left text-lg font-semibold" data-testid="mobile-tab-about" href="{{ "/about/" | relURL }}">About &amp; impact</a>
 <a class="py-2 text-left text-lg font-semibold" data-testid="mobile-tab-programs" href="{{ "/programs/" | relURL }}">Programs</a>
 <a class="py-2 text-left text-lg font-semibold" data-testid="mobile-tab-membership" href="{{ "/membership/" | relURL }}">Membership</a>
 <a class="py-2 text-left text-lg font-semibold" data-testid="mobile-tab-opportunities" href="{{ "/opportunities/" | relURL }}">Opportunities</a>
-<a class="py-2 text-left text-lg font-semibold" data-testid="mobile-tab-stories" href="{{ "/stories/" | relURL }}">Stories</a>
 <a class="py-2 text-left text-lg font-semibold" data-testid="mobile-tab-events" href="{{ "/events/" | relURL }}">Events</a>
 <a class="py-2 text-left text-lg font-semibold" data-testid="mobile-tab-partners" href="{{ "/partners/" | relURL }}">Partners</a>
-<button type="button" class="mt-3 w-full rounded-full bg-[#173d33] py-3 font-bold text-[#f5f0e5]" data-testid="button-join-mobile" data-modal="membership">Join the movement</button>
+<button type="button" class="mt-3 w-full rounded-full bg-[#276ba4] py-3 font-bold text-[#f5f0e5]" data-testid="button-join-mobile" data-modal="membership">Join the movement</button>
 </nav>
 </div>
 </header>
