@@ -5,3 +5,4 @@
 public
 .hugo_cache/
 resources/
+hugo_stats.json

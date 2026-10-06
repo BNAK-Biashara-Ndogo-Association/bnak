@@ -1,0 +1,16 @@
+{{ $section := .Params.invitation }}
+<section class="bg-primary py-16 text-background">
+  <div class="section-wrap grid items-center gap-8 sm:grid-cols-[1.2fr_.8fr]">
+    <div>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-accent">{{ $section.eyebrow }}</p>
+      <h2 class="display-face mt-4 max-w-2xl text-4xl font-semibold leading-[.92] tracking-[-.04em] sm:text-6xl">{{ $section.title }}</h2>
+    </div>
+    <div>
+      <p class="text-base leading-relaxed text-background/85">{{ $section.intro }}</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        {{ partial "components/button.html" (dict "href" site.Params.ctaURL "label" $section.joinLabel "variant" "secondary") }}
+        <a href="mailto:{{ hugo.Data.contact.email }}?subject=Support%20the%20BNAK%20movement" class="inline-flex items-center justify-center rounded-full border border-background/70 px-6 py-4 font-bold text-background transition-colors hover:bg-background/10">{{ $section.supportLabel }}</a>
+      </div>
+    </div>
+  </div>
+</section>

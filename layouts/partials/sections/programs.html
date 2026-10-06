@@ -1,0 +1,30 @@
+{{ $section := site.Home.Params.programs }}
+<section class="section-wrap py-16 sm:py-24" aria-labelledby="programs-heading">
+  <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+    <div>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
+      <h1 id="programs-heading" class="display-face mt-4 max-w-[620px] text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h1>
+    </div>
+    <p class="max-w-sm text-sm leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
+  </div>
+  <div class="mt-12 grid gap-4 md:grid-cols-3">
+    {{ range $index, $program := hugo.Data.programs }}
+      <article class="relative min-h-[270px] overflow-hidden rounded-2xl bg-foreground p-7 text-background transition-transform hover:-translate-y-1">
+        <span class="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-accent text-xs font-bold text-accent-foreground">{{ $program.number }}</span>
+        <span class="text-2xl text-accent" aria-hidden="true">✳</span>
+        <h2 class="display-face mt-16 text-3xl font-semibold">{{ $program.title }}</h2>
+        <p class="mt-3 text-sm leading-relaxed text-background/80">{{ $program.text }}</p>
+      </article>
+    {{ end }}
+  </div>
+  <div class="mt-14 grid gap-4 md:grid-cols-3">
+    {{ range hugo.Data.programShowcases }}
+      {{ $toneClass := "border border-border bg-[#eee6d7]" }}
+      {{ if eq .tone "gold" }}{{ $toneClass = "bg-accent" }}{{ else if eq .tone "green" }}{{ $toneClass = "bg-primary text-background" }}{{ end }}
+      <article class="overflow-hidden rounded-[1.8rem] {{ $toneClass }}">
+        {{ partial "image.html" (dict "src" .image "alt" .alt "class" "h-56 w-full object-cover" "sizes" "(max-width: 768px) 100vw, 33vw") }}
+        <div class="p-7"><p class="mono-face text-[10px] font-bold uppercase tracking-[.18em] text-secondary">{{ .eyebrow }}</p><h2 class="display-face mt-4 text-3xl font-semibold leading-tight">{{ .title }}</h2><p class="mt-3 text-sm leading-relaxed opacity-80">{{ .text }}</p></div>
+      </article>
+    {{ end }}
+  </div>
+</section>

@@ -1,6 +1,7 @@
 ---
 title: "Programs"
 panel: "programs"
+section: "programs"
 description: "Practical capacity building and support for Kenyan small businesses. Explore BNAK's Business Clinics, Financial Literacy & Capital Readiness, Grassroots Market Linkages, and Policy Advocacy initiatives."
 keywords:
   - "BNAK programs"

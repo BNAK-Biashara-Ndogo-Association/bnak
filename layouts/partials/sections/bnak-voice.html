@@ -1,0 +1,9 @@
+{{ $section := .Params.voice }}
+<section class="section-wrap py-2" aria-labelledby="bnak-voice-heading">
+  <a href="mailto:{{ hugo.Data.contact.email }}?subject=BNAK%20Voice" class="group block rounded-[1.8rem] bg-[#eee6d7] p-7 text-left transition-transform hover:-translate-y-1 sm:p-9">
+    <div class="flex items-start justify-between gap-4"><span class="grid h-12 w-12 place-items-center rounded-full bg-secondary text-card" aria-hidden="true">◎</span><span class="text-xl text-secondary" aria-hidden="true">↗</span></div>
+    <p class="mono-face mt-10 text-[10px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
+    <h2 id="bnak-voice-heading" class="display-face mt-3 text-3xl font-semibold leading-tight">{{ $section.title }}</h2>
+    <p class="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
+  </a>
+</section>

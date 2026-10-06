@@ -1,0 +1,6 @@
+<section class="section-wrap py-16 sm:py-24">
+  <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">Biashara Ndogo Association of Kenya</p>
+  <h1 class="display-face mt-4 text-5xl font-semibold tracking-tight sm:text-7xl">{{ .Title }}</h1>
+  {{ with .Description }}<p class="mt-7 max-w-3xl text-lg leading-relaxed text-muted-foreground">{{ . }}</p>{{ end }}
+  {{ with .Content }}<div class="prose prose-lg mt-8 max-w-3xl">{{ . }}</div>{{ end }}
+</section>

@@ -1,0 +1,19 @@
+{{ $section := .Params.info }}
+<section class="section-wrap py-16 sm:py-24" aria-labelledby="opportunities-heading">
+  <div class="grid gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-24">
+    <div>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
+      <h1 id="opportunities-heading" class="display-face mt-5 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h1>
+      <p class="mt-7 text-lg leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
+    </div>
+    <div class="grid gap-3">
+      {{ range $index, $item := $section.items }}
+        <a href="{{ site.Params.ctaURL }}" class="group grid grid-cols-[42px_1fr_auto] items-center gap-4 border-t border-border py-5 transition-colors hover:border-secondary">
+          <span class="mono-face text-xs font-bold text-secondary">{{ printf "%02d" (add $index 1) }}</span>
+          <span><strong class="block text-lg">{{ $item.title }}</strong><span class="mt-1 block text-sm text-muted-foreground">{{ $item.text }}</span></span>
+          <span class="text-xl text-secondary transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</section>

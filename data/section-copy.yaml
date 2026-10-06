@@ -1,0 +1,46 @@
+about:
+  impactMessage: "A stronger livelihood. A lighter footprint."
+hero:
+  exploreLabel: "Explore our work"
+  socialProof: "Thousands already in."
+  socialProofDetail: "One network, every county."
+invest:
+  opportunityEyebrow: "Where capital can help"
+  opportunityTitle: "Invest beyond the transaction."
+  opportunityIntro: "The strongest MSME ecosystems need finance, buyers, digital access and practical support to work together. Explore areas for partnership with BNAK."
+  opportunityLinkLabel: "Explore partnership opportunities"
+  disclaimer: "This page describes areas for discussion; it is not an investment offer. No investment product, terms, or guaranteed returns are presented here. Please request current, verified information and complete your own due diligence."
+membership:
+  packagesTitle: "Explore BNAK service packages"
+partner:
+  methodsHeading: "Ways to work together"
+  methods:
+    - title: "Support practical learning"
+      text: "Help bring business skills, finance-readiness and digital capability closer to MSMEs."
+    - title: "Open routes to market"
+      text: "Connect member businesses to buyers, sourcing opportunities and stronger market networks."
+    - title: "Build inclusive programmes"
+      text: "Work with BNAK and local enterprise communities on accountable, practical programmes."
+  emailActionLabel: "Email a partnership enquiry"
+  whatsappActionLabel: "WhatsApp BNAK"
+pathways:
+  cards:
+    - eyebrow: "Explore the work"
+      title: "Ongoing projects"
+      text: "See BNAK projects and how to join, partner or sponsor."
+      href: "#projects"
+    - eyebrow: "Build the ecosystem"
+      title: "Invest in MSMEs"
+      text: "Explore practical areas where responsible investment and partnership can help."
+      href: "#invest"
+    - eyebrow: "Work together"
+      title: "Partner with BNAK"
+      text: "Share how your organisation could support Kenya's MSMEs."
+      href: "#partners"
+    - eyebrow: "Join the network"
+      title: "Find your place"
+      text: "Contact BNAK to learn about membership and current joining guidance."
+      cta: true
+notFound:
+  title: "This page could not be found."
+  backLabel: "Back to BNAK"

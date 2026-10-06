@@ -1,0 +1,9 @@
+{{ $section := .Params.info }}
+<section class="section-wrap py-16 sm:py-24" aria-labelledby="stories-heading">
+  <div class="max-w-3xl rounded-[2rem] bg-[#eee6d7] p-7 sm:p-12">
+    <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
+    <h1 id="stories-heading" class="display-face mt-4 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h1>
+    <p class="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
+    <a href="mailto:{{ hugo.Data.contact.email }}?subject=Share%20a%20BNAK%20member%20story" class="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-bold text-primary-foreground">Ask about sharing a story <span aria-hidden="true">→</span></a>
+  </div>
+</section>

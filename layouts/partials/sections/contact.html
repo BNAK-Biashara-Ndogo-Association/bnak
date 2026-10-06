@@ -1,0 +1,14 @@
+{{ $section := .Params.contact }}
+<section id="contact" class="border-y border-border bg-[#eee6d7] py-7" aria-label="{{ $section.eyebrow }}">
+  <div class="section-wrap flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+    <div>
+      <p class="mono-face text-[10px] font-bold uppercase tracking-[.17em] text-secondary">{{ $section.eyebrow }}</p>
+      <p class="mt-1 text-sm text-muted-foreground">{{ $section.intro }}</p>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">
+      <a href="{{ hugo.Data.contact.phoneLink | safeURL }}" class="text-foreground hover:text-secondary">Call {{ hugo.Data.contact.phone }}</a>
+      <a href="{{ hugo.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="text-foreground hover:text-secondary">WhatsApp {{ hugo.Data.contact.phone }}</a>
+      <a href="mailto:{{ hugo.Data.contact.email }}" class="text-foreground hover:text-secondary">{{ hugo.Data.contact.email }}</a>
+    </div>
+  </div>
+</section>

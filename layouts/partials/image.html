@@ -1,0 +1,21 @@
+{{ $src := .src }}
+{{ $image := resources.Get $src }}
+{{ if not $image }}
+  {{ errorf "Image resource %q not found" $src }}
+{{ end }}
+{{ $alt := .alt | default "" }}
+{{ if and (eq $alt "") (not .decorative) }}
+  {{ errorf "Image resource %q needs meaningful alt text or decorative=true" $src }}
+{{ end }}
+{{ $class := index . "class" | default "block h-auto w-full" }}
+{{ $loading := .loading | default "lazy" }}
+{{ $sizes := .sizes | default "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw" }}
+{{ if strings.HasSuffix $src ".svg" }}
+  <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" width="{{ .width | default 128 }}" height="{{ .height | default 128 }}" loading="{{ $loading }}" decoding="async">
+{{ else }}
+  {{ $small := $image.Resize "480x webp q82" }}
+  {{ $medium := $image.Resize "800x webp q82" }}
+  {{ $large := $image.Resize "1280x webp q82" }}
+  {{ $srcset := printf "%s %dw, %s %dw, %s %dw" $small.RelPermalink $small.Width $medium.RelPermalink $medium.Width $large.RelPermalink $large.Width }}
+  <img src="{{ $medium.RelPermalink }}" srcset="{{ $srcset }}" sizes="{{ $sizes }}" alt="{{ $alt }}" class="{{ $class }}" width="{{ .width | default $medium.Width }}" height="{{ .height | default $medium.Height }}" loading="{{ $loading }}" decoding="async"{{ if eq $loading "eager" }} fetchpriority="high"{{ end }}>
+{{ end }}

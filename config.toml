@@ -1,5 +1,5 @@
 baseURL = 'https://bnak.co.ke/'
-languageCode = 'en-ke'
+locale = 'en-KE'
 title = 'BNak | Biashara Ndogo Association of Kenya'
 disableKinds = ['taxonomy', 'term']
 
@@ -9,6 +9,27 @@ disableKinds = ['taxonomy', 'term']
   author = "Biashara Ndogo Association of Kenya"
   siteName = "Biashara Ndogo Association of Kenya (BNAK)"
   email = "hello@bnak.co.ke"
+  ctaURL = "https://wa.me/254711422163"
+  contactPhone = "+254711422163"
+
+[build]
+  [build.buildStats]
+    enable = true
+    disableClasses = false
+    disableIDs = true
+    disableTags = true
+
+  [[build.cachebusters]]
+    source = "layouts/.*"
+    target = "css"
+
+  [[build.cachebusters]]
+    source = "content/.*"
+    target = "css"
+
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
 
 [sitemap]
   changefreq = 'weekly'
@@ -17,3 +38,6 @@ disableKinds = ['taxonomy', 'term']
 
 [markup.goldmark.renderer]
   unsafe = false
+
+[security.exec]
+  allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$']

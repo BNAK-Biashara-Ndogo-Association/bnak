@@ -1,19 +1,18 @@
-<!doctype html>
-<html lang="en-KE">
-<head>
-  {{ partial "head.html" . }}
-</head>
-<body class="page-grain min-h-[100dvh] overflow-x-hidden bg-[#fafafa] text-[#276ba4]" data-page="home">
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:z-50 focus:bg-white focus:p-4">Skip to content</a>
-
-  {{ partial "header.html" . }}
-
-  <main id="main" class="pt-[76px]">
-    {{ partial "pages/home.html" . }}
-  </main>
-
-  {{ partial "footer.html" . }}
-
-  {{ partial "modals.html" . }}
-</body>
-</html>
+{{ define "main" }}
+  {{ partial "sections/hero.html" . }}
+  {{ partial "sections/marquee.html" . }}
+  {{ partial "sections/stats.html" . }}
+  {{ partial "sections/sectors.html" . }}
+  {{ partial "sections/pathways.html" . }}
+  {{ partial "sections/speak-up.html" . }}
+  {{ partial "sections/academy.html" . }}
+  {{ partial "sections/bnak-voice.html" . }}
+  {{ partial "sections/membership.html" (dict "page" . "isStandalone" false) }}
+  {{ partial "sections/invest.html" . }}
+  {{ partial "sections/voices.html" . }}
+  {{ partial "sections/projects.html" . }}
+  {{ partial "sections/ribbon.html" . }}
+  {{ partial "sections/partner.html" . }}
+  {{ partial "sections/contact.html" . }}
+  {{ partial "sections/invitation.html" . }}
+{{ end }}

@@ -1,0 +1,11 @@
+<figure class="flex min-h-[230px] flex-col rounded-[1.7rem] bg-[#eee6d7] p-6 sm:p-8">
+  <svg class="h-6 w-6 text-secondary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.17 6A5.17 5.17 0 0 0 2 11.17V18h7v-6H5.5a3.5 3.5 0 0 1 3.5-3.5V6H7.17Zm10 0A5.17 5.17 0 0 0 12 11.17V18h7v-6h-3.5a3.5 3.5 0 0 1 3.5-3.5V6h-1.83Z"/></svg>
+  <blockquote class="display-face mt-5 flex-1 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">“{{ .quote }}”</blockquote>
+  <figcaption class="mt-7 flex flex-wrap items-end justify-between gap-3 border-t border-[#d5cbb8] pt-4">
+    <span>
+      <span class="block font-bold">{{ .name }}</span>
+      <span class="mt-1 block text-xs text-muted-foreground">{{ .context }}</span>
+    </span>
+    <a href="{{ .source }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-secondary hover:text-foreground">Original source <span aria-hidden="true">↗</span></a>
+  </figcaption>
+</figure>

@@ -1,0 +1,8 @@
+<section class="section-wrap grid gap-3 border-y border-border py-6 sm:grid-cols-3" aria-label="BNAK at a glance">
+  {{ range .Params.stats }}
+    <div class="border-t border-border pt-4 first:border-t-0 first:pt-0 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0 sm:first:border-l-0 sm:first:pl-0">
+      <p class="display-face text-4xl font-semibold text-primary">{{ .value }}</p>
+      <p class="mt-1 text-sm text-muted-foreground">{{ .label }}</p>
+    </div>
+  {{ end }}
+</section>

@@ -1,0 +1,10 @@
+{{ $variant := .variant | default "primary" }}
+{{ $classes := "inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-bold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary" }}
+{{ if eq $variant "secondary" }}
+  {{ $classes = printf "%s bg-accent text-accent-foreground hover:-translate-y-0.5 hover:bg-[#f0d978]" $classes }}
+{{ else if eq $variant "outline" }}
+  {{ $classes = printf "%s border border-current text-current hover:bg-white/10" $classes }}
+{{ else }}
+  {{ $classes = printf "%s bg-primary text-primary-foreground hover:-translate-y-0.5 hover:bg-[#205b4b]" $classes }}
+{{ end }}
+<a href="{{ .href }}" class="{{ $classes }}">{{ .label }} <span aria-hidden="true">→</span></a>

@@ -1,0 +1,32 @@
+{{ $page := .page }}
+{{ $section := $page.Params.membership }}
+<section id="membership" class="section-wrap py-16 sm:py-24" aria-labelledby="membership-heading">
+  <div class="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
+    <div>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
+      {{ if not $.isStandalone }}
+      <h2 id="membership-heading" class="display-face mt-5 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h2>
+      {{ else }}
+      <h1 id="membership-heading" class="display-face mt-5 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h1>
+      {{ end }}
+    </div>
+    <div class="rounded-xl bg-accent p-6 text-accent-foreground">
+      <h3 class="font-bold">{{ hugo.Data.sectionCopy.membership.packagesTitle }}</h3>
+      <p class="mt-2 text-sm leading-relaxed">{{ $section.intro }}</p>
+    </div>
+  </div>
+  <div class="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    {{ range hugo.Data.membership }}
+      <article class="overflow-hidden rounded-xl border border-border bg-card">
+        {{ partial "image.html" (dict "src" .image "alt" .alt "class" "h-44 w-full object-cover" "sizes" "(max-width: 640px) 100vw, 50vw") }}
+        <div class="p-5">
+          <h3 class="text-xl font-bold">{{ .title }}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{{ .audience }}</p>
+          <ul class="mt-4 space-y-2 border-t border-border pt-4">
+            {{ range .benefits }}<li class="flex gap-2 text-sm leading-relaxed text-muted-foreground"><span class="text-primary" aria-hidden="true">✓</span>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+</section>

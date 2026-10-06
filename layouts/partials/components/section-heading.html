@@ -1,0 +1,5 @@
+<div class="{{ .class | default "" }}">
+  {{ with .eyebrow }}<p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ . }}</p>{{ end }}
+  {{ with .title }}<h2 class="display-face mt-3 max-w-3xl text-4xl font-semibold leading-[.96] tracking-[-.04em] sm:text-5xl">{{ . }}</h2>{{ end }}
+  {{ with .intro }}<p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">{{ . }}</p>{{ end }}
+</div>

@@ -1,34 +1,37 @@
-# BNak — Hugo + Tailwind CSS
+# BNAK public site — Hugo + Tailwind CSS v4
 
-The BNak MSME Platform design and public content have been migrated into native Hugo pages. No React or Vite runtime is required.
+The public-facing BNAK site is rendered with Hugo templates and content. The Replit React application remains reference-only; no React or Vite runtime is used by this site.
 
-## Run
+## Requirements and commands
 
-Install Hugo (0.124.1 or newer) and Node.js, then run:
+Use Hugo **Extended v0.128 or newer** and Node.js. In this directory:
 
-```sh
-npm ci
-npm start
+```powershell
+npm install
+hugo server
 ```
 
-Open http://localhost:1313. Production: `npm run build`; output: `public/`.
-Tailwind compiles before Hugo so Hugo can fingerprint the stylesheet. The development watcher updates the same asset.
-Set `baseURL` in `config.toml` to the deployment URL before publishing, or pass Hugo's `--baseURL` option.
+For a production build:
+
+```powershell
+hugo --minify
+```
+
+Hugo's `css.TailwindCSS` integration processes `assets/css/main.css`; production builds minify and fingerprint the result. `npm install` installs only `tailwindcss` and `@tailwindcss/cli`.
 
 ## Editing
 
-- `content/`: page titles and routes.
-- `layouts/partials/pages/`: migrated page content and Tailwind layouts.
-- `data/bnak.json`: carousel stories and membership packages.
-- `layouts/partials/journey/`: membership and support form layouts.
-- `assets/js/site.js`: native browser interactions.
-- `assets/css/main.css`: source typography, colors and custom styles.
-- `static/images/`: all ten source photographs.
+- `content/_index.md`: homepage section copy and hero images.
+- `content/*.md`: public informational page titles and descriptions.
+- `data/*.yaml`: navigation, contacts, membership categories, sectors, projects, quote attribution, and repeated lists.
+- `layouts/index.html`: homepage section composition.
+- `layouts/partials/sections/`: independently maintained page sections.
+- `layouts/partials/components/`: repeated cards and headings.
+- `layouts/partials/image.html`: responsive WebP image processing, dimensions, and alt-text validation.
+- `assets/css/main.css`: Tailwind v4 theme tokens and site styling.
+- `assets/js/site.js`: mobile navigation, scroll header, hero rotation, marquee accessibility via CSS, and touch-friendly ribbon scrolling.
+- `config.toml`: existing `baseURL`, site metadata, CTA, Tailwind build stats, and template cache busting.
 
-All eight active source tabs are separate Hugo routes. The original FIQA content and templates are preserved in `archive/fiqa/`, outside Hugo's published content. The source BNak project is untouched.
+The homepage includes the hero and stats, brand marquee, business sectors, informational pathways, membership categories, investment information, Kenyan voices, verified project descriptions and farming imagery, partner information, contact details, and invitation. About, Programs, and Membership are static informational pages. Payments, registration/KYC, account areas, forms, APIs, and admin tools are not part of the published layouts.
 
-## Service connections
-
-The source project has no membership registration, M-Pesa or donation processing backend. The migrated forms keep entries only in page memory and explicitly report that nothing was submitted or charged. Connect a secure backend before enabling real registrations or payments. Do not place payment credentials in browser code.
-
-The source's illustrative testimonial labels are preserved. Event dates and partner claims are copied from the source and should be confirmed by the content owner before publication.
+The Replit export in `../new/` is read-only reference material.

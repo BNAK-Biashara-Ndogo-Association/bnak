@@ -1,0 +1,35 @@
+{{ $section := .Params.invest }}
+<section id="invest" class="section-wrap py-16 sm:py-24" aria-labelledby="invest-heading">
+  <div class="relative overflow-hidden rounded-[2rem] bg-foreground p-7 text-background sm:p-12">
+    <div class="absolute -right-8 -top-10 select-none opacity-20" aria-hidden="true"><span class="display-face text-[250px] leading-none">K</span></div>
+    <div class="relative max-w-3xl">
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-accent">{{ $section.eyebrow }}</p>
+      <h2 id="invest-heading" class="display-face mt-6 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h2>
+      <p class="mt-7 max-w-2xl text-lg leading-relaxed text-background/80">{{ $section.intro }}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {{ partial "components/button.html" (dict "href" site.Params.ctaURL "label" $section.actionLabel "variant" "secondary") }}
+        <a href="{{ hugo.Data.contact.phoneLink | safeURL }}" class="inline-flex items-center rounded-full border border-background/60 px-5 py-3 font-bold text-background transition-colors hover:bg-background hover:text-foreground">Call {{ hugo.Data.contact.phone }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="mt-14 grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:gap-16">
+    <div>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ hugo.Data.sectionCopy.invest.opportunityEyebrow }}</p>
+      <h3 class="display-face mt-4 text-4xl font-semibold leading-none sm:text-5xl">{{ hugo.Data.sectionCopy.invest.opportunityTitle }}</h3>
+      <p class="mt-5 text-base leading-relaxed text-muted-foreground">{{ hugo.Data.sectionCopy.invest.opportunityIntro }}</p>
+      <a href="#partners" class="mt-7 inline-flex items-center gap-2 font-bold text-secondary hover:text-foreground">{{ hugo.Data.sectionCopy.invest.opportunityLinkLabel }} <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="grid gap-3 sm:grid-cols-2">
+      {{ range hugo.Data.investmentAreas }}
+        <article class="rounded-[1.5rem] border border-border bg-card p-6">
+          <span class="text-2xl text-primary" aria-hidden="true">✳</span>
+          <h4 class="display-face mt-7 text-2xl font-semibold">{{ .title }}</h4>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{{ .text }}</p>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+  <aside class="mt-8 rounded-2xl border border-border bg-[#eee6d7] p-5 text-sm leading-relaxed text-muted-foreground">
+    {{ hugo.Data.sectionCopy.invest.disclaimer }}
+  </aside>
+</section>

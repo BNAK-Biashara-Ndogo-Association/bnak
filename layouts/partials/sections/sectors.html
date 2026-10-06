@@ -1,0 +1,13 @@
+{{ $section := .Params.sectors }}
+<section id="business-sectors" class="section-wrap mt-16 border-t border-border py-12" aria-labelledby="business-sectors-heading">
+  <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+    <div>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
+      <h2 id="business-sectors-heading" class="display-face mt-3 max-w-xl text-4xl font-semibold leading-[.96] tracking-[-.04em] sm:text-5xl">{{ $section.title }}</h2>
+    </div>
+    <p class="max-w-md text-sm leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
+  </div>
+  <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+    {{ range hugo.Data.sectors }}{{ partial "components/sector-card.html" . }}{{ end }}
+  </div>
+</section>

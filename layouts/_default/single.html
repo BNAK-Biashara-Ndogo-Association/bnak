@@ -1,23 +1,25 @@
-<!doctype html>
-<html lang="en-KE">
-<head>
-  {{ partial "head.html" . }}
-</head>
-<body class="page-grain min-h-[100dvh] overflow-x-hidden bg-[#fafafa] text-[#276ba4]" data-page="{{ .Params.panel | default "page" }}">
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:z-50 focus:bg-white focus:p-4">Skip to content</a>
-
-  {{ partial "header.html" . }}
-
-  <main id="main" class="pt-[76px]">
-    {{ if .Params.panel }}
-      {{ partial (printf "pages/%s.html" .Params.panel) . }}
-    {{ else }}
-      {{ .Content }}
-    {{ end }}
-  </main>
-
-  {{ partial "footer.html" . }}
-
-  {{ partial "modals.html" . }}
-</body>
-</html>
+{{ define "main" }}
+  {{ if eq .Params.section "about" }}
+    {{ partial "sections/about.html" site.Home }}
+  {{ else if eq .Params.section "programs" }}
+    {{ partial "sections/programs.html" site.Home }}
+  {{ else if eq .Params.section "membership" }}
+    {{ partial "sections/membership.html" (dict "page" site.Home "isStandalone" true) }}
+  {{ else if eq .Params.section "opportunities" }}
+    {{ partial "sections/opportunities.html" . }}
+  {{ else if eq .Params.section "stories" }}
+    {{ partial "sections/stories.html" . }}
+  {{ else if eq .Params.section "events" }}
+    {{ partial "sections/events.html" . }}
+  {{ else if eq .Params.section "partners" }}
+    {{ partial "sections/partner.html" . }}
+  {{ else if eq .Section "about" }}
+    {{ partial "sections/about.html" site.Home }}
+  {{ else if eq .Section "programs" }}
+    {{ partial "sections/programs.html" site.Home }}
+  {{ else if eq .Section "membership" }}
+    {{ partial "sections/membership.html" site.Home }}
+  {{ else if .Content }}
+    {{ partial "sections/generic-page.html" . }}
+  {{ end }}
+{{ end }}
