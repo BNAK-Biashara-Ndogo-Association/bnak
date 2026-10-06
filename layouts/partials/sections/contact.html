@@ -6,9 +6,9 @@
       <p class="mt-1 text-sm text-muted-foreground">{{ $section.intro }}</p>
     </div>
     <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">
-      <a href="{{ hugo.Data.contact.phoneLink | safeURL }}" class="text-foreground hover:text-secondary">Call {{ hugo.Data.contact.phone }}</a>
-      <a href="{{ hugo.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="text-foreground hover:text-secondary">WhatsApp {{ hugo.Data.contact.phone }}</a>
-      <a href="mailto:{{ hugo.Data.contact.email }}" class="text-foreground hover:text-secondary">{{ hugo.Data.contact.email }}</a>
+      <a href="{{ site.Data.contact.phoneLink | safeURL }}" class="text-foreground hover:text-secondary">Call {{ site.Data.contact.phone }}</a>
+      <a href="{{ site.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="text-foreground hover:text-secondary">WhatsApp {{ site.Data.contact.phone }}</a>
+      <a href="mailto:{{ site.Data.contact.email }}" class="text-foreground hover:text-secondary">{{ site.Data.contact.email }}</a>
     </div>
   </div>
 </section>

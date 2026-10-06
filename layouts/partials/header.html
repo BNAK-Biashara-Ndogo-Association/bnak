@@ -1,10 +1,11 @@
 <header class="site-header fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent" data-site-header>
-  <div class="section-wrap relative z-10 flex h-[76px] items-center justify-between gap-4">
+  <div class="site-header__inner relative z-10 flex h-[76px] items-center justify-between gap-4">
     <a href="{{ "/" | relURL }}" class="flex shrink-0 items-center" aria-label="BNAK home">
-      {{ partial "image.html" (dict "src" hugo.Data.brand.logo "alt" hugo.Data.brand.logoAlt "class" "h-12 w-40 object-contain sm:w-44" "loading" "eager" "sizes" "176px") }}
+      {{ partial "image.html" (dict "src" site.Data.brand.logo "alt" site.Data.brand.logoAlt "class" "h-12 w-40 object-contain sm:w-44" "loading" "eager" "sizes" "176px") }}
     </a>
     <nav class="hidden items-center gap-3 xl:flex" aria-label="Main navigation">
-      {{ range hugo.Data.nav }}
+      {{ range site.Data.nav }}
+        {{ if ne .label "Contact" }}
         {{ $url := .url }}
         {{ if hasPrefix $url "#" }}
           {{ if not $.IsHome }}{{ $url = printf "/%s" $url | relLangURL }}{{ end }}
@@ -12,10 +13,13 @@
           {{ $url = $url | relURL }}
         {{ end }}
         <a href="{{ $url }}" class="text-sm font-semibold transition-colors hover:text-secondary">{{ .label }}</a>
+        {{ end }}
       {{ end }}
     </nav>
     <div class="hidden items-center gap-4 xl:flex">
-      <a href="mailto:{{ hugo.Data.contact.email }}" class="text-sm font-bold text-secondary hover:text-foreground">Contact us</a>
+      {{ $contactURL := "#contact" }}
+      {{ if not .IsHome }}{{ $contactURL = printf "/%s" $contactURL | relLangURL }}{{ end }}
+      <a href="{{ $contactURL }}" class="rounded-full bg-secondary px-5 py-3 text-sm font-bold text-secondary-foreground transition-transform hover:-translate-y-0.5 hover:bg-[#c64e36]">Contact <span aria-hidden="true">→</span></a>
       <a href="{{ site.Params.ctaURL }}" class="rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-[#205b4b]">Join the movement <span aria-hidden="true">→</span></a>
     </div>
     <button type="button" class="grid h-11 w-11 place-items-center rounded-full border border-foreground/20 xl:hidden" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
@@ -26,7 +30,7 @@
   <div id="mobile-navigation" class="mobile-overlay xl:hidden" hidden data-mobile-overlay>
     <nav class="section-wrap flex flex-col gap-1" aria-label="Mobile navigation">
       <a href="{{ "/" | relURL }}" class="py-2 text-lg font-semibold text-secondary">Home</a>
-      {{ range hugo.Data.nav }}
+      {{ range site.Data.nav }}
         {{ $url := .url }}
         {{ if hasPrefix $url "#" }}
           {{ if not $.IsHome }}{{ $url = printf "/%s" $url | relLangURL }}{{ end }}

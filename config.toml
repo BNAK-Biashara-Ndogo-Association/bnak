@@ -1,5 +1,5 @@
 baseURL = 'https://bnak.co.ke/'
-locale = 'en-KE'
+languageCode = 'en-KE'
 title = 'BNak | Biashara Ndogo Association of Kenya'
 disableKinds = ['taxonomy', 'term']
 

@@ -12,17 +12,17 @@
       {{ with $section.conversation }}<div class="mt-8 rounded-2xl bg-accent p-5 text-accent-foreground">
         <p class="font-bold">{{ . }}</p>
         <div class="mt-4 flex flex-wrap gap-4 text-sm font-bold">
-          <a href="{{ hugo.Data.contact.phoneLink | safeURL }}" class="text-foreground">Call {{ hugo.Data.contact.phone }}</a>
-          <a href="{{ hugo.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="text-foreground">{{ hugo.Data.sectionCopy.partner.whatsappActionLabel }}</a>
+          <a href="{{ site.Data.contact.phoneLink | safeURL }}" class="text-foreground">Call {{ site.Data.contact.phone }}</a>
+          <a href="{{ site.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="text-foreground">{{ site.Data.sectionCopy.partner.whatsappActionLabel }}</a>
         </div>
       </div>{{ end }}
-      <a href="mailto:{{ hugo.Data.contact.email }}?subject=Partnership%20with%20BNAK" class="mt-6 inline-flex items-center gap-2 font-bold text-secondary hover:text-foreground">{{ hugo.Data.sectionCopy.partner.emailActionLabel }} <span aria-hidden="true">↗</span></a>
+      <a href="mailto:{{ site.Data.contact.email }}?subject=Partnership%20with%20BNAK" class="mt-6 inline-flex items-center gap-2 font-bold text-secondary hover:text-foreground">{{ site.Data.sectionCopy.partner.emailActionLabel }} <span aria-hidden="true">↗</span></a>
     </div>
     <div class="rounded-[1.8rem] bg-foreground p-7 text-background sm:p-10">
-      <p class="mono-face text-[10px] font-bold uppercase tracking-[.18em] text-accent">{{ hugo.Data.sectionCopy.partner.methodsHeading }}</p>
+      <p class="mono-face text-[10px] font-bold uppercase tracking-[.18em] text-accent">{{ site.Data.sectionCopy.partner.methodsHeading }}</p>
       <ul class="mt-6 space-y-5">
-        {{ range $index, $method := hugo.Data.sectionCopy.partner.methods }}
-          <li{{ if lt $index (sub (len hugo.Data.sectionCopy.partner.methods) 1) }} class="border-b border-background/20 pb-5"{{ end }}><h3 class="display-face text-2xl font-semibold">{{ $method.title }}</h3><p class="mt-2 text-sm leading-relaxed text-background/80">{{ $method.text }}</p></li>
+        {{ range $index, $method := site.Data.sectionCopy.partner.methods }}
+          <li{{ if lt $index (sub (len site.Data.sectionCopy.partner.methods) 1) }} class="border-b border-background/20 pb-5"{{ end }}><h3 class="display-face text-2xl font-semibold">{{ $method.title }}</h3><p class="mt-2 text-sm leading-relaxed text-background/80">{{ $method.text }}</p></li>
         {{ end }}
       </ul>
     </div>

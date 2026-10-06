@@ -33,9 +33,9 @@
     </details>
     <div class="mt-5 flex flex-wrap gap-x-5 gap-y-3 border-t border-border pt-4 text-sm font-bold">
       <a href="{{ site.Params.ctaURL }}" class="text-foreground hover:text-secondary">Join project <span aria-hidden="true">→</span></a>
-      <a href="mailto:{{ hugo.Data.contact.email }}?subject={{ printf "Partner with BNAK: %s" .project.name | urlquery }}" class="text-foreground hover:text-secondary">Partner with BNAK <span aria-hidden="true">→</span></a>
+      <a href="mailto:{{ site.Data.contact.email }}?subject={{ printf "Partner with BNAK: %s" .project.name | urlquery }}" class="text-foreground hover:text-secondary">Partner with BNAK <span aria-hidden="true">→</span></a>
       {{ $message := printf "Hello BNAK, I would like to discuss sponsoring %s. Please share the confirmed support needs." .project.name }}
-      <a href="{{ hugo.Data.contact.whatsAppLink }}?text={{ $message | urlquery }}" target="_blank" rel="noopener noreferrer" class="text-foreground hover:text-secondary">Sponsor project <span aria-hidden="true">→</span></a>
+      <a href="{{ site.Data.contact.whatsAppLink }}?text={{ $message | urlquery }}" target="_blank" rel="noopener noreferrer" class="text-foreground hover:text-secondary">Sponsor project <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </article>

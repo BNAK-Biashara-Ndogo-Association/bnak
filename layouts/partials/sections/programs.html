@@ -8,7 +8,7 @@
     <p class="max-w-sm text-sm leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
   </div>
   <div class="mt-12 grid gap-4 md:grid-cols-3">
-    {{ range $index, $program := hugo.Data.programs }}
+    {{ range $index, $program := site.Data.programs }}
       <article class="relative min-h-[270px] overflow-hidden rounded-2xl bg-foreground p-7 text-background transition-transform hover:-translate-y-1">
         <span class="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-accent text-xs font-bold text-accent-foreground">{{ $program.number }}</span>
         <span class="text-2xl text-accent" aria-hidden="true">✳</span>
@@ -18,7 +18,7 @@
     {{ end }}
   </div>
   <div class="mt-14 grid gap-4 md:grid-cols-3">
-    {{ range hugo.Data.programShowcases }}
+    {{ range site.Data.programShowcases }}
       {{ $toneClass := "border border-border bg-[#eee6d7]" }}
       {{ if eq .tone "gold" }}{{ $toneClass = "bg-accent" }}{{ else if eq .tone "green" }}{{ $toneClass = "bg-primary text-background" }}{{ end }}
       <article class="overflow-hidden rounded-[1.8rem] {{ $toneClass }}">

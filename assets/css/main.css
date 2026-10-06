@@ -100,6 +100,7 @@
 .brand-marquee__item { display: inline-flex; flex: none; align-items: center; gap: clamp(1rem, 2.25vw, 2rem); white-space: nowrap; font-family: var(--font-mono); font-size: clamp(.58rem, .8vw, .7rem); font-weight: 700; letter-spacing: .15em; }
 .brand-marquee__watermark { position: absolute; top: 50%; left: 50%; width: clamp(8rem, 18vw, 12rem); height: 2.75rem; object-fit: contain; opacity: .2; filter: grayscale(1) invert(1); transform: translate(-50%, -50%); pointer-events: none; }
 .brand-marquee__separator { color: #e9c95e; font-size: .8em; }
+.site-header__inner { width: min(1600px, calc(100% - 40px)); margin-inline: auto; }
 .site-header { transition: background-color .25s ease, box-shadow .25s ease; }
 .site-header.is-scrolled { background: rgb(245 240 229 / .96); box-shadow: 0 4px 20px rgb(23 61 51 / .08); }
 .site-header.menu-open { background: transparent; box-shadow: none; }
@@ -118,4 +119,5 @@
 }
 @media (max-width: 640px) {
   .section-wrap { width: min(100% - 28px, 1180px); }
+  .site-header__inner { width: calc(100% - 28px); }
 }

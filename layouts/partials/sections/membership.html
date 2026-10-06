@@ -11,12 +11,12 @@
       {{ end }}
     </div>
     <div class="rounded-xl bg-accent p-6 text-accent-foreground">
-      <h3 class="font-bold">{{ hugo.Data.sectionCopy.membership.packagesTitle }}</h3>
+      <h3 class="font-bold">{{ site.Data.sectionCopy.membership.packagesTitle }}</h3>
       <p class="mt-2 text-sm leading-relaxed">{{ $section.intro }}</p>
     </div>
   </div>
   <div class="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-    {{ range hugo.Data.membership }}
+    {{ range site.Data.membership }}
       <article class="overflow-hidden rounded-xl border border-border bg-card">
         {{ partial "image.html" (dict "src" .image "alt" .alt "class" "h-44 w-full object-cover" "sizes" "(max-width: 640px) 100vw, 50vw") }}
         <div class="p-5">

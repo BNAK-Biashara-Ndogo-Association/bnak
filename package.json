@@ -1,6 +1,11 @@
 {
   "name": "bnak-hugo",
   "private": true,
+  "scripts": {
+    "start": "node scripts/start.cjs",
+    "css:build": "tailwindcss --input assets/css/main.css --output assets/css/generated.css --minify",
+    "build": "npm run css:build && node scripts/hugo.cjs --minify"
+  },
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.0",
     "tailwindcss": "^4.0.0"

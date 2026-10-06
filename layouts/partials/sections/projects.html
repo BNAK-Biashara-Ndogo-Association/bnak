@@ -6,7 +6,7 @@
     <p class="mt-7 max-w-3xl text-lg leading-relaxed text-background/80">{{ $section.intro }}</p>
   </div>
   <div class="mt-10 grid gap-4 lg:grid-cols-2">
-    {{ range $index, $project := hugo.Data.projects }}
+    {{ range $index, $project := site.Data.projects }}
       {{ partial "components/project-card.html" (dict "project" $project "index" (add $index 1)) }}
     {{ end }}
   </div>

@@ -8,10 +8,10 @@
 <meta name="theme-color" content="#f5f0e5">
 <title>{{ if .IsHome }}{{ site.Title }} — Home of Kenya's Small Businesses{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
 <link rel="canonical" href="{{ .Permalink }}">
-<link rel="icon" type="image/svg+xml" href="{{ hugo.Data.brand.favicon | relURL }}">
-{{ $brandLogo := resources.Get hugo.Data.brand.siteLogo }}
+<link rel="icon" type="image/svg+xml" href="{{ site.Data.brand.favicon | relURL }}">
+{{ $brandLogo := resources.Get site.Data.brand.siteLogo }}
 <link rel="mask-icon" href="{{ $brandLogo.RelPermalink }}" color="#173d33">
-<link rel="alternate icon" href="{{ hugo.Data.brand.faviconFallback | relURL }}">
+<link rel="alternate icon" href="{{ site.Data.brand.faviconFallback | relURL }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta property="og:type" content="website">
@@ -29,7 +29,7 @@
 <meta name="twitter:title" content="{{ .Title | default site.Title }}">
 <meta name="twitter:description" content="{{ .Description | default .Params.description | default site.Params.description }}">
 <meta name="twitter:image" content="{{ $socialImage.RelPermalink | absURL }}">
-{{ $css := resources.Get "css/main.css" | css.TailwindCSS }}
+{{ $css := resources.Get "css/generated.css" }}
 {{ if hugo.IsProduction }}
   {{ $css = $css | minify | fingerprint }}
 {{ end }}

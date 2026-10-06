@@ -8,7 +8,7 @@
     <p class="max-w-sm text-sm leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
   </div>
   <div class="mt-7 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-    {{ range $index, $card := hugo.Data.sectionCopy.pathways.cards }}
+    {{ range $index, $card := site.Data.sectionCopy.pathways.cards }}
       {{ $cardClass := "group rounded-[1.5rem] bg-[#eee6d7] p-6 text-foreground transition-transform hover:-translate-y-1" }}
       {{ $eyebrowClass := "text-secondary" }}
       {{ if eq $index 0 }}{{ $cardClass = "group rounded-[1.5rem] bg-primary p-6 text-card transition-transform hover:-translate-y-1" }}{{ $eyebrowClass = "text-accent" }}

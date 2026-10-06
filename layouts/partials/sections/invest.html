@@ -8,19 +8,19 @@
       <p class="mt-7 max-w-2xl text-lg leading-relaxed text-background/80">{{ $section.intro }}</p>
       <div class="mt-8 flex flex-wrap gap-3">
         {{ partial "components/button.html" (dict "href" site.Params.ctaURL "label" $section.actionLabel "variant" "secondary") }}
-        <a href="{{ hugo.Data.contact.phoneLink | safeURL }}" class="inline-flex items-center rounded-full border border-background/60 px-5 py-3 font-bold text-background transition-colors hover:bg-background hover:text-foreground">Call {{ hugo.Data.contact.phone }}</a>
+        <a href="{{ site.Data.contact.phoneLink | safeURL }}" class="inline-flex items-center rounded-full border border-background/60 px-5 py-3 font-bold text-background transition-colors hover:bg-background hover:text-foreground">Call {{ site.Data.contact.phone }}</a>
       </div>
     </div>
   </div>
   <div class="mt-14 grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:gap-16">
     <div>
-      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ hugo.Data.sectionCopy.invest.opportunityEyebrow }}</p>
-      <h3 class="display-face mt-4 text-4xl font-semibold leading-none sm:text-5xl">{{ hugo.Data.sectionCopy.invest.opportunityTitle }}</h3>
-      <p class="mt-5 text-base leading-relaxed text-muted-foreground">{{ hugo.Data.sectionCopy.invest.opportunityIntro }}</p>
-      <a href="#partners" class="mt-7 inline-flex items-center gap-2 font-bold text-secondary hover:text-foreground">{{ hugo.Data.sectionCopy.invest.opportunityLinkLabel }} <span aria-hidden="true">→</span></a>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ site.Data.sectionCopy.invest.opportunityEyebrow }}</p>
+      <h3 class="display-face mt-4 text-4xl font-semibold leading-none sm:text-5xl">{{ site.Data.sectionCopy.invest.opportunityTitle }}</h3>
+      <p class="mt-5 text-base leading-relaxed text-muted-foreground">{{ site.Data.sectionCopy.invest.opportunityIntro }}</p>
+      <a href="#partners" class="mt-7 inline-flex items-center gap-2 font-bold text-secondary hover:text-foreground">{{ site.Data.sectionCopy.invest.opportunityLinkLabel }} <span aria-hidden="true">→</span></a>
     </div>
     <div class="grid gap-3 sm:grid-cols-2">
-      {{ range hugo.Data.investmentAreas }}
+      {{ range site.Data.investmentAreas }}
         <article class="rounded-[1.5rem] border border-border bg-card p-6">
           <span class="text-2xl text-primary" aria-hidden="true">✳</span>
           <h4 class="display-face mt-7 text-2xl font-semibold">{{ .title }}</h4>
@@ -30,6 +30,6 @@
     </div>
   </div>
   <aside class="mt-8 rounded-2xl border border-border bg-[#eee6d7] p-5 text-sm leading-relaxed text-muted-foreground">
-    {{ hugo.Data.sectionCopy.invest.disclaimer }}
+    {{ site.Data.sectionCopy.invest.disclaimer }}
   </aside>
 </section>

@@ -6,3 +6,4 @@ public
 .hugo_cache/
 resources/
 hugo_stats.json
+assets/css/generated.css

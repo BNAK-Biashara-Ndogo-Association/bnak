@@ -4,20 +4,20 @@ The public-facing BNAK site is rendered with Hugo templates and content. The Rep
 
 ## Requirements and commands
 
-Use Hugo **Extended v0.128 or newer** and Node.js. In this directory:
+Use Hugo **Extended v0.124 or newer** and Node.js. In this directory:
 
 ```powershell
 npm install
-hugo server
+npm run start
 ```
 
 For a production build:
 
 ```powershell
-hugo --minify
+npm run build
 ```
 
-Hugo's `css.TailwindCSS` integration processes `assets/css/main.css`; production builds minify and fingerprint the result. `npm install` installs only `tailwindcss` and `@tailwindcss/cli`.
+The Tailwind CLI processes `assets/css/main.css` into a generated stylesheet before Hugo starts; the development command watches for CSS changes. Production builds minify and fingerprint the stylesheet. `npm install` installs only `tailwindcss` and `@tailwindcss/cli`.
 
 ## Editing
 

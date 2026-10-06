@@ -9,7 +9,7 @@
       <p class="text-base leading-relaxed text-background/85">{{ $section.intro }}</p>
       <div class="mt-6 flex flex-wrap gap-3">
         {{ partial "components/button.html" (dict "href" site.Params.ctaURL "label" $section.joinLabel "variant" "secondary") }}
-        <a href="mailto:{{ hugo.Data.contact.email }}?subject=Support%20the%20BNAK%20movement" class="inline-flex items-center justify-center rounded-full border border-background/70 px-6 py-4 font-bold text-background transition-colors hover:bg-background/10">{{ $section.supportLabel }}</a>
+        <a href="mailto:{{ site.Data.contact.email }}?subject=Support%20the%20BNAK%20movement" class="inline-flex items-center justify-center rounded-full border border-background/70 px-6 py-4 font-bold text-background transition-colors hover:bg-background/10">{{ $section.supportLabel }}</a>
       </div>
     </div>
   </div>

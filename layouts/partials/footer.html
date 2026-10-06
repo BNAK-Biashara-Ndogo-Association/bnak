@@ -3,7 +3,7 @@
     <div class="grid gap-10 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_.7fr_.7fr_1fr]">
       <div>
         <a href="{{ "/" | relURL }}" aria-label="BNAK home">
-          {{ partial "image.html" (dict "src" hugo.Data.brand.logo "alt" hugo.Data.brand.logoAlt "class" "h-12 w-40 object-contain brightness-0 invert" "loading" "lazy" "sizes" "160px") }}
+          {{ partial "image.html" (dict "src" site.Data.brand.logo "alt" site.Data.brand.logoAlt "class" "h-12 w-40 object-contain brightness-0 invert" "loading" "lazy" "sizes" "160px") }}
         </a>
         <p class="mt-5 max-w-xs text-sm leading-relaxed text-background/75">The home of Kenya's MSMEs, connecting practical learning with an evidence-based collective voice.</p>
       </div>
@@ -28,9 +28,9 @@
         <p class="mono-face text-[10px] font-bold uppercase tracking-widest text-accent">Contact</p>
         <p class="mt-4 text-sm leading-relaxed text-background/75">Questions about membership or partnerships?</p>
         <div class="mt-4 flex flex-col items-start gap-3 text-sm font-bold text-accent">
-          <a href="mailto:{{ hugo.Data.contact.email }}" class="hover:text-background">{{ hugo.Data.contact.email }}</a>
-          <a href="{{ hugo.Data.contact.phoneLink | safeURL }}" class="hover:text-background">Call {{ hugo.Data.contact.phone }}</a>
-          <a href="{{ hugo.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="hover:text-background">WhatsApp BNAK</a>
+          <a href="mailto:{{ site.Data.contact.email }}" class="hover:text-background">{{ site.Data.contact.email }}</a>
+          <a href="{{ site.Data.contact.phoneLink | safeURL }}" class="hover:text-background">Call {{ site.Data.contact.phone }}</a>
+          <a href="{{ site.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="hover:text-background">WhatsApp BNAK</a>
         </div>
       </div>
     </div>
