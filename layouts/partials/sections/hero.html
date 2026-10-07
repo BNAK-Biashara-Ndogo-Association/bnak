@@ -1,5 +1,5 @@
 {{ $hero := .Params.hero }}
-<section id="landing" class="section-wrap grid items-center gap-10 pb-16 pt-28 sm:pb-24 sm:pt-32 lg:grid-cols-[.9fr_1.1fr] lg:gap-20" aria-labelledby="hero-heading">
+<section id="landing" class="section-wrap grid min-h-[720px] items-center gap-10 pb-16 pt-36 lg:grid-cols-[.9fr_1.1fr] lg:gap-20 lg:pb-24 lg:pt-44" aria-labelledby="hero-heading">
   <div>
     <div class="mb-6 flex items-center gap-3">
       <span class="h-px w-10 bg-secondary"></span>
@@ -7,9 +7,10 @@
     </div>
     <h1 id="hero-heading" class="display-face max-w-[620px] text-[clamp(3.7rem,7.2vw,7.4rem)] font-semibold leading-[.88] tracking-[-.055em]">{{ $hero.title }}<br><span class="text-secondary">{{ $hero.accent }}</span></h1>
     <p class="mt-8 max-w-[470px] text-lg leading-relaxed text-muted-foreground">{{ $hero.intro }}</p>
+    <p class="mono-face mt-4 text-[10px] font-bold uppercase tracking-[.15em] text-muted-foreground">{{ $hero.sectors }}</p>
     <div class="mt-9 flex flex-wrap items-center gap-4">
       {{ partial "components/button.html" (dict "href" site.Params.ctaURL "label" $hero.primaryLabel) }}
-      <a href="{{ "/programs/" | relURL }}" class="group flex items-center gap-2 px-2 py-3 font-bold">{{ site.Data.sectionCopy.hero.exploreLabel }} <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
+      <a href="#programs" class="group flex items-center gap-2 px-2 py-3 font-bold">{{ site.Data.sectionCopy.hero.exploreLabel }} <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></a>
     </div>
     <div class="mt-12 flex items-center gap-4 border-t border-border pt-5">
       <div class="flex -space-x-2" aria-hidden="true">
@@ -43,6 +44,11 @@
           <div class="mono-face text-xs font-bold tracking-widest" aria-live="polite"><span data-hero-current>01</span> / {{ printf "%02d" (len $hero.images) }}</div>
         </div>
       </div>
+    </div>
+    <div class="absolute -bottom-6 -left-5 hidden rounded-2xl bg-accent p-4 shadow-lg sm:block">
+      <p class="mono-face text-[10px] font-bold uppercase tracking-[.15em] text-foreground">{{ $hero.statLabel }}</p>
+      <p class="mt-1 text-2xl font-bold text-foreground">{{ (index .Params.stats 0).value }}</p>
+      <p class="text-xs text-foreground/80">{{ $hero.statCaption }}</p>
     </div>
     <div class="absolute -bottom-5 right-5 flex gap-2">
       <button type="button" class="grid h-11 w-11 place-items-center rounded-full bg-background text-foreground shadow-lg transition hover:bg-accent" aria-label="Previous story" data-hero-previous><span aria-hidden="true">←</span></button>

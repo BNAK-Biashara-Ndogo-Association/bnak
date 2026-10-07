@@ -1,12 +1,17 @@
-{{ $brand := site.Data.brand }}
 <div class="brand-marquee relative h-9 overflow-hidden border-y border-accent/30 bg-[#205b4b] text-card" data-brand-marquee>
-  <span class="sr-only">{{ $brand.name }}</span>
+  <span class="sr-only">Made in Kenya. Built by small business. Opportunity for all.</span>
   {{ partial "image.html" (dict "src" site.Data.brand.symbol "alt" "" "decorative" true "class" "brand-marquee__watermark" "loading" "lazy" "sizes" "192px") }}
   <div class="brand-marquee__track relative z-10 flex h-full w-max" aria-hidden="true">
     {{ range seq 2 }}
       <div class="brand-marquee__group">
-        {{ range seq 4 }}
-          <span class="brand-marquee__item">{{ $brand.name }}{{ if lt . 4 }}<span class="brand-marquee__separator">✦</span>{{ end }}</span>
+        {{ range seq 3 }}
+          {{ if eq . 1 }}
+            <span class="brand-marquee__item">Made in Kenya <span class="brand-marquee__separator">✦</span></span>
+          {{ else if eq . 2 }}
+            <span class="brand-marquee__item">Built by small business <span class="brand-marquee__separator">✦</span></span>
+          {{ else if eq . 3 }}
+            <span class="brand-marquee__item">Opportunity for all <span class="brand-marquee__separator">✦</span></span>
+          {{ end }}
         {{ end }}
       </div>
     {{ end }}

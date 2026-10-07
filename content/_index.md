@@ -7,6 +7,9 @@ hero:
   accent: "powerful."
   intro: "BNak is the home of Kenya's small businesses — a trusted network turning practical support, dignity and opportunity into everyday progress."
   primaryLabel: "I want to join"
+  sectors: "Farming · Mobility · Trade · Craft · Care · Hospitality"
+  statLabel: "The engine of Kenya"
+  statCaption: "MSMEs at work"
   secondaryLabel: "Explore our work"
   quote: "Every basket on this stall carries a family forward."
   speaker: "Jane, fresh produce trader"
@@ -39,10 +42,24 @@ hero:
 stats:
   - value: "7.5M+"
     label: "MSMEs power Kenya's economy"
+  - value: "33%"
+    label: "of jobs are in small business"
   - value: "47"
     label: "counties, one shared voice"
-  - value: "01"
-    label: "network for the everyday economy"
+why:
+  eyebrow: "Why we exist"
+  title: "The economy has a face."
+  lead: "It looks like the woman who opens her kiosk before sunrise. The rider who knows every shortcut. The maker whose hands hold a family's future."
+  intro: "Kenya's MSMEs are not a footnote to the economy. They are where work begins, where ingenuity lives and where communities find a way. BNak brings them together so no owner has to build alone."
+  storiesLink: "Meet the people"
+  mission:
+    eyebrow: "Our mission"
+    title: "Make it easier for every Kenyan MSME to start, survive and grow."
+    text: "We connect people to practical support and to each other, because progress should not depend on who you already know."
+  vision:
+    eyebrow: "Our vision"
+    title: "A Kenya where small business is seen, heard and built to last."
+    text: "A future where the everyday economy is valued for what it is: the country's most human engine of possibility."
 sectors:
   eyebrow: "Kenya's everyday economy"
   title: "Every kind of business belongs."
@@ -113,6 +130,26 @@ about:
   intro: "We organise the everyday economy around dignity, practical knowledge and a healthier Kenya. That means backing the owners already doing the work and making room for the next generation."
 programs:
   eyebrow: "What we do"
-  title: "Useful support for the work in front of you."
-  intro: "No jargon. No one-size-fits-all answers. Just practical routes to stronger enterprise."
+  title: "Good business needs a good network."
+  intro: "No jargon. No one-size-fits-all answers. Just useful things, shared by people who understand the work."
+  membershipLink: "Find your membership"
+stories:
+  eyebrow: "A shared story"
+  title: "For the people who keep Kenya moving."
+  intro: "From one shop to the next, the ambition is already here. BNak makes it easier to find the knowledge, community and opportunities that match it."
+  image:
+    src: "images/sectors/meeting.jpg"
+    alt: "Small business owners meeting together around a table"
+  quote: "We do not wait for permission to build a better day."
+  attribution: "BNAK member, Nairobi"
+  points:
+    - "Practical support you can use today"
+    - "A voice that is stronger together"
+    - "A future where small is never overlooked"
+  action: "Find your place in BNAK"
+events:
+  eyebrow: "On the ground"
+  title: "Pull up a chair."
+  intro: "There are no confirmed public event dates listed right now. BNAK will publish dates, venues and registration details here once they are confirmed."
+  action: "Ask about events"
 ---

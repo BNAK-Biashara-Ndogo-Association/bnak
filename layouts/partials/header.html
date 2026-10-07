@@ -1,7 +1,7 @@
 <header class="site-header fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent" data-site-header>
   <div class="site-header__inner relative z-10 flex h-[76px] items-center justify-between gap-4">
     <a href="{{ "/" | relURL }}" class="flex shrink-0 items-center" aria-label="BNAK home">
-      {{ partial "image.html" (dict "src" site.Data.brand.logo "alt" site.Data.brand.logoAlt "class" "h-12 w-40 object-contain sm:w-44" "loading" "eager" "sizes" "176px") }}
+      <img src="{{ site.Data.brand.logo | relURL }}" alt="{{ site.Data.brand.logoAlt }}" class="h-14 w-40 object-contain sm:h-16 sm:w-44" width="176" height="58" loading="eager" decoding="async">
     </a>
     <nav class="hidden items-center gap-3 xl:flex" aria-label="Main navigation">
       {{ range site.Data.nav }}

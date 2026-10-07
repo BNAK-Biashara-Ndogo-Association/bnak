@@ -3,7 +3,7 @@
     <div class="grid gap-10 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_.7fr_.7fr_1fr]">
       <div>
         <a href="{{ "/" | relURL }}" aria-label="BNAK home">
-          {{ partial "image.html" (dict "src" site.Data.brand.logo "alt" site.Data.brand.logoAlt "class" "h-12 w-40 object-contain brightness-0 invert" "loading" "lazy" "sizes" "160px") }}
+          <img src="{{ site.Data.brand.logo | relURL }}" alt="{{ site.Data.brand.logoAlt }}" class="h-14 w-40 object-contain" width="160" height="53" loading="lazy" decoding="async">
         </a>
         <p class="mt-5 max-w-xs text-sm leading-relaxed text-background/75">The home of Kenya's MSMEs, connecting practical learning with an evidence-based collective voice.</p>
       </div>

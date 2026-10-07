@@ -1,0 +1,27 @@
+{{ $section := .Params.why }}
+<section id="why" class="section-wrap py-24 lg:py-36" aria-labelledby="why-heading">
+  <div class="grid gap-14 lg:grid-cols-[.72fr_1.28fr] lg:gap-24">
+    <div>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
+      <h2 id="why-heading" class="display-face mt-5 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-6xl">{{ $section.title }}</h2>
+    </div>
+    <div>
+      <p class="text-2xl leading-snug text-muted-foreground sm:text-3xl">{{ $section.lead }}</p>
+      <p class="mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
+      <a href="#stories" class="mt-8 inline-flex items-center gap-2 font-bold text-secondary hover:text-foreground">{{ $section.storiesLink }} <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  {{ partial "sections/stats.html" . }}
+  <div id="mission" class="mt-20 grid gap-4 md:grid-cols-2">
+    <article class="rounded-2xl bg-primary p-7 text-background sm:p-9">
+      <p class="mono-face text-[10px] font-bold uppercase tracking-[.18em] text-accent">{{ $section.mission.eyebrow }}</p>
+      <h3 class="display-face mt-5 max-w-md text-3xl font-semibold leading-tight">{{ $section.mission.title }}</h3>
+      <p class="mt-5 max-w-md text-sm leading-relaxed text-background/80">{{ $section.mission.text }}</p>
+    </article>
+    <article class="rounded-2xl bg-accent p-7 text-accent-foreground sm:p-9">
+      <p class="mono-face text-[10px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.vision.eyebrow }}</p>
+      <h3 class="display-face mt-5 max-w-md text-3xl font-semibold leading-tight">{{ $section.vision.title }}</h3>
+      <p class="mt-5 max-w-md text-sm leading-relaxed text-foreground/80">{{ $section.vision.text }}</p>
+    </article>
+  </div>
+</section>
