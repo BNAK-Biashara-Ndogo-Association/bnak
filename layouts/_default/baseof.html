@@ -4,10 +4,11 @@
   <body class="page-grain min-h-screen overflow-x-hidden text-foreground">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-card focus:px-4 focus:py-3 focus:font-bold">Skip to content</a>
     {{ partial "header.html" . }}
-    <main id="main">
+    <main id="main"{{ if not .IsHome }} class="inner-page"{{ end }}>
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}
+    {{ partial "ask-bnak.html" . }}
     {{ partial "scripts.html" . }}
   </body>
 </html>

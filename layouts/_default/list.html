@@ -1,6 +1,6 @@
 {{ define "main" }}
   <section class="section-wrap py-16 sm:py-24">
-    <h1 class="display-face text-5xl font-semibold tracking-tight sm:text-7xl">{{ .Title }}</h1>
+    <h1 class="hero-title">{{ .Title }}</h1>
     {{ with .Content }}<div class="prose prose-lg mt-6 max-w-3xl">{{ . }}</div>{{ end }}
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {{ range .Pages }}

@@ -3,8 +3,8 @@
   <div class="grid gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-24">
     <div>
       <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
-      <h1 id="opportunities-heading" class="display-face mt-5 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h1>
-      <p class="mt-7 text-lg leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
+      <h1 id="opportunities-heading" class="hero-title">{{ $section.title }}</h1>
+      <p class="hero-intro mt-7">{{ $section.intro }}</p>
     </div>
     <div class="grid gap-3">
       {{ range $index, $item := $section.items }}

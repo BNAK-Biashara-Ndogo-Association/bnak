@@ -3,9 +3,9 @@
   <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
     <div>
       <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
-      <h1 id="programs-heading" class="display-face mt-4 max-w-[620px] text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h1>
+      <h1 id="programs-heading" class="hero-title">{{ $section.title }}</h1>
     </div>
-    <p class="max-w-sm text-sm leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
+    <p class="hero-intro mt-7">{{ $section.intro }}</p>
   </div>
   <div class="mt-12 grid gap-4 md:grid-cols-3">
     {{ range $index, $program := site.Data.programs }}

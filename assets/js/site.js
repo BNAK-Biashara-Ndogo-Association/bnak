@@ -40,9 +40,16 @@
     const slides = [...carousel.querySelectorAll('[data-hero-slide]')];
     const current = carousel.querySelector('[data-hero-current]');
     const label = carousel.querySelector('[data-hero-label]');
-    const frame = carousel.querySelector('img')?.parentElement;
-    const previous = document.querySelector('[data-hero-previous]');
-    const next = document.querySelector('[data-hero-next]');
+    const frame = carousel;
+    const rotation = carousel.querySelector('[data-hero-rotation]');
+    let paused = prefersReducedMotion;
+    const updateRotation = () => {
+      if (rotation) rotation.textContent = paused ? 'Resume rotation' : 'Pause rotation';
+    };
+    updateRotation();
+    rotation?.addEventListener('click', () => { paused = !paused; updateRotation(); });
+    const previous = carousel.querySelector('[data-hero-previous]');
+    const next = carousel.querySelector('[data-hero-next]');
     if (!slides.length || !current || !label || !frame) return;
 
     let index = 0;
@@ -60,11 +67,9 @@
     previous?.addEventListener('click', () => showSlide(index - 1));
     next?.addEventListener('click', () => showSlide(index + 1));
 
-    if (!prefersReducedMotion) {
-      window.setInterval(() => {
-        if (!document.hidden && !frame.matches(':hover, :focus-within')) showSlide(index + 1);
-      }, 5400);
-    }
+    window.setInterval(() => {
+      if (!paused && !document.hidden && !frame.matches(':hover, :focus-within')) showSlide(index + 1);
+    }, 5400);
   });
 
   document.querySelectorAll('[data-image-ribbon]').forEach((ribbon) => {

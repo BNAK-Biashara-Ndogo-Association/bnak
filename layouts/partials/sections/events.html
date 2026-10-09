@@ -1,10 +1,10 @@
 {{ $section := .Params.info }}
 <section class="section-wrap py-16 sm:py-24" aria-labelledby="events-heading">
-  <div class="max-w-3xl rounded-[2rem] border border-border bg-[#eee6d7] p-7 sm:p-12">
+  <div class="hero-panel">
     <span class="text-3xl text-secondary" aria-hidden="true">◷</span>
     <p class="mono-face mt-6 text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
-    <h1 id="events-heading" class="display-face mt-4 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h1>
-    <p class="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
+    <h1 id="events-heading" class="hero-title">{{ $section.title }}</h1>
+    <p class="hero-intro mt-7">{{ $section.intro }}</p>
     <a href="mailto:{{ site.Data.contact.email }}?subject=Upcoming%20BNAK%20events" class="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-bold text-primary-foreground">Ask BNAK about events <span aria-hidden="true">→</span></a>
   </div>
 </section>
