@@ -1,11 +1,11 @@
 ---
-title: "Stories"
+title: "Member Stories"
 panel: "stories"
 section: "stories"
 info:
-  eyebrow: "Member stories"
-  title: "The people behind the progress."
-  intro: "Member stories will appear here after BNAK verifies the details and has permission to share them. No sample profiles or unverified testimonials are published."
+  eyebrow: "Voices from the Ground"
+  title: "The people who keep Kenya moving."
+  intro: "From open-air market stalls in Gikomba to workshops in Kariobangi and farms in Siaya, meet the everyday entrepreneurs building Kenya's economy with BNAK."
 description: "Real stories from Kenyan micro-entrepreneurs. Discover how farmers, salon owners, mama mboga, and guesthouse proprietors across Kenya grow their businesses with BNAK."
 keywords:
   - "BNAK member stories"

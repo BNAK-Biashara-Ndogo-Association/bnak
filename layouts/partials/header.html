@@ -1,35 +1,32 @@
-<header class="site-header fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent" data-site-header>
+<header class="site-header fixed inset-x-0 top-0 z-50 border-b border-border" data-site-header>
+  {{ $joinURL := site.Params.ctaURL }}
   <div class="site-header__inner relative z-10 flex h-[76px] items-center justify-between gap-4">
     <a href="{{ "/" | relURL }}" class="flex shrink-0 items-center" aria-label="BNAK home">
       <img src="{{ site.Data.brand.logo | relURL }}" alt="{{ site.Data.brand.logoAlt }}" class="h-14 w-40 object-contain sm:h-16 sm:w-44" width="176" height="58" loading="eager" decoding="async">
     </a>
-    <nav class="hidden items-center gap-3 xl:flex" aria-label="Main navigation">
+    <nav class="hidden items-center gap-4 xl:gap-5 lg:flex" aria-label="Main navigation">
       {{ range site.Data.nav }}
-        {{ if ne .label "Contact" }}
         {{ $url := .url }}
         {{ if hasPrefix $url "#" }}
           {{ if not $.IsHome }}{{ $url = printf "/%s" $url | relLangURL }}{{ end }}
         {{ else }}
           {{ $url = $url | relURL }}
         {{ end }}
-        <a href="{{ $url }}" class="text-sm font-semibold transition-colors hover:text-secondary">{{ .label }}</a>
-        {{ end }}
+        <a href="{{ $url }}" class="inline-flex min-h-11 items-center text-sm font-semibold transition-colors hover:text-primary">{{ .label }}</a>
       {{ end }}
     </nav>
-    <div class="hidden items-center gap-4 xl:flex">
-      {{ $contactURL := "#contact" }}
-      {{ if not .IsHome }}{{ $contactURL = printf "/%s" $contactURL | relLangURL }}{{ end }}
-      <a href="{{ $contactURL }}" class="rounded-full bg-secondary px-5 py-3 text-sm font-bold text-secondary-foreground transition-transform hover:-translate-y-0.5 hover:bg-[#c64e36]">Contact <span aria-hidden="true">→</span></a>
-      <a href="{{ site.Params.ctaURL }}" class="rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-[#205b4b]">Join the movement <span aria-hidden="true">→</span></a>
+    <div class="hidden items-center gap-2 xl:gap-3 lg:flex">
+      <a href="{{ site.Params.memberPortalURL }}" class="inline-flex min-h-11 items-center rounded-full px-2 text-sm font-bold text-foreground transition-colors hover:text-primary">Member login</a>
+      <a href="{{ $joinURL }}" class="inline-flex min-h-11 items-center rounded-full bg-accent px-4 py-2.5 text-sm font-bold text-accent-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:brightness-95">Join BNAK</a>
     </div>
-    <button type="button" class="grid h-11 w-11 place-items-center rounded-full border border-foreground/20 xl:hidden" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+    <button type="button" class="grid h-11 w-11 place-items-center rounded-full border border-foreground/20 lg:hidden" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
       <svg data-menu-open-icon aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       <svg data-menu-close-icon aria-hidden="true" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
     </button>
   </div>
-  <div id="mobile-navigation" class="mobile-overlay xl:hidden" hidden data-mobile-overlay>
+  <div id="mobile-navigation" class="mobile-overlay lg:hidden" hidden data-mobile-overlay>
     <nav class="section-wrap flex flex-col gap-1" aria-label="Mobile navigation">
-      <a href="{{ "/" | relURL }}" class="py-2 text-lg font-semibold text-secondary">Home</a>
+      <a href="{{ "/" | relURL }}" class="flex min-h-11 items-center text-lg font-semibold text-secondary">Home</a>
       {{ range site.Data.nav }}
         {{ $url := .url }}
         {{ if hasPrefix $url "#" }}
@@ -37,9 +34,12 @@
         {{ else }}
           {{ $url = $url | relURL }}
         {{ end }}
-        <a href="{{ $url }}" class="py-2 text-lg font-semibold">{{ .label }}</a>
+        <a href="{{ $url }}" class="flex min-h-11 items-center text-lg font-semibold">{{ .label }}</a>
       {{ end }}
-      <a href="{{ site.Params.ctaURL }}" class="mt-4 rounded-full bg-primary px-5 py-4 text-center font-bold text-primary-foreground">Join the movement</a>
+      <div class="mt-4 flex flex-col gap-3">
+        <a href="{{ $joinURL }}" class="flex min-h-12 items-center justify-center rounded-full bg-accent px-5 py-3 font-bold text-accent-foreground">Join BNAK</a>
+        <a href="{{ site.Params.memberPortalURL }}" class="flex min-h-12 items-center justify-center rounded-full border border-primary px-5 py-3 font-bold text-primary">Member login &amp; renew</a>
+      </div>
     </nav>
   </div>
 </header>

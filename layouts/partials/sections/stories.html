@@ -1,9 +1,44 @@
-{{ $section := .Params.info }}
+﻿{{ $section := .Params.info }}
 <section class="section-wrap py-16 sm:py-24" aria-labelledby="stories-heading">
-  <div class="hero-panel">
-    <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
-    <h1 id="stories-heading" class="hero-title">{{ $section.title }}</h1>
+  <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+    <div>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
+      <h1 id="stories-heading" class="hero-title">{{ $section.title }}</h1>
+    </div>
     <p class="hero-intro mt-7">{{ $section.intro }}</p>
-    <a href="mailto:{{ site.Data.contact.email }}?subject=Share%20a%20BNAK%20member%20story" class="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-bold text-primary-foreground">Ask about sharing a story <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {{ range site.Data.bnak.slides }}
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md">
+        <div class="relative">
+          {{ $base := path.Base .image }}
+          {{ $src := printf "images/sectors/%s" $base }}
+          {{ if not (resources.Get $src) }}
+            {{ $src = printf "images/hero/%s" $base }}
+          {{ end }}
+          {{ partial "image.html" (dict "src" $src "alt" .name "class" "h-64 w-full object-cover" "sizes" "(max-width: 640px) 100vw, 33vw") }}
+          <span class="absolute left-3 top-3 rounded-full bg-primary/90 px-3 py-1 text-xs font-bold text-primary-foreground backdrop-blur-sm">{{ .label }}</span>
+        </div>
+        <div class="flex flex-1 flex-col p-6">
+          <blockquote class="display-face flex-1 text-lg font-semibold leading-snug text-foreground">
+            &ldquo;{{ .quote }}&rdquo;
+          </blockquote>
+          <div class="mt-6 border-t border-border pt-4">
+            <span class="block font-bold text-foreground">{{ .name }}</span>
+            <span class="text-xs text-muted-foreground">{{ .place }}</span>
+          </div>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+
+  <div class="mt-16 rounded-2xl bg-primary p-8 text-center text-primary-foreground sm:p-12">
+    <h2 class="display-face text-3xl font-bold sm:text-4xl">Have a story to share with Kenya?</h2>
+    <p class="mx-auto mt-3 max-w-xl text-base opacity-85">Are you a BNAK member growing your business? Connect with our communications team to feature your enterprise.</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-4">
+      <a href="{{ site.Params.ctaURL }}" target="_blank" rel="noopener noreferrer" class="rounded-full bg-secondary px-6 py-3 font-bold text-secondary-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-secondary">Join BNAK &rarr;</a>
+      <a href="mailto:{{ site.Data.contact.email }}?subject=BNAK%20Member%20Story" class="rounded-full border border-primary-foreground/60 px-6 py-3 font-bold text-primary-foreground transition-colors hover:bg-primary-foreground/10">Share Your Story</a>
+    </div>
   </div>
 </section>

@@ -83,7 +83,7 @@
         "Selected training and market networking"
       ],
       "image": "/images/market_stall.jpg",
-      "tone": "bg-[#7abf61]"
+      "tone": "bg-primary"
     },
     {
       "key": "bodaboda",
@@ -109,7 +109,7 @@
         "Priority programme information"
       ],
       "image": "/images/meeting.jpg",
-      "tone": "bg-[#276ba4]"
+      "tone": "bg-primary"
     },
     {
       "key": "sole-proprietor",
@@ -122,7 +122,7 @@
         "Finance-readiness programmes"
       ],
       "image": "/images/salon_owner.jpg",
-      "tone": "bg-[#7abf61]"
+      "tone": "bg-primary"
     },
     {
       "key": "micro-business",
@@ -148,7 +148,7 @@
         "Exhibition and trade opportunities"
       ],
       "image": "/images/artisan.jpg",
-      "tone": "bg-[#276ba4]"
+      "tone": "bg-primary"
     },
     {
       "key": "corporate",
@@ -161,7 +161,7 @@
         "Corporate–MSME partnership opportunities"
       ],
       "image": "/images/hotelier.jpg",
-      "tone": "bg-[#7abf61]"
+      "tone": "bg-primary"
     },
     {
       "key": "strategic-partner",
@@ -182,7 +182,7 @@
       "number": "01",
       "title": "Know your business",
       "text": "Practical tools, peer learning and trusted guidance for the decisions that keep an enterprise moving.",
-      "color": "bg-[#7abf61]"
+      "color": "bg-primary"
     },
     {
       "number": "02",
@@ -194,7 +194,7 @@
       "number": "03",
       "title": "Build together",
       "text": "A national network that turns shared challenges into collective action and better policy.",
-      "color": "bg-[#276ba4]"
+      "color": "bg-primary"
     }
   ],
   "testimonials": [

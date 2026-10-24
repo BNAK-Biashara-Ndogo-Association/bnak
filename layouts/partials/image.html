@@ -1,4 +1,4 @@
-{{ $src := .src }}
+﻿{{ $src := .src }}
 {{ $image := resources.Get $src }}
 {{ if not $image }}
   {{ errorf "Image resource %q not found" $src }}

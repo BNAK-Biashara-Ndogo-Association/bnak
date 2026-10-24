@@ -1,12 +1,13 @@
 ---
-title: "Partners"
+title: "Corporates & Partners"
 panel: "partners"
 section: "partners"
 info:
-  eyebrow: "The bigger table"
-  title: "No movement grows alone."
-  intro: "Interested in working with BNAK to support Kenya's MSMEs? Start a conversation with the team. Partner names will appear here only after BNAK confirms the relationship and publication permission."
-description: "Partner with BNAK to empower millions of micro and small business owners in Kenya. Join our public, private, and development partners driving financial inclusion, digital tools, and fair market growth."
+  eyebrow: "Corporate & Institutional Partnerships"
+  title: "Partner with Kenya's everyday economy."
+  intro: "BNAK bridges commercial enterprises, financial institutions, and development organizations with over 7.5 million micro and small business owners across all 47 counties."
+  conversation: "Looking to explore a partnership, supplier diversity program, or community initiative? Connect directly with our partnerships desk."
+description: "Partner with BNAK to empower millions of micro and small business owners in Kenya. Join commercial, financial, and development partners driving financial inclusion, supply chain linkages, and sustainable enterprise growth."
 keywords:
   - "Partner with BNAK"
   - "MSME partnerships Kenya"

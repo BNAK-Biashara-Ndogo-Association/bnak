@@ -1,4 +1,4 @@
-baseURL = 'https://bnak.co.ke/'
+baseURL = 'https://biasharandogoassociatonofkenya.com/'
 languageCode = 'en-KE'
 title = 'BNak | Biashara Ndogo Association of Kenya'
 disableKinds = ['taxonomy', 'term']
@@ -9,7 +9,8 @@ disableKinds = ['taxonomy', 'term']
   author = "Biashara Ndogo Association of Kenya"
   siteName = "Biashara Ndogo Association of Kenya (BNAK)"
   email = "hello@bnak.co.ke"
-  ctaURL = "https://wa.me/254711422163"
+  ctaURL = "https://member.biasharandogoassociatonofkenya.com/signup?returnTo=%2Fdashboard"
+  memberPortalURL = "https://member.biasharandogoassociatonofkenya.com/login"
   contactPhone = "+254711422163"
 
 [build]

@@ -1,21 +1,15 @@
 {{ define "main" }}
   {{ partial "sections/hero.html" . }}
-  {{ partial "sections/marquee.html" . }}
-  {{ partial "sections/why.html" . }}
+
   {{ partial "sections/home-programs.html" . }}
-  {{ partial "sections/home-stories.html" . }}
-  {{ partial "sections/home-events.html" . }}
   {{ partial "sections/sectors.html" . }}
-  {{ partial "sections/pathways.html" . }}
+  {{ partial "sections/home-events.html" . }}
   {{ partial "sections/speak-up.html" . }}
-  {{ partial "sections/academy.html" . }}
-  {{ partial "sections/bnak-voice.html" . }}
-  {{ partial "sections/membership.html" (dict "page" . "isStandalone" false) }}
-  {{ partial "sections/invest.html" . }}
+  {{ partial "sections/home-stories.html" . }}
   {{ partial "sections/voices.html" . }}
-  {{ partial "sections/projects.html" . }}
-  {{ partial "sections/ribbon.html" . }}
   {{ partial "sections/partner.html" . }}
+  {{ partial "sections/membership.html" (dict "page" . "isStandalone" false) }}
+  {{ partial "sections/ribbon.html" . }}
   {{ partial "sections/contact.html" . }}
   {{ partial "sections/invitation.html" . }}
 {{ end }}

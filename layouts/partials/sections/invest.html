@@ -1,9 +1,9 @@
-{{ $section := .Params.invest }}
+﻿{{ $section := .Params.invest }}
 <section id="invest" class="section-wrap py-16 sm:py-24" aria-labelledby="invest-heading">
   <div class="relative overflow-hidden rounded-[2rem] bg-foreground p-7 text-background sm:p-12">
     <div class="absolute -right-8 -top-10 select-none opacity-20" aria-hidden="true"><span class="display-face text-[250px] leading-none">K</span></div>
     <div class="relative max-w-3xl">
-      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-accent">{{ $section.eyebrow }}</p>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-primary-foreground">{{ $section.eyebrow }}</p>
       <h2 id="invest-heading" class="display-face mt-6 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h2>
       <p class="mt-7 max-w-2xl text-lg leading-relaxed text-background/80">{{ $section.intro }}</p>
       <div class="mt-8 flex flex-wrap gap-3">
@@ -29,7 +29,7 @@
       {{ end }}
     </div>
   </div>
-  <aside class="mt-8 rounded-2xl border border-border bg-[#eee6d7] p-5 text-sm leading-relaxed text-muted-foreground">
+  <aside class="mt-8 rounded-2xl border border-border bg-muted p-5 text-sm leading-relaxed text-muted-foreground">
     {{ site.Data.sectionCopy.invest.disclaimer }}
   </aside>
 </section>

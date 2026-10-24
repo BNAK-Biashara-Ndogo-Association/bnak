@@ -1,16 +1,17 @@
-<meta charset="utf-8">
+﻿<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ .Description | default .Params.description | default site.Params.description }}">
 {{ $keywords := site.Params.keywords }}
 {{ with .Params.keywords }}{{ $keywords = union . $keywords }}{{ end }}
 <meta name="keywords" content="{{ delimit $keywords ", " }}">
 <meta name="author" content="{{ site.Params.author }}">
-<meta name="theme-color" content="#f5f0e5">
+<meta name="theme-color" content="#f5f8fb">
 <title>{{ if .IsHome }}{{ site.Title }} — Home of Kenya's Small Businesses{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="icon" type="image/svg+xml" href="{{ site.Data.brand.favicon | relURL }}">
-{{ $brandLogo := resources.Get site.Data.brand.siteLogo }}
-<link rel="mask-icon" href="{{ $brandLogo.RelPermalink }}" color="#173d33">
+{{ with resources.Get site.Data.brand.siteLogo }}
+<link rel="mask-icon" href="{{ .RelPermalink }}" color="#0c6bad">
+{{ end }}
 <link rel="alternate icon" href="{{ site.Data.brand.faviconFallback | relURL }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

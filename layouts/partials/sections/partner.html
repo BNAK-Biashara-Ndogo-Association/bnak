@@ -1,30 +1,64 @@
-{{ $section := .Params.info | default .Params.partner }}
+﻿{{ $section := .Params.info | default .Params.partner }}
+{{ $partnerData := site.Data.partners | default site.Data.sectionCopy.partner | default (index site.Data "section-copy").partner }}
 <section id="partners" class="section-wrap py-16 sm:py-24" aria-labelledby="partner-heading">
-  <div class="grid items-center gap-10 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
+  <div class="grid items-center gap-10 lg:grid-cols-[.85fr_1.15fr] lg:gap-16">
     <div>
-      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
+      <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow | default $partnerData.eyebrow }}</p>
       {{ if .IsHome }}
-      <h2 id="partner-heading" class="display-face mt-6 text-5xl font-semibold leading-[.94] tracking-[-.04em] sm:text-7xl">{{ $section.title }}</h2>
+      <h2 id="partner-heading" class="display-face mt-5 text-4xl font-semibold leading-[.94] tracking-[-.04em] sm:text-6xl">{{ $section.title | default $partnerData.title }}</h2>
       {{ else }}
-      <h1 id="partner-heading" class="hero-title">{{ $section.title }}</h1>
+      <h1 id="partner-heading" class="hero-title">{{ $section.title | default $partnerData.title }}</h1>
       {{ end }}
-      <p class="hero-intro mt-7">{{ $section.intro }}</p>
-      {{ with $section.conversation }}<div class="mt-8 rounded-2xl bg-accent p-5 text-accent-foreground">
-        <p class="font-bold">{{ . }}</p>
+      <p class="hero-intro mt-6 text-base leading-relaxed text-muted-foreground">{{ $section.intro | default $partnerData.intro }}</p>
+      
+      <div class="mt-8 rounded-2xl bg-muted p-6 text-foreground">
+        <p class="font-bold text-foreground">{{ $section.conversation | default $partnerData.conversation }}</p>
         <div class="mt-4 flex flex-wrap gap-4 text-sm font-bold">
-          <a href="{{ site.Data.contact.phoneLink | safeURL }}" class="text-foreground">Call {{ site.Data.contact.phone }}</a>
-          <a href="{{ site.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="text-foreground">{{ site.Data.sectionCopy.partner.whatsappActionLabel }}</a>
+          <a href="{{ site.Data.contact.phoneLink | safeURL }}" class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-primary-foreground hover:bg-secondary">Call {{ site.Data.contact.phone }}</a>
+          <a href="{{ site.Data.contact.whatsAppLink }}?text=Hello+BNAK%2C+I+represent+an+organization+interested+in+a+corporate+partnership." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-primary px-4 py-2 text-primary hover:bg-primary hover:text-primary-foreground">{{ $partnerData.whatsappActionLabel }}</a>
         </div>
-      </div>{{ end }}
-      <a href="mailto:{{ site.Data.contact.email }}?subject=Partnership%20with%20BNAK" class="mt-6 inline-flex items-center gap-2 font-bold text-secondary hover:text-foreground">{{ site.Data.sectionCopy.partner.emailActionLabel }} <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="mt-6">
+        <a href="mailto:{{ site.Data.contact.email }}?subject=Corporate%20Partnership%20with%20BNAK" class="inline-flex items-center gap-2 font-bold text-secondary hover:text-foreground">
+          {{ $partnerData.emailActionLabel }} <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
     </div>
-    <div class="rounded-[1.8rem] bg-foreground p-7 text-background sm:p-10">
-      <p class="mono-face text-[10px] font-bold uppercase tracking-[.18em] text-accent">{{ site.Data.sectionCopy.partner.methodsHeading }}</p>
-      <ul class="mt-6 space-y-5">
-        {{ range $index, $method := site.Data.sectionCopy.partner.methods }}
-          <li{{ if lt $index (sub (len site.Data.sectionCopy.partner.methods) 1) }} class="border-b border-background/20 pb-5"{{ end }}><h3 class="display-face text-2xl font-semibold">{{ $method.title }}</h3><p class="mt-2 text-sm leading-relaxed text-background/80">{{ $method.text }}</p></li>
+
+    <div class="rounded-[2rem] bg-foreground p-7 text-background sm:p-10">
+      <div class="flex items-center justify-between border-b border-background/20 pb-4">
+        <p class="mono-face text-xs font-bold uppercase tracking-wider text-primary">{{ $partnerData.methodsHeading }}</p>
+        <span class="rounded-full bg-[var(--bnak-blue-tint)] px-3 py-1 text-xs font-semibold text-primary">For Corporates & Institutions</span>
+      </div>
+      <ul class="mt-6 space-y-6">
+        {{ range $partnerData.methods }}
+          <li class="border-b border-background/15 pb-5 last:border-0 last:pb-0">
+            <h3 class="display-face text-xl font-semibold text-primary">{{ .title }}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-background/80">{{ .text }}</p>
+          </li>
         {{ end }}
       </ul>
     </div>
   </div>
+
+  {{ if not .IsHome }}
+  <!-- Additional corporate credibility points on the standalone /partners/ page -->
+  <div class="mt-16 grid gap-6 border-t border-border pt-12 md:grid-cols-3">
+    <div class="rounded-2xl border border-border bg-card p-6">
+      <div class="mono-face text-xs font-bold uppercase tracking-wider text-secondary">01. Direct Reach</div>
+      <h3 class="display-face mt-3 text-2xl font-bold text-foreground">All 47 Counties</h3>
+      <p class="mt-2 text-sm text-muted-foreground">Access organized grassroots hubs in municipal markets, trading centers, and rural cooperative circles nationwide.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-card p-6">
+      <div class="mono-face text-xs font-bold uppercase tracking-wider text-secondary">02. Verified Network</div>
+      <h3 class="display-face mt-3 text-2xl font-bold text-foreground">Verified MSME Base</h3>
+      <p class="mt-2 text-sm text-muted-foreground">Work with identified, organized business owners across agriculture, crafts, mobility, food, and micro-retail.</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-card p-6">
+      <div class="mono-face text-xs font-bold uppercase tracking-wider text-secondary">03. Measurable Impact</div>
+      <h3 class="display-face mt-3 text-2xl font-bold text-foreground">Clear ESG Outcomes</h3>
+      <p class="mt-2 text-sm text-muted-foreground">Generate verified reporting on livelihood improvements, youth/women participation, and financial inclusion.</p>
+    </div>
+  </div>
+  {{ end }}
 </section>

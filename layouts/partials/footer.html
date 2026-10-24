@@ -1,42 +1,43 @@
-<footer class="bg-foreground py-12 text-background">
+﻿<footer class="bg-foreground py-12 text-background">
   <div class="section-wrap">
     <div class="grid gap-10 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_.7fr_.7fr_1fr]">
       <div>
         <a href="{{ "/" | relURL }}" aria-label="BNAK home">
           <img src="{{ site.Data.brand.logo | relURL }}" alt="{{ site.Data.brand.logoAlt }}" class="h-14 w-40 object-contain" width="160" height="53" loading="lazy" decoding="async">
         </a>
-        <p class="mt-5 max-w-xs text-sm leading-relaxed text-background/75">The home of Kenya's MSMEs, connecting practical learning with an evidence-based collective voice.</p>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-background/75">Kenya's national association for micro and small businesses, uniting mama mboga, boda boda operators, farmers, and artisans for legal protection and economic progress.</p>
       </div>
       <div>
-        <p class="mono-face text-[10px] font-bold uppercase tracking-widest text-accent">Explore</p>
+        <p class="mono-face text-[10px] font-bold uppercase tracking-widest text-primary-foreground">For You</p>
         <div class="mt-4 flex flex-col gap-3 text-sm text-background/85">
-          <a href="{{ "/about/" | relURL }}" class="hover:text-accent">About &amp; impact</a>
-          <a href="{{ "/programs/" | relURL }}" class="hover:text-accent">Programs</a>
-          <a href="{{ "/membership/" | relURL }}" class="hover:text-accent">Membership</a>
-          <a href="{{ "/#projects" | relURL }}" class="hover:text-accent">Ongoing projects</a>
+          <a href="{{ "/membership/" | relURL }}" class="hover:text-primary-foreground">Small Businesses &amp; Tiers</a>
+          <a href="{{ "/partners/" | relURL }}" class="hover:text-primary-foreground">Corporates &amp; Partners</a>
+          <a href="{{ "/programs/" | relURL }}" class="hover:text-primary-foreground">Programs &amp; Clinics</a>
+          <a href="{{ "/about/" | relURL }}" class="hover:text-primary-foreground">About BNAK</a>
         </div>
       </div>
       <div>
-        <p class="mono-face text-[10px] font-bold uppercase tracking-widest text-accent">Connect</p>
+        <p class="mono-face text-[10px] font-bold uppercase tracking-widest text-primary-foreground">Resources</p>
         <div class="mt-4 flex flex-col gap-3 text-sm text-background/85">
-          <a href="{{ "/#voices" | relURL }}" class="hover:text-accent">Kenyan voices</a>
-          <a href="{{ "/#partners" | relURL }}" class="hover:text-accent">Partnerships</a>
-          <a href="{{ "/#contact" | relURL }}" class="hover:text-accent">Contact BNAK</a>
+          <a href="{{ "/stories/" | relURL }}" class="hover:text-primary-foreground">Member Stories</a>
+          <a href="{{ "/events/" | relURL }}" class="hover:text-primary-foreground">Clinics &amp; Forums</a>
+          <a href="{{ "/opportunities/" | relURL }}" class="hover:text-primary-foreground">Opportunities</a>
+          <a href="{{ "/#contact" | relURL }}" class="hover:text-primary-foreground">Member Helpline</a>
         </div>
       </div>
       <div>
-        <p class="mono-face text-[10px] font-bold uppercase tracking-widest text-accent">Contact</p>
-        <p class="mt-4 text-sm leading-relaxed text-background/75">Questions about membership or partnerships?</p>
-        <div class="mt-4 flex flex-col items-start gap-3 text-sm font-bold text-accent">
+        <p class="mono-face text-[10px] font-bold uppercase tracking-widest text-primary-foreground">Contact Office</p>
+        <p class="mt-4 text-sm leading-relaxed text-background/75">Questions about joining or corporate partnerships?</p>
+        <div class="mt-4 flex flex-col items-start gap-3 text-sm font-bold text-primary-foreground">
           <a href="mailto:{{ site.Data.contact.email }}" class="hover:text-background">{{ site.Data.contact.email }}</a>
           <a href="{{ site.Data.contact.phoneLink | safeURL }}" class="hover:text-background">Call {{ site.Data.contact.phone }}</a>
-          <a href="{{ site.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="hover:text-background">WhatsApp BNAK</a>
+          <a href="{{ site.Data.contact.whatsAppLink }}" target="_blank" rel="noopener noreferrer" class="hover:text-background">WhatsApp BNAK Team</a>
         </div>
       </div>
     </div>
-    <div class="flex flex-col justify-between gap-3 pt-7 text-xs text-background/60 sm:flex-row">
-      <span>© {{ now.Year }} Biashara Ndogo Association of Kenya</span>
-      <span>Made with care, across Kenya.</span>
+    <div class="flex flex-col justify-between gap-3 pt-7 text-xs text-background/75 sm:flex-row">
+      <span>© {{ now.Year }} Biashara Ndogo Association of Kenya (BNAK)</span>
+      <span>Supporting small businesses across all 47 counties.</span>
     </div>
   </div>
 </footer>

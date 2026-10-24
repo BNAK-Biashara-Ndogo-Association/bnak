@@ -37,7 +37,7 @@
   name: "MSME Digital Transformation Project"
   objective: "Help small businesses establish practical digital foundations and use technology to reach customers and manage trade."
   beneficiaries: "MSMEs seeking digital profiles, tools and channels."
-  activities: ["Digital profiles and websites", "Social media support", "Digital payments and e-commerce", "AI tools for business"]
+  activities: ["Digital profiles and websites", "Social media support", "Digital payments and e-commerce", "Digital bookkeeping & inventory"]
   image: "images/sectors/inclusive-business.jpg"
   alt: "Kenyan women running a tailoring business, including a wheelchair-using entrepreneur"
 - id: "bnak-marketplace"
@@ -65,7 +65,7 @@
   name: "BNAK Business Academy"
   objective: "Provide ongoing, practical learning for the decisions and skills involved in running a small business."
   beneficiaries: "MSME owners and people preparing to start or grow an enterprise."
-  activities: ["Marketing and bookkeeping", "Tax and compliance", "Customer service and digital skills", "AI, management and export readiness"]
+  activities: ["Marketing and bookkeeping", "Tax and compliance", "Customer service and digital skills", "Business management & trade readiness"]
   image: "images/sectors/meeting.jpg"
   alt: "Kenyan small business owners meeting together"
 - id: "business-rescue-growth-desk"

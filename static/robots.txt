@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bnak.co.ke/sitemap.xml
+Sitemap: https://biasharandogoassociatonofkenya.com/sitemap.xml

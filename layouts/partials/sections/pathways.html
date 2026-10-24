@@ -1,4 +1,5 @@
-{{ $section := .Params.pathways }}
+﻿{{ $section := .Params.pathways }}
+{{ $pathwaysData := site.Data.pathways | default site.Data.sectionCopy.pathways | default (index site.Data "section-copy").pathways }}
 <section class="section-wrap py-12 sm:py-16" aria-labelledby="pathways-heading">
   <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
     <div>
@@ -7,16 +8,24 @@
     </div>
     <p class="max-w-sm text-sm leading-relaxed text-muted-foreground">{{ $section.intro }}</p>
   </div>
-  <div class="mt-7 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-    {{ range $index, $card := site.Data.sectionCopy.pathways.cards }}
-      {{ $cardClass := "group rounded-[1.5rem] bg-[#eee6d7] p-6 text-foreground transition-transform hover:-translate-y-1" }}
+  <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+    {{ range $index, $card := $pathwaysData.cards }}
+      {{ $cardClass := "group rounded-[1.5rem] bg-muted p-6 text-foreground transition-all hover:-translate-y-1 hover:shadow-md" }}
       {{ $eyebrowClass := "text-secondary" }}
-      {{ if eq $index 0 }}{{ $cardClass = "group rounded-[1.5rem] bg-primary p-6 text-card transition-transform hover:-translate-y-1" }}{{ $eyebrowClass = "text-accent" }}
-      {{ else if eq $index 1 }}{{ $cardClass = "group rounded-[1.5rem] bg-accent p-6 text-foreground transition-transform hover:-translate-y-1" }}
-      {{ else if eq $index 3 }}{{ $cardClass = "group rounded-[1.5rem] border border-border bg-card p-6 text-foreground transition-transform hover:-translate-y-1 hover:border-secondary" }}{{ end }}
-      <a href="{{ if $card.cta }}{{ site.Params.ctaURL }}{{ else }}{{ $card.href }}{{ end }}" class="{{ $cardClass }}">
-        <div class="flex items-center justify-between"><span class="mono-face text-[10px] font-bold uppercase tracking-[.16em] {{ $eyebrowClass }}">{{ $card.eyebrow }}</span><span class="{{ $eyebrowClass }}" aria-hidden="true">↗</span></div>
-        <h3 class="display-face mt-7 text-2xl font-semibold">{{ $card.title }}</h3><p class="mt-2 text-sm leading-relaxed">{{ $card.text }}</p>
+      {{ if eq $index 0 }}
+        {{ $cardClass = "group rounded-[1.5rem] bg-primary p-6 text-card transition-all hover:-translate-y-1 hover:shadow-md" }}
+        {{ $eyebrowClass = "text-primary" }}
+      {{ else if eq $index 1 }}
+        {{ $cardClass = "group rounded-[1.5rem] bg-[var(--bnak-blue-tint)] p-6 text-foreground transition-all hover:-translate-y-1 hover:shadow-md" }}
+      {{ else if eq $index 3 }}
+        {{ $cardClass = "group rounded-[1.5rem] border border-border bg-card p-6 text-foreground transition-all hover:-translate-y-1 hover:border-secondary hover:shadow-md" }}
+      {{ end }}
+      {{ $target := $card.href }}
+      {{ if hasPrefix $target "/" }}{{ $target = $target | relURL }}{{ end }}
+      <a href="{{ if $card.cta }}{{ site.Params.ctaURL }}{{ else }}{{ $target }}{{ end }}" class="{{ $cardClass }}">
+        <div class="flex items-center justify-between"><span class="mono-face text-[10px] font-bold uppercase tracking-[.16em] {{ $eyebrowClass }}">{{ $card.eyebrow }}</span><span class="{{ $eyebrowClass }}" aria-hidden="true">&rarr;</span></div>
+        <h3 class="display-face mt-6 text-2xl font-semibold leading-tight">{{ $card.title }}</h3>
+        <p class="mt-2 text-sm leading-relaxed opacity-90">{{ $card.text }}</p>
       </a>
     {{ end }}
   </div>

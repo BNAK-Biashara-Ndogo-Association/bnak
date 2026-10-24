@@ -1,10 +1,34 @@
-{{ $section := .Params.info }}
-<section class="section-wrap py-16 sm:py-24" aria-labelledby="events-heading">
-  <div class="hero-panel">
-    <span class="text-3xl text-secondary" aria-hidden="true">◷</span>
-    <p class="mono-face mt-6 text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
-    <h1 id="events-heading" class="hero-title">{{ $section.title }}</h1>
-    <p class="hero-intro mt-7">{{ $section.intro }}</p>
-    <a href="mailto:{{ site.Data.contact.email }}?subject=Upcoming%20BNAK%20events" class="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-bold text-primary-foreground">Ask BNAK about events <span aria-hidden="true">→</span></a>
+﻿{{ $section := .Params.info }}
+<section class="section-wrap py-8 sm:py-12" aria-labelledby="events-heading">
+  <div class="grid gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end">
+    <div>
+      <p class="mono-face text-xs font-bold uppercase tracking-[.16em] text-primary">{{ $section.eyebrow }}</p>
+      <h1 id="events-heading" class="hero-title">{{ $section.title }}</h1>
+      <p class="hero-intro mt-6">{{ $section.intro }}</p>
+    </div>
+    <div class="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+      <p class="text-xs font-bold uppercase tracking-[.14em] text-primary">Upcoming events</p>
+      {{ with site.Data.events }}
+        <ul class="mt-5 divide-y divide-border">
+          {{ range . }}
+            <li class="py-4 first:pt-0 last:pb-0">
+              <p class="text-sm font-bold text-muted-foreground">{{ .date }} <span aria-hidden="true">&middot;</span> {{ .location }}</p>
+              <h2 class="mt-1 text-lg font-bold">{{ .title }}</h2>
+              <p class="mt-2 text-sm text-muted-foreground">{{ .description }}</p>
+              {{ with .url }}<a class="mt-3 inline-flex min-h-11 items-center font-bold text-primary underline-offset-4 hover:underline" href="{{ . | safeURL }}">Register <span class="ml-2" aria-hidden="true">&rarr;</span></a>{{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <h2 class="mt-4 text-xl font-bold">No event dates have been posted yet.</h2>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Ask the BNAK team about the next county clinic or market forum. We’ll share registration details when a date is confirmed.</p>
+        <a class="mt-5 inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-5 py-3 font-bold text-accent-foreground" href="{{ site.Data.contact.whatsAppLink }}?text=Hello+BNAK%2C+please+share+the+next+upcoming+business+clinic+or+market+forum." target="_blank" rel="noopener noreferrer">Ask about the next event <span class="ml-2" aria-hidden="true">&rarr;</span></a>
+      {{ end }}
+    </div>
+  </div>
+  <div class="mt-12 grid gap-4 border-t border-border pt-8 sm:grid-cols-3">
+    <article class="rounded-2xl bg-card p-6 shadow-sm"><h2 class="text-lg font-bold">Business clinics</h2><p class="mt-2 text-sm leading-relaxed text-muted-foreground">Practical help with bookkeeping, tax compliance, digital tools and market access.</p></article>
+    <article class="rounded-2xl bg-card p-6 shadow-sm"><h2 class="text-lg font-bold">County forums</h2><p class="mt-2 text-sm leading-relaxed text-muted-foreground">Meet local business owners and raise shared priorities with county leaders.</p></article>
+    <article class="rounded-2xl bg-card p-6 shadow-sm"><h2 class="text-lg font-bold">Market outreach</h2><p class="mt-2 text-sm leading-relaxed text-muted-foreground">Connect with BNAK coordinators about membership, rights and local support.</p></article>
   </div>
 </section>

@@ -1,11 +1,11 @@
 ---
-title: "Events"
+title: "Events & Engagements"
 panel: "events"
 section: "events"
 info:
-  eyebrow: "On the ground"
-  title: "Pull up a chair."
-  intro: "There are no confirmed public event dates listed right now. BNAK will publish dates, venues and registration details here once they are confirmed."
+  eyebrow: "Grassroots Engagements"
+  title: "County Clinics & Market Forums"
+  intro: "BNAK convenes regular on-the-ground business development clinics, market activations, and policy roundtables for micro and small businesses across all 47 counties."
 description: "Stay connected with BNAK events, county forums, vendor exhibitions, and business advisory clinics happening across Kenya. Meet fellow business owners and expand your network."
 keywords:
   - "BNAK events"

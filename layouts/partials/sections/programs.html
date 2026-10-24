@@ -1,4 +1,4 @@
-{{ $section := site.Home.Params.programs }}
+﻿{{ $section := site.Home.Params.programs }}
 <section class="section-wrap py-16 sm:py-24" aria-labelledby="programs-heading">
   <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
     <div>
@@ -7,24 +7,68 @@
     </div>
     <p class="hero-intro mt-7">{{ $section.intro }}</p>
   </div>
-  <div class="mt-12 grid gap-4 md:grid-cols-3">
+
+  <!-- 3 Foundational Pillars -->
+  <div class="mt-12 grid gap-6 md:grid-cols-3">
     {{ range $index, $program := site.Data.programs }}
-      <article class="relative min-h-[270px] overflow-hidden rounded-2xl bg-foreground p-7 text-background transition-transform hover:-translate-y-1">
-        <span class="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-accent text-xs font-bold text-accent-foreground">{{ $program.number }}</span>
-        <span class="text-2xl text-accent" aria-hidden="true">✳</span>
-        <h2 class="display-face mt-16 text-3xl font-semibold">{{ $program.title }}</h2>
-        <p class="mt-3 text-sm leading-relaxed text-background/80">{{ $program.text }}</p>
+      <article class="relative flex flex-col justify-between overflow-hidden rounded-2xl bg-foreground p-7 text-background transition-transform hover:-translate-y-1">
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="mono-face text-xs font-bold uppercase tracking-wider text-primary-foreground">Pillar {{ $program.number }}</span>
+            <span class="grid h-9 w-9 place-items-center rounded-full bg-primary text-xs font-bold text-primary-foreground">{{ $program.number }}</span>
+          </div>
+          <h2 class="display-face mt-8 text-2xl font-semibold">{{ $program.title }}</h2>
+          <p class="mt-3 text-sm leading-relaxed text-background/80">{{ $program.text }}</p>
+        </div>
+        <div class="mt-8 border-t border-background/20 pt-4">
+          <a href="{{ "/membership/" | relURL }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary-foreground hover:underline">
+            Member Benefits &rarr;
+          </a>
+        </div>
       </article>
     {{ end }}
   </div>
-  <div class="mt-14 grid gap-4 md:grid-cols-3">
-    {{ range site.Data.programShowcases }}
-      {{ $toneClass := "border border-border bg-[#eee6d7]" }}
-      {{ if eq .tone "gold" }}{{ $toneClass = "bg-accent" }}{{ else if eq .tone "green" }}{{ $toneClass = "bg-primary text-background" }}{{ end }}
-      <article class="overflow-hidden rounded-[1.8rem] {{ $toneClass }}">
-        {{ partial "image.html" (dict "src" .image "alt" .alt "class" "h-56 w-full object-cover" "sizes" "(max-width: 768px) 100vw, 33vw") }}
-        <div class="p-7"><p class="mono-face text-[10px] font-bold uppercase tracking-[.18em] text-secondary">{{ .eyebrow }}</p><h2 class="display-face mt-4 text-3xl font-semibold leading-tight">{{ .title }}</h2><p class="mt-3 text-sm leading-relaxed opacity-80">{{ .text }}</p></div>
-      </article>
-    {{ end }}
+
+  <!-- Sector Focus Showcases -->
+  <div class="mt-16">
+    <div class="flex flex-col justify-between gap-4 border-b border-border pb-4 sm:flex-row sm:items-end">
+      <div>
+        <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">Sector Focus</p>
+        <h2 class="display-face mt-2 text-3xl font-semibold text-foreground">Targeted Enterprise Support</h2>
+      </div>
+      <p class="max-w-md text-sm text-muted-foreground">Tailored interventions for agriculture, mobility, and local cottage artisans.</p>
+    </div>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      {{ range (index site.Data "program-showcases") | default site.Data.programShowcases }}
+        {{ $toneClass := "border border-border bg-muted" }}
+        {{ if eq .tone "gold" }}{{ $toneClass = "bg-[var(--bnak-blue-tint)] text-foreground" }}{{ else if eq .tone "green" }}{{ $toneClass = "bg-primary text-background" }}{{ end }}
+        <article class="overflow-hidden rounded-2xl {{ $toneClass }} shadow-sm">
+          {{ partial "image.html" (dict "src" .image "alt" .alt "class" "h-56 w-full object-cover" "sizes" "(max-width: 768px) 100vw, 33vw") }}
+          <div class="p-6">
+            <p class="mono-face text-[10px] font-bold uppercase tracking-[.18em] text-secondary">{{ .eyebrow }}</p>
+            <h3 class="display-face mt-3 text-2xl font-semibold leading-tight">{{ .title }}</h3>
+            <p class="mt-2 text-sm leading-relaxed opacity-85">{{ .text }}</p>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Flagship Initiatives On The Ground -->
+  <div class="mt-20">
+    <div class="flex flex-col justify-between gap-4 border-b border-border pb-4 sm:flex-row sm:items-end">
+      <div>
+        <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">Community Impact</p>
+        <h2 class="display-face mt-2 text-3xl font-semibold text-foreground">Active Initiatives on the Ground</h2>
+      </div>
+      <p class="max-w-md text-sm text-muted-foreground">Explore our active programs and discover how small business owners can participate and corporates can sponsor.</p>
+    </div>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {{ range $index, $project := site.Data.projects }}
+        {{ partial "components/project-card.html" (dict "project" $project "index" (add $index 1)) }}
+      {{ end }}
+    </div>
   </div>
 </section>

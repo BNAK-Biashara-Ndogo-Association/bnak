@@ -1,4 +1,4 @@
-{{ $hero := .Params.hero }}
+﻿{{ $hero := .Params.hero }}
 <section id="landing" class="section-wrap home-hero" aria-labelledby="hero-heading">
   <div class="hero-banner" data-hero-carousel aria-roledescription="carousel" aria-label="Kenyan small business stories">
     {{ range $index, $photo := $hero.images }}
@@ -14,15 +14,14 @@
         <p class="hero-banner__eyebrow mono-face">{{ $hero.eyebrow }}</p>
         <h1 id="hero-heading" class="hero-title">{{ $hero.title }} <span>{{ $hero.accent }}</span></h1>
         <p class="hero-intro">{{ $hero.intro }}</p>
-        <p class="hero-banner__sectors mono-face">{{ $hero.sectors }}</p>
         <div class="hero-banner__actions">
-          <a href="{{ site.Params.ctaURL }}" class="hero-banner__join">{{ $hero.primaryLabel }} <span aria-hidden="true">&#8599;</span></a>
-          <a href="#programs" class="hero-banner__explore">{{ site.Data.sectionCopy.hero.exploreLabel }} <span aria-hidden="true">&#8594;</span></a>
+          <a href="{{ site.Params.ctaURL }}" target="_blank" rel="noopener noreferrer" class="hero-banner__join">Join BNAK (Small Businesses) <span aria-hidden="true">&#8599;</span></a>
+          <a href="{{ "/partners/" | relURL }}" class="hero-banner__explore">Partner with Us (Corporates) <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
       <div class="hero-banner__footer">
         <p class="hero-banner__counter mono-face" aria-live="polite"><span data-hero-current>01</span> / {{ printf "%02d" (len $hero.images) }} <span aria-hidden="true">&middot;</span> <span data-hero-label>{{ (index $hero.images 0).label }}</span></p>
-        <div class="hero-banner__controls">
+        <div class="hero-banner__controls" role="group" aria-label="Hero carousel controls">
           <button type="button" aria-label="Previous story" data-hero-previous>&#8592;</button>
           <button type="button" aria-label="Next story" data-hero-next>&#8594;</button>
           <button type="button" class="hero-banner__rotation" data-hero-rotation>Pause rotation</button>
