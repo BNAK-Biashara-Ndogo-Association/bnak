@@ -4,6 +4,7 @@
   const header = document.querySelector('[data-site-header]');
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const mobileOverlay = document.querySelector('[data-mobile-overlay]');
+  const desktopNavigation = window.matchMedia('(min-width: 64rem)');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const setMenuOpen = (open) => {
@@ -21,6 +22,10 @@
     setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
   });
 
+  desktopNavigation.addEventListener('change', (event) => {
+    if (event.matches) setMenuOpen(false);
+  });
+
   mobileOverlay?.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => setMenuOpen(false));
   });
@@ -29,6 +34,17 @@
     if (event.key === 'Escape' && menuToggle?.getAttribute('aria-expanded') === 'true') {
       setMenuOpen(false);
       menuToggle.focus();
+    }
+    if (event.key === 'Tab' && menuToggle?.getAttribute('aria-expanded') === 'true') {
+      const links = [...mobileOverlay.querySelectorAll('a[href]')];
+      const lastLink = links[links.length - 1];
+      if (event.shiftKey && document.activeElement === menuToggle && lastLink) {
+        event.preventDefault();
+        lastLink.focus();
+      } else if (!event.shiftKey && document.activeElement === lastLink) {
+        event.preventDefault();
+        menuToggle.focus();
+      }
     }
   });
 
