@@ -95,14 +95,14 @@
 .site-header { color: var(--bnak-ink); background: rgb(245 248 251 / .96); backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgb(18 55 87 / .06); }
 .site-header.is-scrolled { background: rgb(245 248 251 / .98); box-shadow: 0 4px 20px rgb(18 55 87 / .1); }
 .site-header.menu-open { background: var(--bnak-paper); box-shadow: none; border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
-@media (width < 64rem) {
-  .site-header.menu-open { height: 100vh; height: 100dvh; }
-}
 .mobile-overlay[hidden] { display: none !important; }
 .mobile-overlay {
-  position: absolute;
-  inset: 76px 0 0;
-  z-index: 40;
+  position: fixed;
+  inset: 76px 0 auto;
+  height: calc(100vh - 76px);
+  height: calc(100dvh - 76px);
+  box-sizing: border-box;
+  z-index: 50;
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--bnak-paper, #f5f8fb);
