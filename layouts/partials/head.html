@@ -1,4 +1,15 @@
 ﻿<meta charset="utf-8">
+{{ if hugo.IsProduction }}
+{{ with site.Params.googleAnalyticsID }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', {{ . }});
+</script>
+{{ end }}
+{{ end }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ .Description | default .Params.description | default site.Params.description }}">
 {{ $keywords := site.Params.keywords }}

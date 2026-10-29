@@ -2,19 +2,20 @@
 {{ $section := $page.Params.membership }}
 <section id="membership" class="membership-section bg-background py-16 sm:py-24" aria-labelledby="membership-heading">
   <div class="section-wrap">
-    <div class="grid gap-8 lg:grid-cols-[1.2fr_.8fr] lg:items-end">
-      <div>
+    <div class="membership-scroll-track">
+    <div class="membership-layout">
+      <div class="membership-intro">
         <p class="mono-face text-[11px] font-bold uppercase tracking-[.18em] text-secondary">{{ $section.eyebrow }}</p>
         {{ if not $.isStandalone }}
           <h2 id="membership-heading" class="display-face mt-5 text-4xl font-semibold leading-[.96] tracking-[-.04em] sm:text-6xl">{{ $section.title }}</h2>
         {{ else }}
           <h1 id="membership-heading" class="hero-title">{{ $section.title }}</h1>
         {{ end }}
+        <p class="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground lg:text-lg">{{ $section.intro }}</p>
       </div>
-      <p class="max-w-xl text-base leading-relaxed text-muted-foreground lg:justify-self-end lg:text-lg">{{ $section.intro }}</p>
-    </div>
 
-    <div class="membership-list mt-10 grid gap-6" aria-label="Membership categories">
+    <div class="membership-cards-viewport">
+    <div class="membership-list grid gap-6" aria-label="Membership categories">
       {{ range site.Data.membership }}
         <article class="membership-tier surface-card flex flex-col overflow-hidden transition-shadow hover:shadow-md">
           <div class="flex flex-1 flex-col p-6 sm:p-8 lg:p-10">
@@ -41,6 +42,9 @@
           </div>
         </article>
       {{ end }}
+    </div>
+    </div>
+    </div>
     </div>
 
     <div class="mt-12 rounded-2xl border border-border bg-muted p-6 sm:p-7">

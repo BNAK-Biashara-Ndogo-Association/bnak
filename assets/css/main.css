@@ -247,6 +247,15 @@ body.overflow-hidden .ask-bnak { visibility: hidden; }
 .form-success { color: var(--bnak-success); font-size: .875rem; font-weight: 600; }
 input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--bnak-red); }
 .membership-list { scroll-margin-top: 6rem; }
+.membership-layout { display: grid; gap: 2.5rem; align-items: start; }
+.membership-intro, .membership-list { min-width: 0; }
+@media (min-width: 1024px) {
+  .membership-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(3rem, 6vw, 6rem); }
+}
+.membership-scroll-track.is-pinned { height: var(--membership-track-height); }
+.membership-scroll-track.is-pinned .membership-layout { position: sticky; top: 7rem; height: var(--membership-viewport-height); }
+.membership-scroll-track.is-pinned .membership-cards-viewport { height: var(--membership-viewport-height); min-height: 0; overflow: clip; }
+.membership-scroll-track.is-pinned .membership-list { transform: translateY(var(--membership-card-offset, 0px)); will-change: transform; }
 .membership-tier { border-radius: var(--bnak-radius-card); }
 .membership-section { font-family: "DM Sans", sans-serif; }
 .membership-section .display-face, .membership-section .hero-title { font-family: "Poppins", sans-serif; }

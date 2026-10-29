@@ -2,13 +2,13 @@
   {{ partial "sections/hero.html" . }}
 
   {{ partial "sections/home-programs.html" . }}
+  {{ partial "sections/membership.html" (dict "page" . "isStandalone" false) }}
   {{ partial "sections/sectors.html" . }}
   {{ partial "sections/home-events.html" . }}
   {{ partial "sections/speak-up.html" . }}
   {{ partial "sections/home-stories.html" . }}
   {{ partial "sections/voices.html" . }}
   {{ partial "sections/partner.html" . }}
-  {{ partial "sections/membership.html" (dict "page" . "isStandalone" false) }}
   {{ partial "sections/ribbon.html" . }}
   {{ partial "sections/contact.html" . }}
   {{ partial "sections/invitation.html" . }}

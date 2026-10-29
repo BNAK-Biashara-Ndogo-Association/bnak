@@ -103,4 +103,44 @@
     ribbon.addEventListener('pointercancel', () => { pointerStart = null; });
   });
 
+  document.querySelectorAll('.membership-scroll-track').forEach((track) => {
+    const intro = track.querySelector('.membership-intro');
+    const list = track.querySelector('.membership-list');
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    let distance = 0;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (!track.classList.contains('is-pinned')) return;
+      const progress = Math.min(distance, Math.max(0, 112 - track.getBoundingClientRect().top));
+      track.style.setProperty('--membership-card-offset', `${-progress}px`);
+    };
+    const measure = () => {
+      const height = window.innerHeight - 144;
+      const enabled = desktop.matches && height >= intro.offsetHeight && height >= 360;
+      distance = Math.max(0, list.offsetHeight - height);
+      track.style.setProperty('--membership-viewport-height', `${height}px`);
+      track.style.setProperty('--membership-track-height', `${height + distance}px`);
+      track.classList.toggle('is-pinned', enabled && distance > 0);
+      if (!enabled) track.style.removeProperty('--membership-card-offset');
+      update();
+    };
+    window.addEventListener('scroll', () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    }, { passive: true });
+    window.addEventListener('resize', measure);
+    new ResizeObserver(measure).observe(list);
+    document.fonts.ready.then(measure);
+    // Keep keyboard-focused links visible within the pinned card column.
+    list.addEventListener('focusin', (event) => {
+      if (!track.classList.contains('is-pinned')) return;
+      const card = event.target.closest('.membership-tier');
+      if (!card) return;
+      const start = track.getBoundingClientRect().top + window.scrollY - 112;
+      const offset = card.getBoundingClientRect().top - list.getBoundingClientRect().top;
+      window.scrollTo({ top: start + Math.min(distance, offset), behavior: 'instant' });
+    });
+    measure();
+  });
+
 })();
