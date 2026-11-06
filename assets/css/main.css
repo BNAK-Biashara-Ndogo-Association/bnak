@@ -259,3 +259,5 @@ input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="
 .membership-tier { border-radius: var(--bnak-radius-card); }
 .membership-section { font-family: "DM Sans", sans-serif; }
 .membership-section .display-face, .membership-section .hero-title { font-family: "Poppins", sans-serif; }
+
+.membership-category-icon { width: 24px; height: 24px; margin-right: .6rem; flex-shrink: 0; }

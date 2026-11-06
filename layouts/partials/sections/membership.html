@@ -17,17 +17,18 @@
     <div class="membership-cards-viewport">
     <div class="membership-list grid gap-6" aria-label="Membership categories">
       {{ range site.Data.membership }}
-        <article class="membership-tier surface-card flex flex-col overflow-hidden transition-shadow hover:shadow-md">
+        <article id="membership-{{ .id }}" class="membership-tier surface-card flex flex-col overflow-hidden transition-shadow hover:shadow-md">
           <div class="flex flex-1 flex-col p-6 sm:p-8 lg:p-10">
-            <span class="mb-5 inline-flex w-fit rounded-full bg-muted px-4 py-2 text-sm font-semibold text-primary">{{ .badge }}</span>
+            <span class="mb-5 inline-flex w-fit rounded-full bg-muted px-4 py-2 text-sm font-semibold text-primary"><svg class="membership-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ .icon }}"/></svg>{{ .badge }}</span>
             <h3 class="display-face text-2xl font-semibold leading-tight text-foreground sm:text-3xl">{{ .title }}</h3>
             <p class="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">{{ .audience }}</p>
             <div class="mt-6 flex flex-wrap items-baseline justify-between gap-3 border-t border-border pt-5">
               <span class="text-sm text-muted-foreground">Membership fee</span>
               <span class="display-face text-2xl font-semibold text-foreground sm:text-3xl">{{ .price }}</span>
             </div>
+            <h4 class="mt-5 font-semibold">Who should join</h4>
             <ul class="mt-5 grid gap-3 sm:grid-cols-2">
-              {{ range .benefits }}
+              {{ range .targets }}
                 <li class="flex items-start gap-2 text-sm leading-relaxed text-foreground">
                   <span class="shrink-0 font-bold text-primary" aria-hidden="true">&#10003;</span>
                   <span>{{ . }}</span>
@@ -35,8 +36,8 @@
               {{ end }}
             </ul>
             <div class="mt-7 sm:mt-auto sm:pt-8">
-              <a href="{{ site.Params.ctaURL }}" class="button-primary min-h-12 w-full text-sm md:w-fit md:min-w-56">
-                Learn More &rarr;
+              <a href="{{ printf "%s?returnTo=%s" (index (split site.Params.ctaURL "?") 0) (printf "/dashboard/registration?category=%s" .id | urlquery) }}" class="button-primary min-h-12 w-full text-sm md:w-fit md:min-w-56">
+                Register for {{ .title }} &rarr;
               </a>
             </div>
           </div>
@@ -51,8 +52,8 @@
       <p class="mono-face text-xs font-bold uppercase tracking-wider text-secondary">How to Join BNAK in 3 Simple Steps</p>
       <div class="mt-4 grid gap-4 sm:grid-cols-3">
         <div class="border-t border-border pt-3">
-          <span class="mono-face text-xs font-bold text-primary">01. Pick Your Tier</span>
-          <p class="mt-1 text-xs text-muted-foreground">Select the package that fits your business stage.</p>
+          <span class="mono-face text-xs font-bold text-primary">01. Choose Your Network</span>
+          <p class="mt-1 text-xs text-muted-foreground">Match your business to one of nine membership categories.</p>
         </div>
         <div class="border-t border-border pt-3">
           <span class="mono-face text-xs font-bold text-primary">02. Quick Registration</span>

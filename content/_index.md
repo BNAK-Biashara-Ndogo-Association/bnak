@@ -67,7 +67,7 @@ sectors:
 membership:
   eyebrow: "Membership Categories"
   title: "Find your place in BNAK."
-  intro: "Transparent annual packages starting from KSh 300 / year for market traders and boda boda riders, up to dedicated corporate collaboration memberships."
+  intro: "Nine business networks. Membership fees from KSh 100. Find your business below, choose the category that fits your work, and start your registration."
 invest:
   eyebrow: "Corporate & Institutional Collaboration"
   title: "Back the businesses that keep Kenya moving."
@@ -132,7 +132,7 @@ programs:
   eyebrow: "Our Core Programs"
   title: "Practical support for everyday business."
   intro: "Direct, no-jargon assistance delivered through county chapters, market hubs, and business clinics."
-  membershipLink: "Explore membership tiers"
+  membershipLink: "Explore membership categories"
 stories:
   eyebrow: "Member Stories"
   title: "For the people who keep Kenya moving."

@@ -1,103 +1,172 @@
-- title: "Mama Mboga & Market Traders"
-  price: "KSh 300 / yr"
-  badge: "Micro Business"
-  audience: "For open-air market traders, grocery vendors, hawkers, and grassroots food sellers."
-  benefits:
-    - "Official BNAK digital membership certificate"
-    - "Protection against unfair market evictions & harassment"
-    - "Free access to business clinics & bookkeeping sessions"
-    - "Direct connection to farmer cooperatives & bulk buyers"
-  image: "images/sectors/market_stall.jpg"
-  alt: "A Kenyan market trader selecting fresh produce"
-  ctaType: "member"
-
-- title: "Bodaboda & Transport Operators"
-  price: "KSh 300 / yr"
-  badge: "Transport"
-  audience: "For motorcycle riders, tuk-tuk operators, and local transport micro-entrepreneurs."
-  benefits:
-    - "Recognized rider identification & welfare support"
-    - "Access to fair asset-finance & electric mobility options"
-    - "Road safety, compliance & legal advisory guidance"
-    - "Group savings (chama/SACCO) linkage"
-  image: "images/sectors/boda_rider.jpg"
-  alt: "A Kenyan boda boda rider at work"
-  ctaType: "member"
-
-- title: "Grassroots Coordinators"
-  price: "KSh 500 / yr"
-  badge: "Community Champion"
-  audience: "For market chairpersons, ward business representatives, and grassroots organizers."
-  benefits:
-    - "Official coordinator badge & leadership credentials"
-    - "Direct communication channel with BNAK executive desk"
-    - "Priority access to county advocacy roundtables"
-    - "Leadership training & community mobilization allowances"
-  image: "images/sectors/meeting.jpg"
-  alt: "Kenyan small business owners meeting together"
-  ctaType: "member"
-
-- title: "Sole Proprietors & Artisans"
-  price: "KSh 1,500 / yr"
-  badge: "Sole Proprietor"
-  audience: "For salon owners, carpenters, tailors, mechanics, freelancers, and small consultants."
-  benefits:
-    - "National BNAK business directory listing"
-    - "KRA tax compliance, invoicing & M-Pesa business clinics"
-    - "Access to SACCO credit & micro-lending facilitation"
-    - "Peer-to-peer trade referral network"
-  image: "images/sectors/salon_owner.jpg"
-  alt: "A Kenyan salon owner at work"
-  ctaType: "member"
-
-- title: "Micro Enterprises & Retailers"
-  price: "KSh 5,000 / yr"
-  badge: "Micro Enterprise"
-  audience: "For registered retail shops, mini-marts, hardware stores, cafes, and chemists."
-  benefits:
-    - "Enhanced digital profile in the BNAK directory"
-    - "Business dispute mediation & regulatory legal advice"
-    - "Supplier linkage clinics & B2B networking forums"
-    - "Access to specialized MSME working capital programs"
-  image: "images/sectors/retail_shop.jpg"
-  alt: "A Kenyan neighbourhood shop owner"
-  ctaType: "member"
-
-- title: "Small & Medium Enterprises (SMEs)"
-  price: "KSh 15,000 / yr"
-  badge: "SME Tier"
-  audience: "For expanding manufacturers, distributors, processors, and medium enterprises."
-  benefits:
-    - "National buyer linkages & corporate tender readiness"
-    - "Trade mission, expo, and commercial exhibition slots"
-    - "Access to institutional lenders & equity funds"
-    - "Policy advocacy representation in national MSME forums"
-  image: "images/sectors/artisan.jpg"
-  alt: "A Kenyan artisan making furniture"
-  ctaType: "member"
-
-- title: "Corporate Member"
-  price: "KSh 50,000 / yr"
-  badge: "Corporate"
-  audience: "For commercial banks, telcos, FMCG companies, and enterprises engaging MSMEs."
-  benefits:
-    - "Corporate partner accreditation & ESG/CSR impact showcase"
-    - "Access to verified nationwide MSME vendor network"
-    - "Co-branded county training clinics & financial inclusion drives"
-    - "Quarterly grassroots economic insights & MSME trend reports"
-  image: "images/sectors/hotelier.jpg"
-  alt: "A Kenyan business executive engaging with local partners"
-  ctaType: "corporate"
-
-- title: "Strategic Partner"
-  price: "Custom / KSh 150K+"
-  badge: "Strategic Partner"
-  audience: "For development institutions, donor agencies, county governments, and conglomerates."
-  benefits:
-    - "Joint nationwide program development & implementation"
-    - "Keynote participation in annual BNAK MSME Congress"
-    - "Direct outreach to 7.5M+ micro-entrepreneurs in 47 counties"
-    - "Custom monitoring, evaluation & impact reporting"
-  image: "images/sectors/trader.jpg"
-  alt: "A Kenyan trader at work"
-  ctaType: "corporate"
+[
+  {
+    "id": "soko",
+    "title": "BNAK SOKO",
+    "price": "KSh 100",
+    "badge": "Market traders",
+    "audience": "Fresh produce and everyday market trading.",
+    "targets": [
+      "Mama mboga and vegetable vendors",
+      "Market stall owners",
+      "Fruit and fish traders",
+      "Cereals and fresh produce sellers",
+      "Open-air market traders",
+      "Street market vendors"
+    ],
+    "image": "images/sectors/market_stall.jpg",
+    "alt": "A Kenyan market trader selling fresh produce",
+    "icon": "M3 9h18l-2-6H5L3 9Zm2 0v12h14V9M9 21v-7h6v7"
+  },
+  {
+    "id": "move",
+    "title": "BNAK MOVE",
+    "price": "KSh 100",
+    "badge": "Informal mobility",
+    "audience": "Local transport and small delivery entrepreneurs.",
+    "targets": [
+      "Bodaboda riders",
+      "Tuk-tuk operators",
+      "Mikokoteni operators",
+      "Handcart and trolley pushers",
+      "Wheelbarrow operators",
+      "Small delivery operators",
+      "Other informal mobility and transport entrepreneurs"
+    ],
+    "image": "images/sectors/boda_rider.jpg",
+    "alt": "A Kenyan bodaboda rider at work",
+    "icon": "M5 17a3 3 0 1 0 0 .1M19 17a3 3 0 1 0 0 .1M5 17l5-8 5 8H5Zm5-8h5l4 8M8 5h4"
+  },
+  {
+    "id": "duka",
+    "title": "BNAK DUKA",
+    "price": "KSh 200",
+    "badge": "Retail & services",
+    "audience": "Neighbourhood shops, specialist retailers and personal service businesses.",
+    "targets": [
+      "Duka and kiosk owners",
+      "Mini-market operators",
+      "Boutique owners",
+      "Hardware shop owners",
+      "Agrovet operators",
+      "Salon and barber shop owners",
+      "Other retail business operators"
+    ],
+    "image": "images/sectors/retail_shop.jpg",
+    "alt": "A Kenyan neighbourhood shop owner",
+    "icon": "M3 10h18L19 3H5L3 10Zm2 0v11h14V10M9 21v-7h6v7M3 6h18"
+  },
+  {
+    "id": "wholesale",
+    "title": "BNAK WHOLESALE",
+    "price": "KSh 2,000",
+    "badge": "Wholesale & supply",
+    "audience": "Businesses sourcing and supplying bulk goods across local and regional markets.",
+    "targets": [
+      "Wholesale shop owners",
+      "Distributors",
+      "Manufacturers supplying wholesalers",
+      "Importers",
+      "Bulk commodity traders",
+      "Regional suppliers"
+    ],
+    "image": "images/sectors/wholesale.svg",
+    "alt": "Illustration of a wholesale warehouse and bulk goods",
+    "icon": "M3 21V8l9-5 9 5v13M8 21V11h8v10M8 16h8M12 11v10"
+  },
+  {
+    "id": "bale",
+    "title": "BNAK BALE",
+    "price": "KSh 2,000",
+    "badge": "Mitumba & textiles",
+    "audience": "The second-hand clothing and textile network, from bale importers to retailers and recyclers.",
+    "targets": [
+      "Mitumba bale importers",
+      "Bale wholesalers",
+      "Mitumba retailers",
+      "Second-hand clothing traders",
+      "Shoe and handbag traders",
+      "Textile resellers and recyclers"
+    ],
+    "image": "images/sectors/bale.svg",
+    "alt": "Illustration of clothing bales and second-hand garments",
+    "icon": "M8 3 3 6l3 5 2-1v11h8V10l2 1 3-5-5-3M8 3c0 4 8 4 8 0"
+  },
+  {
+    "id": "make",
+    "title": "BNAK MAKE",
+    "price": "KSh 2,000",
+    "badge": "Making & production",
+    "audience": "Entrepreneurs who make, fabricate, process and package products.",
+    "targets": [
+      "Manufacturers",
+      "Furniture makers",
+      "Garment producers",
+      "Food processors",
+      "Metal fabricators",
+      "Artisans and craftspeople",
+      "Packaging and processing businesses"
+    ],
+    "image": "images/sectors/artisan.jpg",
+    "alt": "A Kenyan artisan making furniture",
+    "icon": "M3 21V10l6 3V8l6 3V3h4v18H3ZM7 17h2m3 0h2m3 0h2"
+  },
+  {
+    "id": "kiongozi",
+    "title": "BNAK KIONGOZI",
+    "price": "KSh 200",
+    "badge": "Business leadership",
+    "audience": "Leaders organizing traders, cooperatives and business groups at grassroots, county and regional levels.",
+    "targets": [
+      "Market association leaders",
+      "Trader representatives",
+      "Business group officials",
+      "Cooperative leaders",
+      "Women and youth business leaders",
+      "County and regional MSME representatives",
+      "Grassroots business champions"
+    ],
+    "image": "images/sectors/meeting.jpg",
+    "alt": "Small business representatives meeting together",
+    "icon": "M9 7a3 3 0 1 0 6 0 3 3 0 1 0-6 0M5 21v-3a7 7 0 0 1 14 0v3M3 8v6m18-6v6"
+  },
+  {
+    "id": "mkulima",
+    "title": "BNAK MKULIMA",
+    "price": "KSh 200",
+    "badge": "Farming & agribusiness",
+    "audience": "Farmers, producers and agri-input businesses growing Kenya?s agricultural economy.",
+    "targets": [
+      "Crop farmers",
+      "Livestock farmers",
+      "Poultry and dairy farmers",
+      "Horticultural farmers",
+      "Grain and cereal producers",
+      "Agri-input dealers",
+      "Agribusiness entrepreneurs"
+    ],
+    "image": "images/sectors/avocado_farmer.jpg",
+    "alt": "A Kenyan avocado farmer tending a crop",
+    "icon": "M12 21V10M12 14C3 14 3 5 3 5s9 0 9 9Zm0-4c0-7 9-7 9-7s0 7-9 7"
+  },
+  {
+    "id": "logistics",
+    "title": "BNAK LOGISTICS",
+    "price": "KSh 1,000",
+    "badge": "Commercial transport",
+    "audience": "Established and commercial transport and logistics operators moving cargo and connecting supply chains.",
+    "targets": [
+      "Truck owners and operators",
+      "Lorry and trailer operators",
+      "Long-distance transporters",
+      "Freight and cargo companies",
+      "Courier and parcel delivery companies",
+      "Haulage businesses",
+      "Clearing and forwarding businesses",
+      "Warehousing and distribution companies",
+      "Fleet owners and logistics service providers"
+    ],
+    "image": "images/sectors/logistics.svg",
+    "alt": "Illustration of a commercial cargo truck and distribution warehouse",
+    "icon": "M1 4h13v13H1V4Zm13 5h5l4 5v3h-9M4 17a2 2 0 1 0 4 0 2 2 0 1 0-4 0m12 0a2 2 0 1 0 4 0 2 2 0 1 0-4 0"
+  }
+]
