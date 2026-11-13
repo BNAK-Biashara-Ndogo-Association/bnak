@@ -11,8 +11,8 @@ disableKinds = ['taxonomy', 'term']
   author = "Biashara Ndogo Association of Kenya"
   siteName = "Biashara Ndogo Association of Kenya (BNAK)"
   email = "hello@bnak.co.ke"
-  ctaURL = "https://member.biasharandogoassociatonofkenya.com/signup?returnTo=%2Fdashboard"
-  memberPortalURL = "https://member.biasharandogoassociatonofkenya.com/login"
+  ctaURL = "https://member.biasharandogo.com/signup?returnTo=%2Fdashboard"
+  memberPortalURL = "https://member.biasharandogo.com/login"
   contactPhone = "+254711422163"
 
 [build]
